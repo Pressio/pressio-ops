@@ -59,32 +59,32 @@ template<class T, class Enable = void> struct Traits;
 #include "type_traits/nested_typedef_detection.hpp"
 
 //*** vector ****
-#ifdef PRESSIO_ENABLE_TPL_EIGEN
+#ifdef PRESSIO_OPS_ENABLE_TPL_EIGEN
 #include "type_traits/native_eigen_vector.hpp"
 #endif
-#ifdef PRESSIO_ENABLE_TPL_KOKKOS
+#ifdef PRESSIO_OPS_ENABLE_TPL_KOKKOS
 #include "type_traits/native_kokkos_vector.hpp"
 #endif
-#ifdef PRESSIO_ENABLE_TPL_TRILINOS
+#ifdef PRESSIO_OPS_ENABLE_TPL_TRILINOS
 #include "type_traits/native_teuchos_vector.hpp"
 #include "type_traits/native_tpetra_block_vector.hpp"
 #include "type_traits/native_tpetra_vector.hpp"
 #endif
 
 //*** matrix ****
-#ifdef PRESSIO_ENABLE_TPL_KOKKOS
+#ifdef PRESSIO_OPS_ENABLE_TPL_KOKKOS
 #include "type_traits/native_kokkos_dense_matrix.hpp"
 #endif
-#ifdef PRESSIO_ENABLE_TPL_TRILINOS
+#ifdef PRESSIO_OPS_ENABLE_TPL_TRILINOS
 #include "type_traits/native_teuchos_dense_matrix.hpp"
 #endif
-#ifdef PRESSIO_ENABLE_TPL_EIGEN
+#ifdef PRESSIO_OPS_ENABLE_TPL_EIGEN
 #include "type_traits/native_eigen_dense_matrix.hpp"
 #include "type_traits/native_eigen_sparse_matrix.hpp"
 #endif
 
 //*** multi vector ****
-#ifdef PRESSIO_ENABLE_TPL_TRILINOS
+#ifdef PRESSIO_OPS_ENABLE_TPL_TRILINOS
 #include "type_traits/native_tpetra_block_multi_vector.hpp"
 #include "type_traits/native_tpetra_multi_vector.hpp"
 #endif

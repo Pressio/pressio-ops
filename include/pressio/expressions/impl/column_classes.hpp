@@ -51,7 +51,7 @@
 
 namespace pressio{ namespace expressions{ namespace impl{
 
-#ifdef PRESSIO_ENABLE_TPL_EIGEN
+#ifdef PRESSIO_OPS_ENABLE_TPL_EIGEN
 template <typename T>
 class ColumnExpr<
   T,
@@ -107,7 +107,7 @@ public:
 #endif
 
 
-#ifdef PRESSIO_ENABLE_TPL_TRILINOS
+#ifdef PRESSIO_OPS_ENABLE_TPL_TRILINOS
 template <typename T>
 class ColumnExpr<
   T, std::enable_if_t<

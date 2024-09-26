@@ -245,7 +245,7 @@ TEST_F(ops_tpetra, mv_T_vector_storein_kokkos_diag)
   test_impl(*this, ::pressio::transpose{}, *myMv_, *x_tpetra, y_kokkos_diag);
 }
 
-#ifdef PRESSIO_ENABLE_TPL_EIGEN
+#ifdef PRESSIO_OPS_ENABLE_TPL_EIGEN
 
 //-------------------------------------------
 // Test Eigen x

@@ -87,7 +87,7 @@ get_native(T & objectIn){
 template<typename T, class Enable = void>
 struct NativeType;
 
-#ifdef PRESSIO_ENABLE_TPL_KOKKOS
+#ifdef PRESSIO_OPS_ENABLE_TPL_KOKKOS
 template<typename T>
 struct NativeType<
   T, std::enable_if_t<::pressio::is_vector_kokkos<T>::value>
@@ -106,7 +106,7 @@ struct NativeType<
 };
 
 
-#ifdef PRESSIO_ENABLE_TPL_TRILINOS
+#ifdef PRESSIO_OPS_ENABLE_TPL_TRILINOS
 template<typename T,
   std::enable_if_t<
     ::pressio::is_vector_tpetra_block<T>::value, int > = 0 >

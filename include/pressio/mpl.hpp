@@ -49,7 +49,7 @@
 #ifndef PRESSIO_MPL_HPP_
 #define PRESSIO_MPL_HPP_
 
-#include "macros.hpp"
+#include "ops_macros.hpp"
 
 #include "./mpl/mpl_ConfigDefs.hpp"
 

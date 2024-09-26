@@ -2,7 +2,7 @@
 #include "tpetra_only_fixtures.hpp"
 #include "pressio/ops.hpp"
 
-#ifdef PRESSIO_ENABLE_TPL_EIGEN
+#ifdef PRESSIO_OPS_ENABLE_TPL_EIGEN
 TEST_F(tpetraMultiVectorGlobSize15Fixture, mv_T_mv_storein_eigen_C)
 {
   auto A = pressio::ops::clone(*myMv_);

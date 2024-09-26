@@ -48,7 +48,7 @@
 #ifndef TYPE_TRAITS_MISCELLANEA_HPP_
 #define TYPE_TRAITS_MISCELLANEA_HPP_
 
-#ifdef PRESSIO_ENABLE_TPL_TRILINOS
+#ifdef PRESSIO_OPS_ENABLE_TPL_TRILINOS
 #include <Teuchos_RCPDecl.hpp>
 #endif
 
@@ -137,7 +137,7 @@ template <class ...Args>
 using all_have_traits_and_same_scalar = impl::all_have_traits_and_same_scalar<void, Args...>;
 
 
-#ifdef PRESSIO_ENABLE_TPL_TRILINOS
+#ifdef PRESSIO_OPS_ENABLE_TPL_TRILINOS
 template <typename T,
 	  typename enable = void>
 struct is_teuchos_rcp : std::false_type{};

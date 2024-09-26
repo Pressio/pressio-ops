@@ -139,7 +139,7 @@ product(::pressio::nontranspose mode,
 // A = tpetra block MultiVector
 // y = tpetra block vector or column expression
 // -------------------------------
-#ifdef PRESSIO_ENABLE_TPL_EIGEN
+#ifdef PRESSIO_OPS_ENABLE_TPL_EIGEN
 template < class A_type, class x_type, class y_type, class alpha_t, class beta_t>
 std::enable_if_t<
   // level2 common constraints

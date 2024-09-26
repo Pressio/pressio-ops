@@ -63,10 +63,10 @@ auto subspan(T & operand,
   // because that qualification carries over to the impl
 
   constexpr bool constraint = false
-#ifdef PRESSIO_ENABLE_TPL_KOKKOS
+#ifdef PRESSIO_OPS_ENABLE_TPL_KOKKOS
     || is_dense_matrix_kokkos<T>::value
 #endif
-#ifdef PRESSIO_ENABLE_TPL_EIGEN
+#ifdef PRESSIO_OPS_ENABLE_TPL_EIGEN
     || is_dense_matrix_eigen<T>::value
 #endif
     ;

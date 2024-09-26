@@ -61,10 +61,10 @@ auto column(T & operand, IndexType colIndex)
   // because that qualification carries over to the impl
 
   constexpr bool constraint = false
-#ifdef PRESSIO_ENABLE_TPL_EIGEN
+#ifdef PRESSIO_OPS_ENABLE_TPL_EIGEN
     || is_dense_matrix_eigen<T>::value
 #endif
-#ifdef PRESSIO_ENABLE_TPL_TRILINOS
+#ifdef PRESSIO_OPS_ENABLE_TPL_TRILINOS
     || is_multi_vector_tpetra<T>::value
     || is_multi_vector_tpetra_block<T>::value
 #endif

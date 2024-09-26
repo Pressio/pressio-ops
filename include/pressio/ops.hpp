@@ -71,7 +71,7 @@ template<class ...> struct matching_extents;
 #include "ops/ops_ordinal_type.hpp"
 
 // Eigen
-#ifdef PRESSIO_ENABLE_TPL_EIGEN
+#ifdef PRESSIO_OPS_ENABLE_TPL_EIGEN
 #include "ops/eigen/ops_extent.hpp"
 #include "ops/eigen/ops_clone.hpp"
 #include "ops/eigen/ops_deep_copy.hpp"
@@ -93,7 +93,7 @@ template<class ...> struct matching_extents;
 #endif
 
 // Kokkos
-#ifdef PRESSIO_ENABLE_TPL_KOKKOS
+#ifdef PRESSIO_OPS_ENABLE_TPL_KOKKOS
 #include "ops/kokkos/ops_clone.hpp"
 #include "ops/kokkos/ops_extent.hpp"
 #include "ops/kokkos/ops_deep_copy.hpp"
@@ -113,7 +113,7 @@ template<class ...> struct matching_extents;
 #include "ops/kokkos/ops_level3.hpp"
 #endif
 
-#ifdef PRESSIO_ENABLE_TPL_TRILINOS
+#ifdef PRESSIO_OPS_ENABLE_TPL_TRILINOS
 // Teuchos
 #include "ops/teuchos/ops_extent.hpp"
 #include "ops/teuchos/ops_clone.hpp"
@@ -158,7 +158,7 @@ template<class ...> struct matching_extents;
 #include "ops/tpetra_block/ops_multi_vector_update.hpp"
 #include "ops/tpetra_block/ops_level2.hpp"
 #include "ops/tpetra_block/ops_level3.hpp"
-#endif //PRESSIO_ENABLE_TPL_TRILINOS
+#endif //PRESSIO_OPS_ENABLE_TPL_TRILINOS
 
 // keep this last
 #include "ops/ops_matching_extents.hpp"

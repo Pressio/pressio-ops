@@ -8,7 +8,7 @@ include(colors)
 # versioning
 #=====================================================================
 # adapted from Eigen
-file(READ "${PROJECT_SOURCE_DIR}/include/pressio/macros.hpp" _pressio_macros)
+file(READ "${PROJECT_SOURCE_DIR}/include/pressio/ops_macros.hpp" _pressio_macros)
 string(REGEX MATCH "define[ \t]+PRESSIO_OPS_MAJOR_VERSION[ \t]+([0-9]+)" _major_version_match "${_pressio_macros}")
 set(PRESSIO_OPS_MAJOR_VERSION "${CMAKE_MATCH_1}")
 
