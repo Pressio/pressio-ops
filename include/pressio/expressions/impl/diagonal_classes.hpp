@@ -51,7 +51,7 @@
 
 namespace pressio{ namespace expressions{ namespace impl{
 
-#ifdef PRESSIO_OPS_ENABLE_TPL_EIGEN
+#ifdef PRESSIO_ENABLE_TPL_EIGEN
 template <typename MatrixType>
 class DiagonalExpr<
   MatrixType,
@@ -111,7 +111,7 @@ public:
 #endif
 
 
-#ifdef PRESSIO_OPS_ENABLE_TPL_KOKKOS
+#ifdef PRESSIO_ENABLE_TPL_KOKKOS
 template <typename MatrixType>
 class DiagonalExpr<
   MatrixType,

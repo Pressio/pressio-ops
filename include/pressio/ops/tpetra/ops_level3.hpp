@@ -58,7 +58,7 @@ A = tpetra multivector
 B = tpetra multivector
 C is an Eigen dense matrix with col major
 *-------------------------------------------------------------------*/
-#ifdef PRESSIO_OPS_ENABLE_TPL_EIGEN
+#ifdef PRESSIO_ENABLE_TPL_EIGEN
 template <
   class A_type, class B_type, class C_type,
   class alpha_t, class beta_t

@@ -51,7 +51,7 @@
 
 namespace pressio {
 
-#ifdef PRESSIO_OPS_ENABLE_TPL_EIGEN
+#ifdef PRESSIO_ENABLE_TPL_EIGEN
 template <typename T>
 struct is_native_container_eigen {
   static constexpr auto value = ::pressio::is_vector_eigen<T>::value
@@ -60,7 +60,7 @@ struct is_native_container_eigen {
 };
 #endif
 
-#ifdef PRESSIO_OPS_ENABLE_TPL_KOKKOS
+#ifdef PRESSIO_ENABLE_TPL_KOKKOS
 template <typename T>
 struct is_native_container_kokkos {
   static constexpr auto value = ::pressio::is_vector_kokkos<T>::value
@@ -68,7 +68,7 @@ struct is_native_container_kokkos {
 };
 #endif
 
-#ifdef PRESSIO_OPS_ENABLE_TPL_EIGEN
+#ifdef PRESSIO_ENABLE_TPL_EIGEN
 template <typename T>
 struct Traits< T,
   std::enable_if_t< is_vector_eigen<T>::value > >
@@ -76,9 +76,9 @@ struct Traits< T,
   static constexpr int rank = 1;
   using scalar_type = typename T::Scalar;
 };
-#endif //PRESSIO_OPS_ENABLE_TPL_EIGEN
+#endif //PRESSIO_ENABLE_TPL_EIGEN
 
-#ifdef PRESSIO_OPS_ENABLE_TPL_KOKKOS
+#ifdef PRESSIO_ENABLE_TPL_KOKKOS
 template <typename T>
 struct Traits< T,
   std::enable_if_t< is_vector_kokkos<T>::value > >
@@ -88,7 +88,7 @@ struct Traits< T,
 };
 #endif
 
-#ifdef PRESSIO_OPS_ENABLE_TPL_TRILINOS
+#ifdef PRESSIO_ENABLE_TPL_TRILINOS
 template<typename T>
 struct Traits< T,
    std::enable_if_t<
@@ -99,7 +99,7 @@ struct Traits< T,
 };
 #endif
 
-#ifdef PRESSIO_OPS_ENABLE_TPL_TRILINOS
+#ifdef PRESSIO_ENABLE_TPL_TRILINOS
 template<typename T>
 struct Traits< T,
   std::enable_if_t<
@@ -110,7 +110,7 @@ struct Traits< T,
 };
 #endif
 
-#ifdef PRESSIO_OPS_ENABLE_TPL_EIGEN
+#ifdef PRESSIO_ENABLE_TPL_EIGEN
 template <typename T>
 struct Traits<
   T, std::enable_if_t<
@@ -121,9 +121,9 @@ struct Traits<
   using scalar_type = typename T::Scalar;
 };
 
-#endif //PRESSIO_OPS_ENABLE_TPL_EIGEN
+#endif //PRESSIO_ENABLE_TPL_EIGEN
 
-#ifdef PRESSIO_OPS_ENABLE_TPL_KOKKOS
+#ifdef PRESSIO_ENABLE_TPL_KOKKOS
 template <typename T>
 struct Traits<
   T, std::enable_if_t<
@@ -135,7 +135,7 @@ struct Traits<
 };
 #endif
 
-#ifdef PRESSIO_OPS_ENABLE_TPL_TRILINOS
+#ifdef PRESSIO_ENABLE_TPL_TRILINOS
 template<typename T>
 struct Traits<
   T, std::enable_if_t<
@@ -147,7 +147,7 @@ struct Traits<
 };
 #endif
 
-#ifdef PRESSIO_OPS_ENABLE_TPL_TRILINOS
+#ifdef PRESSIO_ENABLE_TPL_TRILINOS
 template<typename T>
 struct Traits<
   T, std::enable_if_t<
@@ -160,7 +160,7 @@ struct Traits<
 };
 #endif
 
-#ifdef PRESSIO_OPS_ENABLE_TPL_EIGEN
+#ifdef PRESSIO_ENABLE_TPL_EIGEN
 template <typename T>
 struct Traits<
   T, std::enable_if_t<
@@ -179,7 +179,7 @@ private:
     "ordinal type for indexing eigen sparse matrix has to be signed"
   );
 };
-#endif //PRESSIO_OPS_ENABLE_TPL_EIGEN
+#endif //PRESSIO_ENABLE_TPL_EIGEN
 
 
 } // namespace pressio

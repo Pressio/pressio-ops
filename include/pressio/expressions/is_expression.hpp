@@ -82,7 +82,7 @@ struct is_expression<
     >
   > : std::true_type{};
 
-#ifdef PRESSIO_OPS_ENABLE_TPL_EIGEN
+#ifdef PRESSIO_ENABLE_TPL_EIGEN
 template <typename T>
 struct is_expression_acting_on_eigen: public std::false_type {};
 
@@ -117,10 +117,10 @@ struct is_expression_acting_on_eigen<
 {
   static constexpr auto value = ::pressio::is_native_container_eigen<T>::value;
 };
-#endif // PRESSIO_OPS_ENABLE_TPL_EIGEN
+#endif // PRESSIO_ENABLE_TPL_EIGEN
 
 
-#ifdef PRESSIO_OPS_ENABLE_TPL_KOKKOS
+#ifdef PRESSIO_ENABLE_TPL_KOKKOS
 template <typename T>
 struct is_expression_acting_on_kokkos: public std::false_type {};
 
@@ -147,9 +147,9 @@ struct is_expression_acting_on_kokkos<
 {
   static constexpr auto value = ::pressio::is_native_container_kokkos<T>::value;
 };
-#endif // PRESSIO_OPS_ENABLE_TPL_KOKKOS
+#endif // PRESSIO_ENABLE_TPL_KOKKOS
 
-#ifdef PRESSIO_OPS_ENABLE_TPL_TRILINOS
+#ifdef PRESSIO_ENABLE_TPL_TRILINOS
 template <typename T>
 struct is_expression_acting_on_tpetra: public std::false_type {};
 

@@ -55,7 +55,7 @@ template<typename T, class Enable = void> struct OrdinalType       { using type 
 template<typename T, class Enable = void> struct LocalOrdinalType  { using type = void; };
 template<typename T, class Enable = void> struct GlobalOrdinalType { using type = void; };
 
-#ifdef PRESSIO_OPS_ENABLE_TPL_EIGEN
+#ifdef PRESSIO_ENABLE_TPL_EIGEN
 template <class T>
 struct OrdinalType<
   T,
@@ -91,7 +91,7 @@ struct OrdinalType<
 {};
 #endif
 
-#ifdef PRESSIO_OPS_ENABLE_TPL_KOKKOS
+#ifdef PRESSIO_ENABLE_TPL_KOKKOS
 template <class T>
 struct OrdinalType<
   T,
@@ -105,7 +105,7 @@ struct OrdinalType<
 };
 #endif
 
-#ifdef PRESSIO_OPS_ENABLE_TPL_TRILINOS
+#ifdef PRESSIO_ENABLE_TPL_TRILINOS
 template <class T>
 struct LocalOrdinalType<
   T,

@@ -2,7 +2,7 @@
 #include "tpetra_block_only_fixtures.hpp"
 #include "pressio/ops.hpp"
 
-#ifdef PRESSIO_OPS_ENABLE_TPL_EIGEN
+#ifdef PRESSIO_ENABLE_TPL_EIGEN
 TEST_F(tpetraBlockMultiVectorGlobSize15NVec3BlockSize4Fixture,
        mv_T_mv_storein_eigen_C)
 {

@@ -56,7 +56,7 @@ template<class T>
 struct is_known_data_type
 {
   static constexpr bool v1 =
-#ifdef PRESSIO_OPS_ENABLE_TPL_EIGEN
+#ifdef PRESSIO_ENABLE_TPL_EIGEN
     is_vector_eigen<T>::value
     || is_dense_matrix_eigen<T>::value
     || is_sparse_matrix_eigen<T>::value;
@@ -65,7 +65,7 @@ struct is_known_data_type
 #endif
 
   static constexpr bool v2 =
-#ifdef PRESSIO_OPS_ENABLE_TPL_KOKKOS
+#ifdef PRESSIO_ENABLE_TPL_KOKKOS
     is_vector_kokkos<T>::value
     || is_dense_matrix_kokkos<T>::value;
 #else
@@ -73,7 +73,7 @@ struct is_known_data_type
 #endif
 
   static constexpr bool v3 =
-#ifdef PRESSIO_OPS_ENABLE_TPL_TRILINOS
+#ifdef PRESSIO_ENABLE_TPL_TRILINOS
     is_vector_tpetra<T>::value
     || is_multi_vector_tpetra<T>::value
     || is_vector_tpetra_block<T>::value

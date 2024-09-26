@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef PRESSIO_OPS_MACROS_HPP_
-#define PRESSIO_OPS_MACROS_HPP_
+#ifndef PRESSIO_MACROS_HPP_
+#define PRESSIO_MACROS_HPP_
 
 #define PRESSIO_OPS_MAJOR_VERSION 0
 #define PRESSIO_OPS_MINOR_VERSION 14
@@ -57,37 +57,37 @@
 // compiler version
 // ----------------------------------------
 #ifdef _MSVC_LANG
-#define _PRESSIO_OPS_CPLUSPLUS _MSVC_LANG
+#define _PRESSIO_CPLUSPLUS _MSVC_LANG
 #else
-#define _PRESSIO_OPS_CPLUSPLUS __cplusplus
+#define _PRESSIO_CPLUSPLUS __cplusplus
 #endif
 
-#define PRESSIO_OPS_CXX_STD_17 201703L
-#define PRESSIO_OPS_CXX_STD_20 202002L
-static_assert(_PRESSIO_OPS_CPLUSPLUS >= PRESSIO_OPS_CXX_STD_17, "PRESSIO requires C++17 or greater.");
+#define PRESSIO_CXX_STD_17 201703L
+#define PRESSIO_CXX_STD_20 202002L
+static_assert(_PRESSIO_CPLUSPLUS >= PRESSIO_CXX_STD_17, "PRESSIO requires C++17 or greater.");
 
-#if defined PRESSIO_OPS_ENABLE_CXX20
-#define PRESSIO_OPS_ENABLE_CXX17
+#if defined PRESSIO_ENABLE_CXX20
+#define PRESSIO_ENABLE_CXX17
 #endif
 
 // ----------------------------------------
 // TPL macros
 // ----------------------------------------
-#if defined PRESSIO_OPS_ENABLE_TPL_TRILINOS
+#if defined PRESSIO_ENABLE_TPL_TRILINOS
 // if trilinos enabled, kokkos and MPI should be too
-#if !defined PRESSIO_OPS_ENABLE_TPL_KOKKOS
-#define PRESSIO_OPS_ENABLE_TPL_KOKKOS
+#if !defined PRESSIO_ENABLE_TPL_KOKKOS
+#define PRESSIO_ENABLE_TPL_KOKKOS
 #endif
-#if !defined PRESSIO_OPS_ENABLE_TPL_MPI
-#define PRESSIO_OPS_ENABLE_TPL_MPI
+#if !defined PRESSIO_ENABLE_TPL_MPI
+#define PRESSIO_ENABLE_TPL_MPI
 #endif
-#if !defined PRESSIO_OPS_ENABLE_TEUCHOS_TIMERS
-#define PRESSIO_OPS_ENABLE_TEUCHOS_TIMERS
+#if !defined PRESSIO_ENABLE_TEUCHOS_TIMERS
+#define PRESSIO_ENABLE_TEUCHOS_TIMERS
 #endif
 #endif
 
-// #ifndef PRESSIO_OPS_ENABLE_TPL_EIGEN
-// static_assert(false, "Eigen is not enabled.");
-// #endif
+#ifndef PRESSIO_ENABLE_TPL_EIGEN
+static_assert(false, "Eigen is not enabled.");
+#endif
 
 #endif

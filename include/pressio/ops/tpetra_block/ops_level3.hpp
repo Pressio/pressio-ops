@@ -55,7 +55,7 @@ namespace pressio{ namespace ops{
  * C = beta * C + alpha*op(A)*op(B)
 */
 
-#ifdef PRESSIO_OPS_ENABLE_TPL_EIGEN
+#ifdef PRESSIO_ENABLE_TPL_EIGEN
 /* -------------------------------------------------------------------
 C = beta * C + alpha * A^T * B
 
