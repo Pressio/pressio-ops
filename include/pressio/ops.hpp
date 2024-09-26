@@ -72,7 +72,6 @@ template<class ...> struct matching_extents;
 
 // Eigen
 #ifdef PRESSIO_OPS_ENABLE_TPL_EIGEN
-#include "this_file_isnt_real.hpp"
 #include "ops/eigen/ops_extent.hpp"
 #include "ops/eigen/ops_clone.hpp"
 #include "ops/eigen/ops_deep_copy.hpp"
