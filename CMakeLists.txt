@@ -19,7 +19,7 @@ string(REGEX MATCH "define[ \t]+PRESSIO_PATCH_VERSION[ \t]+([0-9]+)" _patch_vers
 set(PRESSIO_PATCH_VERSION "${CMAKE_MATCH_1}")
 
 set(PRESSIO_VERSION_NUMBER ${PRESSIO_MAJOR_VERSION}.${PRESSIO_MINOR_VERSION}.${PRESSIO_PATCH_VERSION})
-message("${Magenta}>> PRESSIO: version = ${PRESSIO_VERSION_NUMBER} ${ColourReset}")
+message("${Magenta}>> PRESSIO-OPS: version = ${PRESSIO_VERSION_NUMBER} ${ColourReset}")
 
 #=====================================================================
 # c++ standard
@@ -89,15 +89,3 @@ if(PRESSIO_OPS_ENABLE_TESTS)
   enable_testing()
   add_subdirectory(tests)
 endif()
-
-######
-
-# Debug prints
-
-message("[pressio-ops] PRESSIO_ENABLE_TPL_EIGEN: ${PRESSIO_ENABLE_TPL_EIGEN}")
-message("[pressio-ops] PRESSIO_ENABLE_TPL_TRILINOS: ${PRESSIO_ENABLE_TPL_TRILINOS}")
-message("[pressio-ops] PRESSIO_ENABLE_TPL_KOKKOS: ${PRESSIO_ENABLE_TPL_KOKKOS}")
-message("[pressio-ops] PRESSIO_ENABLE_TPL_MPI: ${PRESSIO_ENABLE_TPL_MPI}")
-message("[pressio-ops] PRESSIO_ENABLE_CXX20: ${PRESSIO_ENABLE_CXX20}")
-message("[pressio-ops] PRESSIO_ENABLE_CXX17: ${PRESSIO_ENABLE_CXX17}")
-message("[pressio-ops] PRESSIO_ENABLE_TESTS: ${PRESSIO_ENABLE_TESTS}")
