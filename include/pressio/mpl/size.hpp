@@ -10,8 +10,8 @@
 //  enniobarbaro@gmail.com
 //
 
-#ifndef MPL_SIZE_HPP_
-#define MPL_SIZE_HPP_
+#ifndef PRESSIOOPS_MPL_SIZE_HPP_
+#define PRESSIOOPS_MPL_SIZE_HPP_
 
 #include "./variadic/size.hpp"
 
@@ -24,4 +24,4 @@ template<class ... Args>
 using size_t = typename size<Args...>::type;
 
 }}
-#endif  // MPL_SIZE_HPP_
+#endif  // PRESSIOOPS_MPL_SIZE_HPP_

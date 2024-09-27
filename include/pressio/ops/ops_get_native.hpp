@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef OPS_OPS_GET_NATIVE_HPP_
-#define OPS_OPS_GET_NATIVE_HPP_
+#ifndef PRESSIOOPS_OPS_OPS_GET_NATIVE_HPP_
+#define PRESSIOOPS_OPS_OPS_GET_NATIVE_HPP_
 
 namespace pressio{ namespace ops{ namespace impl{
 
@@ -139,4 +139,4 @@ auto get_underlying_tpetra_object(T o){ return o.native(); }
 #endif
 
 }}}
-#endif  // OPS_OPS_GET_NATIVE_HPP_
+#endif  // PRESSIOOPS_OPS_OPS_GET_NATIVE_HPP_

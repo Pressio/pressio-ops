@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef OPS_TPETRA_BLOCK_OPS_FILL_HPP_
-#define OPS_TPETRA_BLOCK_OPS_FILL_HPP_
+#ifndef PRESSIOOPS_OPS_TPETRA_BLOCK_OPS_FILL_HPP_
+#define PRESSIOOPS_OPS_TPETRA_BLOCK_OPS_FILL_HPP_
 
 namespace pressio{ namespace ops{
 
@@ -66,4 +66,4 @@ fill(T & o, const ScalarType & value)
 }
 
 }}//end namespace pressio::ops
-#endif  // OPS_TPETRA_BLOCK_OPS_FILL_HPP_
+#endif  // PRESSIOOPS_OPS_TPETRA_BLOCK_OPS_FILL_HPP_

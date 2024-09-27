@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef OPS_KOKKOS_OPS_ABS_HPP_
-#define OPS_KOKKOS_OPS_ABS_HPP_
+#ifndef PRESSIOOPS_OPS_KOKKOS_OPS_ABS_HPP_
+#define PRESSIOOPS_OPS_KOKKOS_OPS_ABS_HPP_
 
 #include <KokkosBlas1_abs.hpp>
 
@@ -77,4 +77,4 @@ abs(T1 & y, const T2 & x)
 }
 
 }}//end namespace pressio::ops
-#endif  // OPS_KOKKOS_OPS_ABS_HPP_
+#endif  // PRESSIOOPS_OPS_KOKKOS_OPS_ABS_HPP_

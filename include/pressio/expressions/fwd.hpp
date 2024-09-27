@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef EXPRESSIONS_FWD_HPP_
-#define EXPRESSIONS_FWD_HPP_
+#ifndef PRESSIOOPS_EXPRESSIONS_FWD_HPP_
+#define PRESSIOOPS_EXPRESSIONS_FWD_HPP_
 
 namespace pressio{
 
@@ -79,4 +79,4 @@ struct Traits<expressions::impl::ColumnExpr<T>>
   : expressions::impl::ColumnTraits< expressions::impl::ColumnExpr<T> >{};
 
 }//end namespace pressio
-#endif  // EXPRESSIONS_FWD_HPP_
+#endif  // PRESSIOOPS_EXPRESSIONS_FWD_HPP_

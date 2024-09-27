@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef PRESSIO_TYPE_TRAITS_HPP_
-#define PRESSIO_TYPE_TRAITS_HPP_
+#ifndef PRESSIOOPS_TYPE_TRAITS_HPP
+#define PRESSIOOPS_TYPE_TRAITS_HPP
 
 #include "./mpl.hpp"
 

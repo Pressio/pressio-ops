@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef OPS_EIGEN_OPS_MIN_MAX_HPP_
-#define OPS_EIGEN_OPS_MIN_MAX_HPP_
+#ifndef PRESSIOOPS_OPS_EIGEN_OPS_MIN_MAX_HPP_
+#define PRESSIOOPS_OPS_EIGEN_OPS_MIN_MAX_HPP_
 
 namespace pressio{ namespace ops{
 
@@ -82,4 +82,4 @@ min(const T & obj)
 }
 
 }}//end namespace pressio::ops
-#endif  // OPS_EIGEN_OPS_MIN_MAX_HPP_
+#endif  // PRESSIOOPS_OPS_EIGEN_OPS_MIN_MAX_HPP_

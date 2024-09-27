@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef MPL_IS_STD_SHARED_PTR_HPP_
-#define MPL_IS_STD_SHARED_PTR_HPP_
+#ifndef PRESSIOOPS_MPL_IS_STD_SHARED_PTR_HPP_
+#define PRESSIOOPS_MPL_IS_STD_SHARED_PTR_HPP_
 
 namespace pressio{ namespace mpl{ 
 
@@ -69,4 +69,4 @@ struct is_std_shared_ptr<
   > : std::true_type{};
 
 }} // namespace pressio::mpl
-#endif  // MPL_IS_STD_SHARED_PTR_HPP_
+#endif  // PRESSIOOPS_MPL_IS_STD_SHARED_PTR_HPP_

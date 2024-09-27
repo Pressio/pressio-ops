@@ -2,7 +2,7 @@
 //@HEADER
 // ************************************************************************
 //
-// macros.hpp
+// ops_macros.hpp
 //                     		  Pressio
 //                             Copyright 2019
 //    National Technology & Engineering Solutions of Sandia, LLC (NTESS)
@@ -46,12 +46,12 @@
 //@HEADER
 */
 
-#ifndef PRESSIO_MACROS_HPP_
-#define PRESSIO_MACROS_HPP_
+#ifndef PRESSIOOPS_OPS_MACROS_HPP
+#define PRESSIOOPS_OPS_MACROS_HPP
 
-#define PRESSIO_OPS_MAJOR_VERSION 0
-#define PRESSIO_OPS_MINOR_VERSION 14
-#define PRESSIO_OPS_PATCH_VERSION 0
+#define PRESSIO_MAJOR_VERSION 0
+#define PRESSIO_MINOR_VERSION 14
+#define PRESSIO_PATCH_VERSION 0
 
 // ----------------------------------------
 // compiler version
@@ -86,8 +86,8 @@ static_assert(_PRESSIO_CPLUSPLUS >= PRESSIO_CXX_STD_17, "PRESSIO requires C++17 
 #endif
 #endif
 
-// #ifndef PRESSIO_ENABLE_TPL_EIGEN
-// static_assert(false, "Eigen is not enabled.");
-// #endif
+#ifndef PRESSIO_ENABLE_TPL_EIGEN
+static_assert(false, "Eigen is not enabled.");
+#endif
 
 #endif

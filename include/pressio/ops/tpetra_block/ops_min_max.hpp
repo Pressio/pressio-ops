@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef OPS_TPETRA_BLOCK_OPS_MIN_MAX_HPP_
-#define OPS_TPETRA_BLOCK_OPS_MIN_MAX_HPP_
+#ifndef PRESSIOOPS_OPS_TPETRA_BLOCK_OPS_MIN_MAX_HPP_
+#define PRESSIOOPS_OPS_TPETRA_BLOCK_OPS_MIN_MAX_HPP_
 
 namespace pressio{ namespace ops{
 
@@ -92,4 +92,4 @@ min(const T & o)
 }
 
 }}//end namespace pressio::ops
-#endif  // OPS_TPETRA_BLOCK_OPS_MIN_MAX_HPP_
+#endif  // PRESSIOOPS_OPS_TPETRA_BLOCK_OPS_MIN_MAX_HPP_

@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef MPL_IDENTITY_HPP_
-#define MPL_IDENTITY_HPP_
+#ifndef PRESSIOOPS_MPL_IDENTITY_HPP_
+#define PRESSIOOPS_MPL_IDENTITY_HPP_
 
 namespace pressio{ namespace mpl {
 
@@ -59,4 +59,4 @@ template<class T> struct identity{
 };
 
 }} // namespace pressio::mpl
-#endif  // MPL_IDENTITY_HPP_
+#endif  // PRESSIOOPS_MPL_IDENTITY_HPP_

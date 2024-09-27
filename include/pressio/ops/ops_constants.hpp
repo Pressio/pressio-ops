@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef UTILS_UTILS_STATIC_CONSTANTS_HPP_
-#define UTILS_UTILS_STATIC_CONSTANTS_HPP_
+#ifndef PRESSIOOPS_OPS_OPS_CONSTANTS_HPP_
+#define PRESSIOOPS_OPS_OPS_CONSTANTS_HPP_
 
 namespace pressio{
 
@@ -71,4 +71,4 @@ struct Constants
 };
 
 } // end of namespace pressio
-#endif  // UTILS_UTILS_STATIC_CONSTANTS_HPP_
+#endif  // PRESSIOOPS_OPS_OPS_CONSTANTS_HPP_

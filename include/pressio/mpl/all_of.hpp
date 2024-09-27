@@ -1,6 +1,6 @@
 
-#ifndef MPL_ALL_OF_HPP_
-#define MPL_ALL_OF_HPP_
+#ifndef PRESSIOOPS_MPL_ALL_OF_HPP_
+#define PRESSIOOPS_MPL_ALL_OF_HPP_
 
 #include "./variadic/all_of.hpp"
 
@@ -13,4 +13,4 @@ template< template<class... T> class F, class ... Args>
 using all_of_t = typename all_of<F, Args...>::type;
 
 }}
-#endif  // MPL_ALL_OF_HPP_
+#endif  // PRESSIOOPS_MPL_ALL_OF_HPP_

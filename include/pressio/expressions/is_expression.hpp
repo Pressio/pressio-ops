@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef EXPRESSIONS_IS_EXPRESSION_HPP_
-#define EXPRESSIONS_IS_EXPRESSION_HPP_
+#ifndef PRESSIOOPS_EXPRESSIONS_IS_EXPRESSION_HPP_
+#define PRESSIOOPS_EXPRESSIONS_IS_EXPRESSION_HPP_
 
 namespace pressio{
 
@@ -186,4 +186,4 @@ struct is_expression_column_acting_on_tpetra_block{
 #endif
 
 }
-#endif  // EXPRESSIONS_IS_EXPRESSION_HPP_
+#endif  // PRESSIOOPS_EXPRESSIONS_IS_EXPRESSION_HPP_

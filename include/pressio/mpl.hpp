@@ -46,10 +46,10 @@
 //@HEADER
 */
 
-#ifndef PRESSIO_MPL_HPP_
-#define PRESSIO_MPL_HPP_
+#ifndef PRESSIOOPS_MPL_HPP
+#define PRESSIOOPS_MPL_HPP
 
-#include "macros.hpp"
+#include "ops_macros.hpp"
 
 #include "./mpl/mpl_ConfigDefs.hpp"
 

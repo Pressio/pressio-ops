@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef EXPRESSIONS_IMPL_DIAGONAL_TRAITS_HPP_
-#define EXPRESSIONS_IMPL_DIAGONAL_TRAITS_HPP_
+#ifndef PRESSIOOPS_EXPRESSIONS_IMPL_DIAGONAL_TRAITS_HPP_
+#define PRESSIOOPS_EXPRESSIONS_IMPL_DIAGONAL_TRAITS_HPP_
 
 namespace pressio{ namespace expressions{ namespace impl{
 
@@ -104,4 +104,4 @@ public:
 #endif
 
 }}} // pressio::expressions::impl
-#endif  // EXPRESSIONS_IMPL_DIAGONAL_TRAITS_HPP_
+#endif  // PRESSIOOPS_EXPRESSIONS_IMPL_DIAGONAL_TRAITS_HPP_

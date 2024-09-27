@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef TYPE_TRAITS_TRAITS_TPL_HPP_
-#define TYPE_TRAITS_TRAITS_TPL_HPP_
+#ifndef PRESSIOOPS_TYPE_TRAITS_TRAITS_TPL_HPP_
+#define PRESSIOOPS_TYPE_TRAITS_TRAITS_TPL_HPP_
 
 namespace pressio {
 
@@ -183,4 +183,4 @@ private:
 
 
 } // namespace pressio
-#endif  // TYPE_TRAITS_TRAITS_TPL_HPP_
+#endif  // PRESSIOOPS_TYPE_TRAITS_TRAITS_TPL_HPP_

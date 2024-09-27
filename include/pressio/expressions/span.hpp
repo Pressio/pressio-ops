@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef EXPRESSIONS_SPAN_HPP_
-#define EXPRESSIONS_SPAN_HPP_
+#ifndef PRESSIOOPS_EXPRESSIONS_SPAN_HPP_
+#define PRESSIOOPS_EXPRESSIONS_SPAN_HPP_
 
 #include "impl/span_traits.hpp"
 #include "impl/span_classes.hpp"
@@ -80,4 +80,4 @@ auto span(T & operand, IndexType startIndex, IndexType extent)
 }
 
 }
-#endif  // EXPRESSIONS_SPAN_HPP_
+#endif  // PRESSIOOPS_EXPRESSIONS_SPAN_HPP_

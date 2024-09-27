@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef TYPE_TRAITS_NATIVE_KOKKOS_DENSE_MATRIX_HPP_
-#define TYPE_TRAITS_NATIVE_KOKKOS_DENSE_MATRIX_HPP_
+#ifndef PRESSIOOPS_TYPE_TRAITS_NATIVE_KOKKOS_DENSE_MATRIX_HPP_
+#define PRESSIOOPS_TYPE_TRAITS_NATIVE_KOKKOS_DENSE_MATRIX_HPP_
 
 #include <KokkosSparse_CrsMatrix.hpp>
 
@@ -100,4 +100,4 @@ template <typename T>
 struct is_dense_matrix_kokkos<const T>: public is_dense_matrix_kokkos<T>{};
 
 }//end namespace
-#endif  // TYPE_TRAITS_NATIVE_KOKKOS_DENSE_MATRIX_HPP_
+#endif  // PRESSIOOPS_TYPE_TRAITS_NATIVE_KOKKOS_DENSE_MATRIX_HPP_

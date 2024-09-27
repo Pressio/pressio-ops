@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef MPL_REMOVE_REFERENCE_HPP_
-#define MPL_REMOVE_REFERENCE_HPP_
+#ifndef PRESSIOOPS_MPL_REMOVE_REFERENCE_HPP_
+#define PRESSIOOPS_MPL_REMOVE_REFERENCE_HPP_
 
 namespace pressio{ namespace mpl{
 
@@ -64,4 +64,4 @@ using remove_reference_t = typename remove_reference<T>::type;
 
 }} // namespace pressio::mpl
 
-#endif  // MPL_REMOVE_REFERENCE_HPP_
+#endif  // PRESSIOOPS_MPL_REMOVE_REFERENCE_HPP_

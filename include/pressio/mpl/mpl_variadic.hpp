@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef MPL_MPL_VARIADIC_HPP_
-#define MPL_MPL_VARIADIC_HPP_
+#ifndef PRESSIOOPS_MPL_MPL_VARIADIC_HPP_
+#define PRESSIOOPS_MPL_MPL_VARIADIC_HPP_
 
 #include "variadic/size.hpp"
 #include "variadic/at.hpp"
@@ -60,4 +60,4 @@
 #include "variadic/none_of.hpp"
 #include "variadic/all_of.hpp"
 
-#endif  // MPL_MPL_VARIADIC_HPP_
+#endif  // PRESSIOOPS_MPL_MPL_VARIADIC_HPP_

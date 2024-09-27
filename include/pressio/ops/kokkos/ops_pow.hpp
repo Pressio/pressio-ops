@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef OPS_KOKKOS_OPS_POW_HPP_
-#define OPS_KOKKOS_OPS_POW_HPP_
+#ifndef PRESSIOOPS_OPS_KOKKOS_OPS_POW_HPP_
+#define PRESSIOOPS_OPS_KOKKOS_OPS_POW_HPP_
 
 namespace pressio{ namespace ops{
 
@@ -136,4 +136,4 @@ abs_pow(T1 & y,
 }
 
 }}//end namespace pressio::ops
-#endif  // OPS_KOKKOS_OPS_POW_HPP_
+#endif  // PRESSIOOPS_OPS_KOKKOS_OPS_POW_HPP_

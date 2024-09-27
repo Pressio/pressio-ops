@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef OPS_KOKKOS_OPS_MIN_MAX_HPP_
-#define OPS_KOKKOS_OPS_MIN_MAX_HPP_
+#ifndef PRESSIOOPS_OPS_KOKKOS_OPS_MIN_MAX_HPP_
+#define PRESSIOOPS_OPS_KOKKOS_OPS_MIN_MAX_HPP_
 
 namespace pressio{ namespace ops{
 
@@ -137,4 +137,4 @@ min(const T & obj)
 }
 
 }}//end namespace pressio::ops
-#endif  // OPS_KOKKOS_OPS_MIN_MAX_HPP_
+#endif  // PRESSIOOPS_OPS_KOKKOS_OPS_MIN_MAX_HPP_

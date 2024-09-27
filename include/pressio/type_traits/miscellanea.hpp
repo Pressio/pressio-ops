@@ -45,8 +45,8 @@
 //@HEADER
 */
 
-#ifndef TYPE_TRAITS_MISCELLANEA_HPP_
-#define TYPE_TRAITS_MISCELLANEA_HPP_
+#ifndef PRESSIOOPS_TYPE_TRAITS_MISCELLANEA_HPP_
+#define PRESSIOOPS_TYPE_TRAITS_MISCELLANEA_HPP_
 
 #ifdef PRESSIO_ENABLE_TPL_TRILINOS
 #include <Teuchos_RCPDecl.hpp>
@@ -172,4 +172,4 @@ struct _scalar_trait<
 template<class T> using scalar_trait_t = typename impl::_scalar_trait<T>::type;
 
 }
-#endif  // TYPE_TRAITS_ALL_HAVE_TRAITS_HPP_
+#endif  // PRESSIOOPS_TYPE_TRAITS_MISCELLANEA_HPP_

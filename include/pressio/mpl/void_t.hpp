@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef MPL_VOID_T_HPP_
-#define MPL_VOID_T_HPP_
+#ifndef PRESSIOOPS_MPL_VOID_T_HPP_
+#define PRESSIOOPS_MPL_VOID_T_HPP_
 
 namespace pressio { namespace mpl{
 
@@ -64,4 +64,4 @@ template <class... T>
 using void_t = typename _void_t_impl::make_void<T...>::type;
 
 }} // end namespace 
-#endif  // MPL_VOID_T_HPP_
+#endif  // PRESSIOOPS_MPL_VOID_T_HPP_

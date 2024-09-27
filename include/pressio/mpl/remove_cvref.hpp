@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef MPL_REMOVE_CVREF_HPP_
-#define MPL_REMOVE_CVREF_HPP_
+#ifndef PRESSIOOPS_MPL_REMOVE_CVREF_HPP_
+#define PRESSIOOPS_MPL_REMOVE_CVREF_HPP_
 
 namespace pressio{ namespace mpl{
 
@@ -64,4 +64,4 @@ using remove_cvref_t = typename remove_cvref<T>::type;
 
 }} // namespace pressio::mpl
 
-#endif  // MPL_REMOVE_CVREF_HPP_
+#endif  // PRESSIOOPS_MPL_REMOVE_CVREF_HPP_

@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef MPL_NOT_VOID_HPP_
-#define MPL_NOT_VOID_HPP_
+#ifndef PRESSIOOPS_MPL_NOT_VOID_HPP_
+#define PRESSIOOPS_MPL_NOT_VOID_HPP_
 
 namespace pressio { namespace mpl {
 
@@ -60,4 +60,4 @@ struct not_void
 
 }} // end namespace pressio::mpl
 
-#endif  // MPL_NOT_VOID_HPP_
+#endif  // PRESSIOOPS_MPL_NOT_VOID_HPP_

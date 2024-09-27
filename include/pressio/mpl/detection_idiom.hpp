@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef MPL_DETECTION_IDIOM_HPP_
-#define MPL_DETECTION_IDIOM_HPP_
+#ifndef PRESSIOOPS_MPL_DETECTION_IDIOM_HPP_
+#define PRESSIOOPS_MPL_DETECTION_IDIOM_HPP_
 
 namespace pressio{ namespace mpl{
 
@@ -99,4 +99,4 @@ using is_detected_exact = std::is_same<T, detected_t<Op, Args...>>;
 
 
 }}//end namespace pressio::mpl
-#endif  // MPL_DETECTION_IDIOM_HPP_
+#endif  // PRESSIOOPS_MPL_DETECTION_IDIOM_HPP_
