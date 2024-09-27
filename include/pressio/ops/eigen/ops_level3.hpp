@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef OPS_EIGEN_OPS_LEVEL3_HPP_
-#define OPS_EIGEN_OPS_LEVEL3_HPP_
+#ifndef PRESSIOOPS_OPS_EIGEN_OPS_LEVEL3_HPP_
+#define PRESSIOOPS_OPS_EIGEN_OPS_LEVEL3_HPP_
 
 namespace pressio{ namespace ops{
 
@@ -288,4 +288,4 @@ product(::pressio::transpose modeA,
 //     CE.col(i) = beta * CE.col(i) + alpha * currMatrixEigen * BE.col(i);
 //   }
 // }
-#endif  // OPS_EIGEN_OPS_LEVEL3_HPP_
+#endif  // PRESSIOOPS_OPS_EIGEN_OPS_LEVEL3_HPP_

@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef OPS_KOKKOS_OPS_LEVEL3_HPP_
-#define OPS_KOKKOS_OPS_LEVEL3_HPP_
+#ifndef PRESSIOOPS_OPS_KOKKOS_OPS_LEVEL3_HPP_
+#define PRESSIOOPS_OPS_KOKKOS_OPS_LEVEL3_HPP_
 
 #include "KokkosBlas3_gemm.hpp"
 
@@ -198,4 +198,4 @@ product(::pressio::transpose modeA,
 }
 
 }}//end namespace pressio::ops
-#endif  // OPS_KOKKOS_OPS_LEVEL3_HPP_
+#endif  // PRESSIOOPS_OPS_KOKKOS_OPS_LEVEL3_HPP_

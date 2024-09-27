@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef OPS_TPETRA_OPS_SCALE_HPP_
-#define OPS_TPETRA_OPS_SCALE_HPP_
+#ifndef PRESSIOOPS_OPS_TPETRA_OPS_SCALE_HPP_
+#define PRESSIOOPS_OPS_TPETRA_OPS_SCALE_HPP_
 
 namespace pressio{ namespace ops{
 
@@ -70,4 +70,4 @@ scale(T & o, const ScalarType value)
 }
 
 }}//end namespace pressio::ops
-#endif  // OPS_TPETRA_OPS_SCALE_HPP_
+#endif  // PRESSIOOPS_OPS_TPETRA_OPS_SCALE_HPP_

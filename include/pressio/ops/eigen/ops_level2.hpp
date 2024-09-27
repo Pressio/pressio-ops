@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef OPS_EIGEN_OPS_LEVEL2_HPP_
-#define OPS_EIGEN_OPS_LEVEL2_HPP_
+#ifndef PRESSIOOPS_OPS_EIGEN_OPS_LEVEL2_HPP_
+#define PRESSIOOPS_OPS_EIGEN_OPS_LEVEL2_HPP_
 
 namespace pressio{ namespace ops{
 
@@ -246,4 +246,4 @@ product(::pressio::transpose mode,
 
 
 }}//end namespace pressio::ops
-#endif  // OPS_EIGEN_OPS_LEVEL2_HPP_
+#endif  // PRESSIOOPS_OPS_EIGEN_OPS_LEVEL2_HPP_

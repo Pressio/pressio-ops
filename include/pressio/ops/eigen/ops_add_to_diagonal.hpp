@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef OPS_EIGEN_OPS_ADD_TO_DIAGONAL_HPP_
-#define OPS_EIGEN_OPS_ADD_TO_DIAGONAL_HPP_
+#ifndef PRESSIOOPS_OPS_EIGEN_OPS_ADD_TO_DIAGONAL_HPP_
+#define PRESSIOOPS_OPS_EIGEN_OPS_ADD_TO_DIAGONAL_HPP_
 
 namespace pressio{
 
@@ -115,4 +115,4 @@ add_to_diagonal(T & o, const ScalarType & value)
 }
 
 }}//end namespace pressio::ops
-#endif  // OPS_EIGEN_OPS_ADD_TO_DIAGONAL_HPP_
+#endif  // PRESSIOOPS_OPS_EIGEN_OPS_ADD_TO_DIAGONAL_HPP_

@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef TYPE_TRAITS_NATIVE_EIGEN_SPARSE_MATRIX_HPP_
-#define TYPE_TRAITS_NATIVE_EIGEN_SPARSE_MATRIX_HPP_
+#ifndef PRESSIOOPS_TYPE_TRAITS_NATIVE_EIGEN_SPARSE_MATRIX_HPP_
+#define PRESSIOOPS_TYPE_TRAITS_NATIVE_EIGEN_SPARSE_MATRIX_HPP_
 
 #include "Eigen/Sparse"
 
@@ -77,4 +77,4 @@ struct is_sparse_matrix_eigen<
 //----------------------------------------------------------------------
 
 }//end namespace
-#endif  // TYPE_TRAITS_NATIVE_EIGEN_SPARSE_MATRIX_HPP_
+#endif  // PRESSIOOPS_TYPE_TRAITS_NATIVE_EIGEN_SPARSE_MATRIX_HPP_

@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef OPS_TEUCHOS_OPS_FILL_HPP_
-#define OPS_TEUCHOS_OPS_FILL_HPP_
+#ifndef PRESSIOOPS_OPS_TEUCHOS_OPS_FILL_HPP_
+#define PRESSIOOPS_OPS_TEUCHOS_OPS_FILL_HPP_
 
 namespace pressio{ namespace ops{
 
@@ -63,4 +63,4 @@ fill(T & objectIn, ScalarType value)
 }
 
 }} // namespace pressio::ops
-#endif  // OPS_TEUCHOS_OPS_FILL_HPP_
+#endif  // PRESSIOOPS_OPS_TEUCHOS_OPS_FILL_HPP_

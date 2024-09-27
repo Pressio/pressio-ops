@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef EXPRESSIONS_DIAGONAL_HPP_
-#define EXPRESSIONS_DIAGONAL_HPP_
+#ifndef PRESSIOOPS_EXPRESSIONS_DIAGONAL_HPP_
+#define PRESSIOOPS_EXPRESSIONS_DIAGONAL_HPP_
 
 #include "impl/diagonal_traits.hpp"
 #include "impl/diagonal_classes.hpp"
@@ -79,4 +79,4 @@ auto diagonal(T & operand)
 }
 
 }
-#endif  // EXPRESSIONS_DIAGONAL_HPP_
+#endif  // PRESSIOOPS_EXPRESSIONS_DIAGONAL_HPP_

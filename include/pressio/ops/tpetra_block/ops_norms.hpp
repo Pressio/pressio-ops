@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef OPS_TPETRA_BLOCK_OPS_NORMS_HPP_
-#define OPS_TPETRA_BLOCK_OPS_NORMS_HPP_
+#ifndef PRESSIOOPS_OPS_TPETRA_BLOCK_OPS_NORMS_HPP_
+#define PRESSIOOPS_OPS_TPETRA_BLOCK_OPS_NORMS_HPP_
 
 namespace pressio{ namespace ops{
 
@@ -127,4 +127,4 @@ auto norm2(const T & o)
 
 
 }}//end namespace pressio::ops
-#endif  // OPS_TPETRA_BLOCK_OPS_NORMS_HPP_
+#endif  // PRESSIOOPS_OPS_TPETRA_BLOCK_OPS_NORMS_HPP_

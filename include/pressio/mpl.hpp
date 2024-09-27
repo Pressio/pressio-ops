@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef PRESSIO_MPL_HPP_
-#define PRESSIO_MPL_HPP_
+#ifndef PRESSIOOPS_MPL_HPP
+#define PRESSIOOPS_MPL_HPP
 
 #include "ops_macros.hpp"
 

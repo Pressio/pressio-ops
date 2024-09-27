@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef OPS_OPS_MATCHING_EXTENTS_HPP_
-#define OPS_OPS_MATCHING_EXTENTS_HPP_
+#ifndef PRESSIOOPS_OPS_OPS_MATCHING_EXTENTS_HPP_
+#define PRESSIOOPS_OPS_OPS_MATCHING_EXTENTS_HPP_
 
 namespace pressio{ namespace ops{
 
@@ -122,4 +122,4 @@ struct matching_extents<T1, T2, T3, T4, T5>
 };
 
 }}//end namespace pressio::ops
-#endif  // OPS_OPS_MATCHING_EXTENTS_HPP_
+#endif  // PRESSIOOPS_OPS_OPS_MATCHING_EXTENTS_HPP_

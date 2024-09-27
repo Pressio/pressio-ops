@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef OPS_EIGEN_OPS_DEEP_COPY_HPP_
-#define OPS_EIGEN_OPS_DEEP_COPY_HPP_
+#ifndef PRESSIOOPS_OPS_EIGEN_OPS_DEEP_COPY_HPP_
+#define PRESSIOOPS_OPS_EIGEN_OPS_DEEP_COPY_HPP_
 
 namespace pressio{ namespace ops{
 
@@ -71,4 +71,4 @@ deep_copy(T2 & dest, const T1 & src)
 }
 
 }}//end namespace pressio::ops
-#endif  // OPS_EIGEN_OPS_DEEP_COPY_HPP_
+#endif  // PRESSIOOPS_OPS_EIGEN_OPS_DEEP_COPY_HPP_

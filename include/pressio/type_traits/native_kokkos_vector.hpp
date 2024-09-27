@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef TYPE_TRAITS_NATIVE_KOKKOS_VECTOR_HPP_
-#define TYPE_TRAITS_NATIVE_KOKKOS_VECTOR_HPP_
+#ifndef PRESSIOOPS_TYPE_TRAITS_NATIVE_KOKKOS_VECTOR_HPP_
+#define PRESSIOOPS_TYPE_TRAITS_NATIVE_KOKKOS_VECTOR_HPP_
 
 #include "Kokkos_Core.hpp"
 
@@ -110,4 +110,4 @@ struct is_vector_kokkos<
   > : std::true_type{};
 
 }//end namespace
-#endif  // TYPE_TRAITS_NATIVE_KOKKOS_VECTOR_HPP_
+#endif  // PRESSIOOPS_TYPE_TRAITS_NATIVE_KOKKOS_VECTOR_HPP_

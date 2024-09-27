@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef EXPRESSIONS_COLUMN_HPP_
-#define EXPRESSIONS_COLUMN_HPP_
+#ifndef PRESSIOOPS_EXPRESSIONS_COLUMN_HPP_
+#define PRESSIOOPS_EXPRESSIONS_COLUMN_HPP_
 
 #include "impl/column_traits.hpp"
 #include "impl/column_classes.hpp"
@@ -80,4 +80,4 @@ auto column(T & operand, IndexType colIndex)
 }
 
 }
-#endif  // EXPRESSIONS_SPAN_HPP_
+#endif  // PRESSIOOPS_EXPRESSIONS_COLUMN_HPP_

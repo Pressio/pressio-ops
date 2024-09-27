@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef OPS_EIGEN_OPS_ABS_HPP_
-#define OPS_EIGEN_OPS_ABS_HPP_
+#ifndef PRESSIOOPS_OPS_EIGEN_OPS_ABS_HPP_
+#define PRESSIOOPS_OPS_EIGEN_OPS_ABS_HPP_
 
 namespace pressio{ namespace ops{
 
@@ -79,4 +79,4 @@ abs(T1 & y, const T2 & x)
 }
 
 }}//end namespace pressio::ops
-#endif  // OPS_EIGEN_OPS_ABS_HPP_
+#endif  // PRESSIOOPS_OPS_EIGEN_OPS_ABS_HPP_

@@ -18,7 +18,7 @@ The goal is for users to be able to clone and use this repository on its own, wi
 
 The full license is available [here](https://github.com/Pressio/pressio-ops/blob/main/LICENSE).
 
-[^1]: The operations are `qr`, `ops`, `expressions`, `type_traits`, and `mpl`
+[^1]: The operations are `ops`, `expressions`, `type_traits`, and `mpl`
 
 <!-- ## Questions?
 Find us on Slack: https://pressioteam.slack.com and/or

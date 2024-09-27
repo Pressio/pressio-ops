@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef OPS_TPETRA_BLOCK_OPS_LEVEL2_HPP_
-#define OPS_TPETRA_BLOCK_OPS_LEVEL2_HPP_
+#ifndef PRESSIOOPS_OPS_TPETRA_BLOCK_OPS_LEVEL2_HPP_
+#define PRESSIOOPS_OPS_TPETRA_BLOCK_OPS_LEVEL2_HPP_
 
 #include "Tpetra_idot.hpp"
 #include <KokkosBlas1_axpby.hpp>
@@ -253,4 +253,4 @@ product(::pressio::transpose mode,
 
 }}//end namespace pressio::ops
 
-#endif  // OPS_TPETRA_BLOCK_OPS_LEVEL2_HPP_
+#endif  // PRESSIOOPS_OPS_TPETRA_BLOCK_OPS_LEVEL2_HPP_

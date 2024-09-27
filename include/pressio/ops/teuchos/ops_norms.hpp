@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef OPS_TEUCHOS_OPS_NORMS_VECTOR_HPP_
-#define OPS_TEUCHOS_OPS_NORMS_VECTOR_HPP_
+#ifndef PRESSIOOPS_OPS_TEUCHOS_OPS_NORMS_HPP_
+#define PRESSIOOPS_OPS_TEUCHOS_OPS_NORMS_HPP_
 
 namespace pressio{ namespace ops{
 
@@ -84,4 +84,4 @@ norm2(const T & v)
 }
 
 }}//end namespace pressio::ops
-#endif  // OPS_TEUCHOS_OPS_NORMS_VECTOR_HPP_
+#endif  // PRESSIOOPS_OPS_TEUCHOS_OPS_NORMS_HPP_

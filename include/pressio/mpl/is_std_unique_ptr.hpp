@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef MPL_IS_STD_UNIQUE_PTR_HPP_
-#define MPL_IS_STD_UNIQUE_PTR_HPP_
+#ifndef PRESSIOOPS_MPL_IS_STD_UNIQUE_PTR_HPP_
+#define PRESSIOOPS_MPL_IS_STD_UNIQUE_PTR_HPP_
 
 #include <memory>
 
@@ -61,4 +61,4 @@ struct is_std_unique_ptr< std::unique_ptr<T> > : std::true_type{};
 
 
 }} // namespace pressio::mpl
-#endif  // MPL_IS_STD_UNIQUE_PTR_HPP_
+#endif  // PRESSIOOPS_MPL_IS_STD_UNIQUE_PTR_HPP_

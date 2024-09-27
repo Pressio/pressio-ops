@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef PRESSIO_EXPRESSIONS_HPP_
-#define PRESSIO_EXPRESSIONS_HPP_
+#ifndef PRESSIOOPS_EXPRESSIONS_HPP
+#define PRESSIOOPS_EXPRESSIONS_HPP
 
 #include "./mpl.hpp"
 #include "./type_traits.hpp"

@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef MPL_NOT_SAME_HPP_
-#define MPL_NOT_SAME_HPP_
+#ifndef PRESSIOOPS_MPL_NOT_SAME_HPP_
+#define PRESSIOOPS_MPL_NOT_SAME_HPP_
 
 namespace pressio { namespace mpl {
 
@@ -59,4 +59,4 @@ struct not_same<T, T> : std::false_type {};
 
 }} // end namespace pressio::mpl
 
-#endif  // MPL_NOT_SAME_HPP_
+#endif  // PRESSIOOPS_MPL_NOT_SAME_HPP_

@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef OPS_TPETRA_OPS_DOT_HPP_
-#define OPS_TPETRA_OPS_DOT_HPP_
+#ifndef PRESSIOOPS_OPS_TPETRA_OPS_DOT_HPP_
+#define PRESSIOOPS_OPS_TPETRA_OPS_DOT_HPP_
 
 namespace pressio{ namespace ops{
 
@@ -97,4 +97,4 @@ dot(const T1 & a, const T2 & b, DotResult & result)
 }
 
 }}//end namespace pressio::ops
-#endif  // OPS_TPETRA_OPS_DOT_HPP_
+#endif  // PRESSIOOPS_OPS_TPETRA_OPS_DOT_HPP_

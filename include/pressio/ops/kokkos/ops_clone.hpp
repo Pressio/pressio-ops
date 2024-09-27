@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef OPS_KOKKOS_OPS_CLONE_HPP_
-#define OPS_KOKKOS_OPS_CLONE_HPP_
+#ifndef PRESSIOOPS_OPS_KOKKOS_OPS_CLONE_HPP_
+#define PRESSIOOPS_OPS_KOKKOS_OPS_CLONE_HPP_
 
 namespace pressio{ namespace ops{
 
@@ -74,4 +74,4 @@ clone(const T & clonable)
 }
 
 }}
-#endif  // OPS_KOKKOS_OPS_CLONE_HPP_
+#endif  // PRESSIOOPS_OPS_KOKKOS_OPS_CLONE_HPP_

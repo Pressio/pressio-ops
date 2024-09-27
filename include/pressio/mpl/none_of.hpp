@@ -1,6 +1,6 @@
 
-#ifndef MPL_NONE_OF_HPP_
-#define MPL_NONE_OF_HPP_
+#ifndef PRESSIOOPS_MPL_NONE_OF_HPP_
+#define PRESSIOOPS_MPL_NONE_OF_HPP_
 
 #include "./variadic/none_of.hpp"
 
@@ -13,4 +13,4 @@ template< template<class... T> class F, class ... Args>
 using none_of_t = typename none_of<F, Args...>::type;
 
 }}
-#endif  // MPL_NONE_OF_HPP_
+#endif  // PRESSIOOPS_MPL_NONE_OF_HPP_

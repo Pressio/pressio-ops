@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef EXPRESSIONS_SUBSPAN_HPP_
-#define EXPRESSIONS_SUBSPAN_HPP_
+#ifndef PRESSIOOPS_EXPRESSIONS_SUBSPAN_HPP_
+#define PRESSIOOPS_EXPRESSIONS_SUBSPAN_HPP_
 
 #include "impl/subspan_traits.hpp"
 #include "impl/subspan_classes.hpp"
@@ -79,4 +79,4 @@ auto subspan(T & operand,
 }
 
 }
-#endif  // EXPRESSIONS_SUBSPAN_HPP_
+#endif  // PRESSIOOPS_EXPRESSIONS_SUBSPAN_HPP_

@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef OPS_KOKKOS_OPS_LEVEL2_HPP_
-#define OPS_KOKKOS_OPS_LEVEL2_HPP_
+#ifndef PRESSIOOPS_OPS_KOKKOS_OPS_LEVEL2_HPP_
+#define PRESSIOOPS_OPS_KOKKOS_OPS_LEVEL2_HPP_
 
 #include "KokkosBlas2_gemv.hpp"
 
@@ -175,4 +175,4 @@ product(::pressio::transpose /*unused*/,
 }
 
 }}//end namespace pressio::ops
-#endif  // OPS_KOKKOS_OPS_LEVEL2_HPP_
+#endif  // PRESSIOOPS_OPS_KOKKOS_OPS_LEVEL2_HPP_

@@ -1,6 +1,6 @@
 
-#ifndef MPL_ANY_OF_HPP_
-#define MPL_ANY_OF_HPP_
+#ifndef PRESSIOOPS_MPL_ANY_OF_HPP_
+#define PRESSIOOPS_MPL_ANY_OF_HPP_
 
 #include "./variadic/any_of.hpp"
 
@@ -13,4 +13,4 @@ template< template<class... T> class F, class ... Args>
 using any_of_t = typename any_of<F, Args...>::type;
 
 }}
-#endif  // MPL_ANY_OF_HPP_
+#endif  // PRESSIOOPS_MPL_ANY_OF_HPP_

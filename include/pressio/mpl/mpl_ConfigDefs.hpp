@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef MPL_MPL_CONFIGDEFS_HPP_
-#define MPL_MPL_CONFIGDEFS_HPP_
+#ifndef PRESSIOOPS_MPL_MPL_CONFIGDEFS_HPP_
+#define PRESSIOOPS_MPL_MPL_CONFIGDEFS_HPP_
 
 #include <type_traits>
 #include <memory>
@@ -55,4 +55,4 @@
 #include <cstddef>
 #include <tuple>
 
-#endif  // MPL_MPL_CONFIGDEFS_HPP_
+#endif  // PRESSIOOPS_MPL_MPL_CONFIGDEFS_HPP_

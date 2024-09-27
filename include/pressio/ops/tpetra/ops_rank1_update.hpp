@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef OPS_TPETRA_OPS_RANK1_UPDATE_HPP_
-#define OPS_TPETRA_OPS_RANK1_UPDATE_HPP_
+#ifndef PRESSIOOPS_OPS_TPETRA_OPS_RANK1_UPDATE_HPP_
+#define PRESSIOOPS_OPS_TPETRA_OPS_RANK1_UPDATE_HPP_
 
 namespace pressio{ namespace ops{
 
@@ -255,4 +255,4 @@ update(T & vin,         const a_Type &a,
 }
 
 }}//end namespace pressio::ops
-#endif  // OPS_TPETRA_OPS_RANK1_UPDATE_HPP_
+#endif  // PRESSIOOPS_OPS_TPETRA_OPS_RANK1_UPDATE_HPP_

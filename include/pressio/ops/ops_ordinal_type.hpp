@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef OPS_OPS_ORDINAL_TYPE_HPP_
-#define OPS_OPS_ORDINAL_TYPE_HPP_
+#ifndef PRESSIOOPS_OPS_OPS_ORDINAL_TYPE_HPP_
+#define PRESSIOOPS_OPS_OPS_ORDINAL_TYPE_HPP_
 
 namespace pressio{ namespace ops{ namespace impl{
 
@@ -185,4 +185,4 @@ template <class T>
 using global_ordinal_t = typename GlobalOrdinalType<T>::type;
 
 }}}
-#endif  // OPS_OPS_ORDINAL_TYPE_HPP_
+#endif  // PRESSIOOPS_OPS_OPS_ORDINAL_TYPE_HPP_
