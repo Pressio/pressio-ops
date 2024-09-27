@@ -49,9 +49,9 @@
 #ifndef PRESSIO_OPS_MACROS_HPP_
 #define PRESSIO_OPS_MACROS_HPP_
 
-#define PRESSIO_OPS_MAJOR_VERSION 0
-#define PRESSIO_OPS_MINOR_VERSION 14
-#define PRESSIO_OPS_PATCH_VERSION 0
+#define PRESSIO_MAJOR_VERSION 0
+#define PRESSIO_MINOR_VERSION 14
+#define PRESSIO_PATCH_VERSION 0
 
 // ----------------------------------------
 // compiler version
