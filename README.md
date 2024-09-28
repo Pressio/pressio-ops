@@ -1,7 +1,7 @@
 
 # Scope
 
-This repo contains the `mpl`, `type_traits`, `expressions`, and `ops` components, stripped from the [`Pressio/pressio`](https://github.com/Pressio/pressio) repository.
+This repo contains the `mpl`, `type_traits`, `expressions`, and `ops` components, moved from the [`Pressio/pressio`](https://github.com/Pressio/pressio) repository.
 
 ## This repository should NOT be used (yet)
 
