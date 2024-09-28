@@ -10,6 +10,12 @@ The goal is for users to be able to clone and use this repository on its own, wi
 > [!CAUTION]
 > Until we have confirmed that this is the approach we want to take, this repository should NOT be used, and users should instead continue using the full `Pressio/pressio` code.
 
+## Questions?
+
+Find us on Slack: https://pressioteam.slack.com and/or
+open an issue on [github](https://github.com/Pressio/pressio).
+
+
 ## License and Citation
 
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
