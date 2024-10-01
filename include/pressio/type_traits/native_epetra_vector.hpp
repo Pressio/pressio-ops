@@ -2,7 +2,7 @@
 //@HEADER
 // ************************************************************************
 //
-// type_traits.hpp
+// native_epetra_vector.hpp
 //                     		  Pressio
 //                             Copyright 2019
 //    National Technology & Engineering Solutions of Sandia, LLC (NTESS)
@@ -46,55 +46,24 @@
 //@HEADER
 */
 
-#ifndef PRESSIOOPS_TYPE_TRAITS_HPP
-#define PRESSIOOPS_TYPE_TRAITS_HPP
+#ifndef PRESSIOOPS_TYPE_TRAITS_NATIVE_EPETRA_VECTOR_HPP_
+#define PRESSIOOPS_TYPE_TRAITS_NATIVE_EPETRA_VECTOR_HPP_
 
-#include "./mpl.hpp"
+#include "Epetra_Vector.h"
+#include "Epetra_MultiVector.h"
 
 namespace pressio{
-template<class T, class Enable = void> struct Traits;
-}
 
-#include "type_traits/miscellanea.hpp"
-#include "type_traits/nested_typedef_detection.hpp"
+template <typename T, typename enable = void>
+struct is_vector_epetra : std::false_type {};
 
-//*** vector ****
-#ifdef PRESSIO_ENABLE_TPL_EIGEN
-#include "type_traits/native_eigen_vector.hpp"
-#endif
-#ifdef PRESSIO_ENABLE_TPL_KOKKOS
-#include "type_traits/native_kokkos_vector.hpp"
-#endif
-#ifdef PRESSIO_ENABLE_TPL_TRILINOS
-#include "type_traits/native_teuchos_vector.hpp"
-#include "type_traits/native_tpetra_block_vector.hpp"
-#include "type_traits/native_tpetra_vector.hpp"
-#ifdef PRESSIO_ENABLE_EPETRA
-#include "type_traits/native_epetra_vector.hpp"
-#endif // PRESSIO_ENABLE_EPETRA
-#endif // PRSSIO_ENABLE_TPL_TRILINOS
+template <typename T>
+struct is_vector_epetra<T,
+      typename
+      std::enable_if<
+	std::is_same<T,Epetra_Vector>::value
+	>::type
+      > : std::true_type{};
 
-//*** matrix ****
-#ifdef PRESSIO_ENABLE_TPL_KOKKOS
-#include "type_traits/native_kokkos_dense_matrix.hpp"
-#endif
-#ifdef PRESSIO_ENABLE_TPL_TRILINOS
-#include "type_traits/native_teuchos_dense_matrix.hpp"
-#endif
-#ifdef PRESSIO_ENABLE_TPL_EIGEN
-#include "type_traits/native_eigen_dense_matrix.hpp"
-#include "type_traits/native_eigen_sparse_matrix.hpp"
-#endif
-
-//*** multi vector ****
-#ifdef PRESSIO_ENABLE_TPL_TRILINOS
-#include "type_traits/native_tpetra_block_multi_vector.hpp"
-#include "type_traits/native_tpetra_multi_vector.hpp"
-#ifdef PRESSIO_ENABLE_EPETRA
-#include "type_traits/native_epetra_multi_vector.hpp"
-#endif // PRESSIO_ENABLE_EPETRA
-#endif // PRSSIO_ENABLE_TPL_TRILINOS
-
-#include "type_traits/traits_tpl.hpp"
-
-#endif
+}//end namespace
+#endif  // PRESSIOOPS_TYPE_TRAITS_NATIVE_EPETRA_VECTOR_HPP_
