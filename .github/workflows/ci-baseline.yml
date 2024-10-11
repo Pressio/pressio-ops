@@ -1,0 +1,105 @@
+name: github-Linux-baseline
+
+on:
+  pull_request:
+    types: [ opened, reopened, synchronize ]
+    paths-ignore:
+    - 'logos/**'
+    - 'helper_scripts/**'
+    - 'docker_scripts/**'
+    - 'docs/**'
+    - '**/*.md'
+  push: # for direct quick fixes
+    branches:
+      - 'main'
+      - 'develop'
+    paths-ignore:
+    - 'logos/**'
+    - 'helper_scripts/**'
+    - 'docker_scripts/**'
+    - 'docs/**'
+    - '**/*.md'
+
+concurrency:
+  group: ${{ github.event_name }}-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{github.event_name == 'pull_request'}}
+
+jobs:
+  CI:
+    name: baseline
+    continue-on-error: false
+    strategy:
+      fail-fast: false
+      matrix:
+        image:
+          - fedora-clang-17
+          - fedora-gnu-13
+          - ubuntu-clang-14
+          - ubuntu-gnu-11
+          #- intel-oneapi-latest
+        build_type:
+          - Release
+          - Debug
+        cmake_extra_args:
+          - ''
+        include:
+          - image: ubuntu-gnu-11
+            build_type: Release
+            cmake_extra_args: '-D CMAKE_CXX_STANDARD=20 -D PRESSIO_ENABLE_CXX20=ON'
+          - image: ubuntu-clang-14
+            build_type: Release
+            cmake_extra_args: '-D CMAKE_CXX_STANDARD=20 -D PRESSIO_ENABLE_CXX20=ON'
+          - image: fedora-gnu-13
+            build_type: Release
+            cmake_extra_args: '-D CMAKE_CXX_STANDARD=20 -D PRESSIO_ENABLE_CXX20=ON'
+          - image: fedora-clang-17
+            build_type: Release
+            cmake_extra_args: '-D CMAKE_CXX_STANDARD=20 -D PRESSIO_ENABLE_CXX20=ON'
+
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/pressio/${{ matrix.image }}
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.github_token }}
+    env:
+      eigen_version: 3.4.0
+      num_cpus: 2 # $(cat /proc/cpuinfo | grep processor -c)
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Checkout pressio examples
+        uses: actions/checkout@v4
+        with:
+          repository: Pressio/pressio-templates-usage-as-library
+          path: examples
+
+      - name: Preparing environment
+        run: |
+          wget https://gitlab.com/libeigen/eigen/-/archive/${{ env.eigen_version }}/eigen-${{ env.eigen_version }}.tar.gz \
+          && mkdir -p /eigen \
+          && tar -xf eigen-${{ env.eigen_version }}.tar.gz -C /eigen
+
+      - name: Configure
+        run: |
+          cmake -B builddir \
+            -D CMAKE_BUILD_TYPE:STRING=${{ matrix.build_type }} \
+            -D CMAKE_C_COMPILER=$CC \
+            -D CMAKE_CXX_COMPILER=$CXX \
+            -D CMAKE_CXX_FLAGS='-Wall -Werror' \
+            -D CMAKE_INSTALL_PREFIX:PATH=../install \
+            -D CMAKE_VERBOSE_MAKEFILE:BOOL=ON \
+            ${{ matrix.cmake_extra_args }} \
+            -D PRESSIO_OPS_ENABLE_TESTS:BOOL=ON \
+            -D PRESSIO_ENABLE_TPL_EIGEN:BOOL=ON \
+            -D EIGEN_INCLUDE_DIR=/eigen/eigen-${{ env.eigen_version }}
+
+      - name: Build
+        run: |
+          cmake --build builddir --target install
+
+      - name: Run tests
+        working-directory: builddir/tests
+        run: |
+          ctest -j $num_cpus --output-on-failure

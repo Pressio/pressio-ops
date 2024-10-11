@@ -2,7 +2,7 @@
 # to include google test fixtures
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/fixtures)
 
-if(PRESSIO_OPS_ENABLE_TPL_EIGEN)
+if(PRESSIO_ENABLE_TPL_EIGEN)
   add_serial_utest(
     ops_eigen
     ops_eigen_vector.cc
@@ -16,7 +16,7 @@ if(PRESSIO_OPS_ENABLE_TPL_EIGEN)
   )
 endif()
 
-if(PRESSIO_OPS_ENABLE_TPL_KOKKOS)
+if(PRESSIO_ENABLE_TPL_KOKKOS)
   add_serial_utest_kokkos(ops_vector_kokkos
     ops_kokkos_vector.cc
     ops_kokkos_matrix.cc
@@ -28,7 +28,7 @@ if(PRESSIO_OPS_ENABLE_TPL_KOKKOS)
   )
 endif()
 
-if(PRESSIO_OPS_ENABLE_TPL_TRILINOS)
+if(PRESSIO_ENABLE_TPL_TRILINOS)
  # TPETRA
  set(SRC1 ${CMAKE_CURRENT_SOURCE_DIR}/ops_tpetra_vector.cc)
  add_utest_mpi(ops_vector_tpetra gTestMain_tpetra 3 "${SRC1}")
