@@ -36,7 +36,6 @@ jobs:
           - fedora-gnu-13
           - ubuntu-clang-14
           - ubuntu-gnu-11
-          #- intel-oneapi-latest
         build_type:
           - Release
           - Debug
@@ -68,12 +67,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
-      - name: Checkout pressio examples
-        uses: actions/checkout@v4
-        with:
-          repository: Pressio/pressio-templates-usage-as-library
-          path: examples
 
       - name: Preparing environment
         run: |
