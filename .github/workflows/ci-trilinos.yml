@@ -1,0 +1,94 @@
+name: github-Linux-trilinos
+
+on:
+  pull_request:
+    types: [ opened, reopened, synchronize ]
+    paths-ignore:
+    - 'logos/**'
+    - 'helper_scripts/**'
+    - 'docker_scripts/**'
+    - 'docs/**'
+    - '**/*.md'
+  push: # for direct quick fixes
+    branches:
+      - 'main'
+      - 'develop'
+    paths-ignore:
+    - 'logos/**'
+    - 'helper_scripts/**'
+    - 'docker_scripts/**'
+    - 'docs/**'
+    - '**/*.md'
+
+concurrency:
+  group: ${ {github.event_name }}-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{github.event_name == 'pull_request'}}
+
+jobs:
+  CI-trilinos:
+    name: Trilinos
+    strategy:
+      matrix:
+        image:
+          - ubuntu-gnu-trilinos-11
+        tag:
+          - ef73d14
+          - 702aac5
+          - trilinos-release-14-4-0
+        build_type:
+          - Release
+          - Debug
+        epetra_toggle:
+          - ON
+          - OFF
+
+    runs-on: ubuntu-latest
+    container: ghcr.io/pressio/${{ matrix.image }}:${{ matrix.tag }}
+
+    env:
+      eigen_version: 3.4.0
+      num_cpus: 4
+      trilinos_dir: /home/pressio_builds/trilinos/install
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Preparing environment
+      run: |
+        sed -i -e '$alocalhost slots=4' /etc/openmpi/openmpi-default-hostfile \
+        && wget https://gitlab.com/libeigen/eigen/-/archive/${{ env.eigen_version }}/eigen-${{ env.eigen_version }}.tar.gz \
+        && mkdir -p /eigen \
+        && tar -xf eigen-${{ env.eigen_version }}.tar.gz -C /eigen
+
+    - name: Configure
+      run: |
+        cmake -B builddir \
+          -D CMAKE_BUILD_TYPE:STRING=${{ matrix.build_type }} \
+          -D CMAKE_VERBOSE_MAKEFILE:BOOL=ON \
+          -D CMAKE_C_COMPILER:FILEPATH=/usr/bin/mpicc \
+          -D CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/mpic++ \
+          -D MPI_Fortran_COMPILER:FILEPATH=/usr/bin/mpif90 \
+          -D PRESSIO_OPS_ENABLE_TESTS:BOOL=ON \
+          -D PRESSIO_ENABLE_TPL_EIGEN:BOOL=ON \
+          -D PRESSIO_ENABLE_TPL_MPI:BOOL=ON \
+          -D PRESSIO_ENABLE_TPL_TRILINOS:BOOL=ON \
+          -D PRESSIO_ENABLE_EPETRA:BOOL=${{ matrix.epetra_toggle }} \
+          -D PRESSIO_ENABLE_TPL_KOKKOS:BOOL=ON \
+          -D PRESSIO_ENABLE_TPL_BLAS:BOOL=ON \
+          -D PRESSIO_ENABLE_TPL_LAPACK:BOOL=ON \
+          -D PRESSIO_ENABLE_DEBUG_PRINT=ON \
+          -D EIGEN_INCLUDE_DIR=/eigen/eigen-${{ env.eigen_version }} \
+          -D Trilinos_DIR=${{ env.trilinos_dir }}/lib/cmake/Trilinos \
+          -D CMAKE_INSTALL_PREFIX:PATH=../install \
+          -D CMAKE_CXX_FLAGS='-Wall -Werror'
+
+    - name: Build
+      run: cmake --build builddir -j $num_cpus --target install
+
+    - name: Test
+      working-directory: builddir
+      run: |
+        export LD_LIBRARY_PATH=${{ env.trilinos_dir }}/lib
+        export OMPI_ALLOW_RUN_AS_ROOT=1
+        export OMPI_ALLOW_RUN_AS_ROOT_CONFIRM=1
+        ctest -j $num_cpus --output-on-failure
