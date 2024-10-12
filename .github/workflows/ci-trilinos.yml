@@ -9,16 +9,6 @@ on:
     - 'docker_scripts/**'
     - 'docs/**'
     - '**/*.md'
-  push: # for direct quick fixes
-    branches:
-      - 'main'
-      - 'develop'
-    paths-ignore:
-    - 'logos/**'
-    - 'helper_scripts/**'
-    - 'docker_scripts/**'
-    - 'docs/**'
-    - '**/*.md'
 
 concurrency:
   group: ${ {github.event_name }}-${{ github.workflow }}-${{ github.ref }}

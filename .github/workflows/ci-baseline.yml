@@ -3,16 +3,7 @@ name: github-Linux-baseline
 on:
   pull_request:
     types: [ opened, reopened, synchronize ]
-    paths-ignore:
-    - 'logos/**'
-    - 'helper_scripts/**'
-    - 'docker_scripts/**'
-    - 'docs/**'
-    - '**/*.md'
-  push: # for direct quick fixes
-    branches:
-      - 'main'
-      - 'develop'
+    branches: [main, develop]
     paths-ignore:
     - 'logos/**'
     - 'helper_scripts/**'
