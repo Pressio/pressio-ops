@@ -4,7 +4,7 @@ project(pressio C CXX)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 include(colors)
 
-#=====================================================================
+
 # versioning
 #=====================================================================
 # adapted from Eigen
@@ -21,7 +21,7 @@ set(PRESSIO_PATCH_VERSION "${CMAKE_MATCH_1}")
 set(PRESSIO_VERSION_NUMBER ${PRESSIO_MAJOR_VERSION}.${PRESSIO_MINOR_VERSION}.${PRESSIO_PATCH_VERSION})
 message("${Magenta}>> PRESSIO-OPS: version = ${PRESSIO_VERSION_NUMBER} ${ColourReset}")
 
-#=====================================================================
+
 # c++ standard
 #=====================================================================
 if (NOT CMAKE_CXX_STANDARD)
@@ -39,8 +39,8 @@ if(CMAKE_CXX_STANDARD STREQUAL "17"
   endif()
 endif()
 
-################################################################################
-
+# install headers
+#=====================================================================
 include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
 
@@ -48,44 +48,16 @@ install(
   DIRECTORY include/pressio
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 
-add_library(pressioops INTERFACE)
-
-target_include_directories(
-  pressioops INTERFACE
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
-)
-
-install(
-  TARGETS pressioops
-  EXPORT pressioopsTargets
-  INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
-install(
-  EXPORT pressioopsTargets
-  FILE pressioopsTargets.cmake
-  DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/pressioops)
-export(
-  TARGETS pressioops
-  FILE pressioopsTargets.cmake)
-
-configure_package_config_file(
-  ${CMAKE_CURRENT_SOURCE_DIR}/cmake/pressioopsConfig.cmake.in
-  ${CMAKE_CURRENT_BINARY_DIR}/pressioopsConfig.cmake
-  INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/pressioops)
-
-write_basic_package_version_file (pressioopsConfigVersion.cmake
-                                  VERSION ${PRESSIO_VERSION_NUMBER}
-                                  COMPATIBILITY SameMajorVersion
-				  ARCH_INDEPENDENT)
-
-install(FILES
-  ${CMAKE_CURRENT_BINARY_DIR}/pressioopsConfig.cmake
-  ${CMAKE_CURRENT_BINARY_DIR}/pressioopsConfigVersion.cmake
-  DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/pressioops)
-
-################################################################################
-
+# tests
+#=====================================================================
 if(PRESSIO_OPS_ENABLE_TESTS)
+  add_library(pressioops INTERFACE)
+
+  target_include_directories(
+    pressioops INTERFACE
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  )
+
   enable_testing()
   add_subdirectory(tests)
 endif()
