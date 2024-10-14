@@ -33,16 +33,7 @@ jobs:
         cmake_extra_args:
           - ''
         include:
-          - image: ubuntu-gnu-11
-            build_type: Release
-            cmake_extra_args: '-D CMAKE_CXX_STANDARD=20 -D PRESSIO_ENABLE_CXX20=ON'
           - image: ubuntu-clang-14
-            build_type: Release
-            cmake_extra_args: '-D CMAKE_CXX_STANDARD=20 -D PRESSIO_ENABLE_CXX20=ON'
-          - image: fedora-gnu-13
-            build_type: Release
-            cmake_extra_args: '-D CMAKE_CXX_STANDARD=20 -D PRESSIO_ENABLE_CXX20=ON'
-          - image: fedora-clang-17
             build_type: Release
             cmake_extra_args: '-D CMAKE_CXX_STANDARD=20 -D PRESSIO_ENABLE_CXX20=ON'
 
