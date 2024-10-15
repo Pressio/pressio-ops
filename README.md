@@ -4,9 +4,6 @@
 This repo contains the `mpl`, `type_traits`, `expressions`, and `ops` components, moved from the [`Pressio/pressio`](https://github.com/Pressio/pressio) repository.
 The goal is for users to be able to clone and use this repository on its own, without requiring the rest of `Pressio/pressio`.
 
-> [!CAUTION]
-> Until we have confirmed that this is the approach we want to take, this repository should NOT be used, and users should instead continue using the full `Pressio/pressio` code.
-
 ## Questions?
 
 Find us on Slack: https://pressioteam.slack.com and/or
