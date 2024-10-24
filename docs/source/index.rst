@@ -47,6 +47,8 @@ to understand how the repositories fit together.
 
 The following components are included in ``Pressio/pressio`` and build off of the contents of ``pressio-ops``:
 
+|
+
 .. list-table::
    :widths: 10 48 42
    :header-rows: 1
@@ -73,6 +75,8 @@ The following components are included in ``Pressio/pressio`` and build off of th
      - ``<pressio/solvers_linear.hpp>``
 
 The following components are included in ``Pressio/pressio-ops`` and can be used independently of the ``Pressio/pressio`` repository:
+
+|
 
 .. list-table::
    :widths: 10 48 42
