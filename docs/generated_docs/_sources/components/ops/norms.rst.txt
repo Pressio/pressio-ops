@@ -39,4 +39,4 @@ Description
 
     \|\mathbf{a}\|_2 = \sqrt{\sum_{i=1}^{n} a_i^2}
 
-* ``a`` must be rank-1
+* ``a`` must be rank-1 container of any type

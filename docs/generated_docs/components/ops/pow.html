@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="expressions" href="../expressions.html" /><link rel="prev" title="min &amp; max" href="min_max.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
 
     <meta name="generator" content="sphinx-5.0.1, furo 2022.06.04.1"/>
-        <title>norms - Pressio-Ops-0.14.0</title>
+        <title>pow - Pressio-Ops-0.14.0</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -170,8 +170,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../keywords.html">CMake Keywords</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API</span></p>
-<ul class="current">
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../ops.html"><code class="docutils literal notranslate"><span class="pre">ops</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ops.html"><code class="docutils literal notranslate"><span class="pre">ops</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="abs.html"><code class="docutils literal notranslate"><span class="pre">abs</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="add_to_diagonal.html"><code class="docutils literal notranslate"><span class="pre">add_to_diagonal</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="clone.html"><code class="docutils literal notranslate"><span class="pre">clone</span></code></a></li>
@@ -183,7 +183,7 @@
 <li class="toctree-l2"><a class="reference internal" href="matrix_vector_product.html"><code class="docutils literal notranslate"><span class="pre">matrix-vector</span> <span class="pre">product</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="matrix_matrix_product.html"><code class="docutils literal notranslate"><span class="pre">matrix-matrix</span> <span class="pre">product</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="min_max.html"><code class="docutils literal notranslate"><span class="pre">min</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">max</span></code></a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">norms</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="norms.html"><code class="docutils literal notranslate"><span class="pre">norms</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../expressions.html"><code class="docutils literal notranslate"><span class="pre">expressions</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -233,20 +233,35 @@
           </label>
         </div>
         <article role="main">
-          <section id="norms">
-<h1><code class="docutils literal notranslate"><span class="pre">norms</span></code><a class="headerlink" href="#norms" title="Permalink to this heading">#</a></h1>
+          <section id="pow">
+<h1><code class="docutils literal notranslate"><span class="pre">pow</span></code><a class="headerlink" href="#pow" title="Permalink to this heading">#</a></h1>
 <p>Header: <code class="docutils literal notranslate"><span class="pre">&lt;pressio/ops.hpp&gt;</span></code></p>
 <section id="api">
 <h2>API<a class="headerlink" href="#api" title="Permalink to this heading">#</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span><span class="w"> </span><span class="nn">pressio</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">ops</span><span class="p">{</span>
 
-<span class="c1">// L1 Norm</span>
+<span class="c1">// x^exponent</span>
 <span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<span class="n">scalar_type</span><span class="w"> </span><span class="n">norm1</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">pow</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">scalar_type</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">exponent</span><span class="p">);</span>
 
-<span class="c1">// L2 Norm</span>
-<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<span class="n">scalar_type</span><span class="w"> </span><span class="n">norm2</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">);</span>
+<span class="c1">// y = x^exponent</span>
+<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T1</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">T2</span><span class="o">&gt;</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">pow</span><span class="p">(</span><span class="n">T1</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">T2</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">scalar_type</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">exponent</span><span class="p">);</span>
+
+<span class="c1">// y = |x|^exponent (exponent &gt; 0)</span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T1</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">T2</span><span class="o">&gt;</span>
+<span class="n">abs_pow</span><span class="p">(</span><span class="n">T1</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">y</span><span class="p">,</span>
+<span class="w">      </span><span class="k">const</span><span class="w"> </span><span class="n">T2</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">,</span>
+<span class="w">      </span><span class="k">const</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="o">::</span><span class="n">pressio</span><span class="o">::</span><span class="n">Traits</span><span class="o">&lt;</span><span class="n">T1</span><span class="o">&gt;::</span><span class="n">scalar_type</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">exponent</span>
+<span class="p">);</span>
+
+<span class="c1">// y = |x|^exponent (exponent &lt; 0)</span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T1</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">T2</span><span class="o">&gt;</span>
+<span class="n">abs_pow</span><span class="p">(</span><span class="n">T1</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">y</span><span class="p">,</span>
+<span class="w">      </span><span class="k">const</span><span class="w"> </span><span class="n">T2</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">,</span>
+<span class="w">      </span><span class="k">const</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="o">::</span><span class="n">pressio</span><span class="o">::</span><span class="n">Traits</span><span class="o">&lt;</span><span class="n">T1</span><span class="o">&gt;::</span><span class="n">scalar_type</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">exponent</span><span class="p">,</span>
+<span class="w">      </span><span class="k">const</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="o">::</span><span class="n">pressio</span><span class="o">::</span><span class="n">Traits</span><span class="o">&lt;</span><span class="n">T1</span><span class="o">&gt;::</span><span class="n">scalar_type</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">eps</span>
+<span class="p">);</span>
 
 <span class="p">}}</span><span class="w"> </span><span class="c1">// end namespace pressio::ops</span>
 </pre></div>
@@ -255,22 +270,9 @@
 <section id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Returns the desired norm of the given container <code class="docutils literal notranslate"><span class="pre">a</span></code></p></li>
-<li><p>L1 norm is given by</p></li>
-</ul>
-<div class="math-wrapper docutils container">
-<div class="math notranslate nohighlight">
-\[\| a \|_1 = \sum_{i} |a_i|\]</div>
-</div>
-<ul class="simple">
-<li><p>L2 norm is given by:</p></li>
-</ul>
-<div class="math-wrapper docutils container">
-<div class="math notranslate nohighlight">
-\[\|\mathbf{a}\|_2 = \sqrt{\sum_{i=1}^{n} a_i^2}\]</div>
-</div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">a</span></code> must be rank-1 container of any type</p></li>
+<li><p>Raises each element of a rank-1 container <code class="docutils literal notranslate"><span class="pre">x</span></code> to the specified power <code class="docutils literal notranslate"><span class="pre">exponent</span></code></p></li>
+<li><p>Stores the result in <code class="docutils literal notranslate"><span class="pre">y</span></code> if provided; otherwise, acts in place on <code class="docutils literal notranslate"><span class="pre">x</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> may be any type of rank-1 container other than a Teuchos vector</p></li>
 </ul>
 </section>
 </section>
@@ -280,26 +282,8 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../expressions.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title"><code class="docutils literal notranslate"><span class="pre">expressions</span></code></div>
-              </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="min_max.html">
-              <svg><use href="#svg-arrow-right"></use></svg>
-              <div class="page-info">
-                <div class="context">
-                  <span>Previous</span>
-                </div>
-                
-                <div class="title"><code class="docutils literal notranslate"><span class="pre">min</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">max</span></code></div>
-                
-              </div>
-            </a>
+          
+          
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -333,7 +317,7 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">norms</span></code></a><ul>
+<li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">pow</span></code></a><ul>
 <li><a class="reference internal" href="#api">API</a></li>
 <li><a class="reference internal" href="#description">Description</a></li>
 </ul>
@@ -355,6 +339,5 @@
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>

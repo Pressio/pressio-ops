@@ -94,3 +94,4 @@ Use the links below to view details about each operation.
     ops/matrix_matrix_product
     ops/min_max
     ops/norms
+    ops/pow
