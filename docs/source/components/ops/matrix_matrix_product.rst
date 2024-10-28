@@ -1,7 +1,7 @@
 .. include:: ../../mydefs.rst
 
-``matrix-matrix product``
-=========================
+``product`` (matrix-matrix)
+===========================
 
 Header: ``<pressio/ops.hpp>``
 

@@ -90,8 +90,12 @@ Use the links below to view details about each operation.
     ops/elementwise_multiply
     ops/extent
     ops/fill
-    ops/matrix_vector_product
-    ops/matrix_matrix_product
     ops/min_max
     ops/norms
     ops/pow
+    ops/matrix_matrix_product
+    ops/matrix_vector_product
+    ops/resize
+    ops/scale
+    ops/set_zero
+    ops/update
