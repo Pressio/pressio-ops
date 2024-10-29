@@ -4,6 +4,9 @@
 Installation and Dependencies
 =============================
 
+Installation
+------------
+
 .. tip::
 
     pressio-ops is header-only, so it does not need to be precompiled and linked to.
@@ -18,25 +21,8 @@ Installation and Dependencies
 Dependencies
 ------------
 
-Some parts of ``pressio-ops`` contain code and implementations
-that are specific to third-party libraries (TPLs).
-An example is ``pressio/ops``\ , which contains kernels specializations
-for widely-used HPC libraries (e.g. Trilinos, Kokkos).
-The main reason for doing this is that we aim, where possible,
-to alleviate the user from writing custom operations and allow ``pressio-ops`` to decide when and how to leverage
-the native libraries' operations to obtain the best performance.
-This should facilitate the integration and use of ``pressio-ops`` by existing applications.
-This is a growing capability and we currently only
-provide built-in support to some external HPC libraries (see below).
-Obviously, these TPL-specific specializations need to be guarded with
-preprecessor directives, and enabled only if one can access the TPLs.
-
-Enabling/disabling specific dependencies can be done via
-the cmake variables `listed here <keywords.html>`__.
-
-
-Optional vs Required
-^^^^^^^^^^^^^^^^^^^^
+Some parts contain code that are specific to third-party libraries (TPLs).
+Currently, the list of TPLs supported is shown below:
 
 .. list-table::
    :header-rows: 1
@@ -70,73 +56,60 @@ Optional vs Required
 
 Eigen is the only required dependency because it is the
 default choice for instantiating the ROM data structures
-and solving the (dense) ROM problem.
+and solving the (dense) ROM problem used in `pressio <https://github.com/Pressio/pressio>`_.
 
-In practice, what are the steps to get, install and use Pressio?
-----------------------------------------------------------------
+CMake Keywords
+~~~~~~~~~~~~~~
 
-\todo: add description for using pressio without configuring,
-so one has to define the options directly when configuring
-their code or inside the code directly.
+Enabling/disabling specific dependencies can be done via the following cmake variables:
 
-1. Clone `pressio-ops <https://github.com/Pressio/pressio-ops>`_ (defaults to the main branch),
-or you can pick a `release version <https://github.com/Pressio/pressio-ops/releases>`_
+.. list-table::
+   :widths: 30 60 10
+   :header-rows: 1
+   :align: left
 
-2. Create a build and install subdirectories
+   * - Variable
+     - Description
+     - Default
 
-.. code-block:: bash
+   * - ``PRESSIO_ENABLE_TPL_EIGEN``
+     - self-explanatory
+     - ``ON``
 
-   cd <where-you-cloned-pressio-ops>
-   mkdir build && mkdir install
+   * - ``PRESSIO_ENABLE_TPL_TRILINOS``
+     - self-explanatory
+     - ``OFF``
 
-3. Use cmake to configure by passing to the comand line the target list of cmake variables to define.
+   * - ``PRESSIO_ENABLE_TPL_MPI``
+     - self-explanatory
+     - ``OFF`` but automatically ``ON`` if ``PRESSIO_ENABLE_TPL_TRILINOS=ON``
 
-For example, suppose we want to enable support for Trilinos and the debug prints. We would do:
+   * - ``PRESSIO_ENABLE_TPL_KOKKOS``
+     - self-explanatory
+     - ``OFF`` but automatically ``ON`` if ``PRESSIO_ENABLE_TPL_TRILINOS=ON``
 
-.. code-block:: bash
+   * - ``PRESSIO_ENABLE_TEUCHOS_TIMERS``
+     - self-explanatory
+     - ``OFF`` but automatically ``ON`` if ``PRESSIO_ENABLE_TPL_TRILINOS=ON``
 
-   export PRESSIO_SRC=<where-you-cloned-pressio>
-   cd <where-you-cloned-pressio-ops>/build
 
-   cmake -D CMAKE_INSTALL_PREFIX=../install \
-         -D PRESSIO_ENABLE_TPL_TRILINOS=ON \
-         -D PRESSIO_ENABLE_DEBUG_PRINT=ON \
-         ${PRESSIO_SRC}
+Obviously, the choice of which TPLs to enable is related to
+your application's dependency requirements.
+For example, if you have an application that relies on
+Trilinos data structures and want to use ``pressio``\ ,
+then it makes sense to enable the Trilinos dependency.
+On the contrary, if you have an application that relies only on
+Eigen data structures, then it makes sense to only leave only Eigen on
+and disable the rest.
 
-   make install # nothing is built, just headers copied to installation
+Also, we note that some of the cmake variables listed above are connected
+and cannot be turned on individualy.
+For example, if we enable Trilinos then ``pressio`` automatically
+enables also Kokkos, BLAS, LAPACK and MPI.
 
-Note that this step does **not** build anything because ``pressio-ops`` is header-only,
-but only processes the cmake arguments and copies the pressio headers to the
-install prefix ``<where-you-cloned-pressio-ops>/install``.
-If you want, inspect the file ``<where-you-cloned-pressio-ops>/install/pressio_ops_cmake_config.h``
-which contains the cmake variables configuration.
 
-We also remark that during the configuration step above pressio-ops
-does not need to know where a target TPL exists in your system.
-In the configuration step above, you are simply telling Pressio that you have
-a certain TPL and want to enable the corresponding code in pressio.
-The TPLs will be needed at linking stage when you build *your* code that *uses* pressio.
+.. important::
 
-4. When building your application to use pressio-ops, you just have to point to
-the installation directory ``<where-you-cloned-pressio-ops>/install`` with the installed
-pressio-ops headers, and you can access all pressio-ops functionalities like so:
+   All CMake keywords are prefixed with ``PRESSIO_`` which is case-sensitive.
 
-.. code-block:: cpp
-
-    #include "pressio/what_you_need.hpp"
-    // ...
-    int main(){
-     // do something
-    }
-
-.. warning::
-
-    The procedure above is advised because it enables ``pressio-ops``
-    to properly process the cmake options and turn on/off based
-    on certain conditions (as explained above).
-    The alternative way to use pressio would be to just clone the repo,
-    point to the ``<where-you-cloned-pressio-ops>/include`` subdirectory
-    and use cmake variables directly when building your code.
-    However, this could have unexpected consequences since
-    you would be resposible to set the variables correctly but you would not
-    know exactly all the possible constraints.
+   Recall that to set a keyword in CMake you used the syntax ``-Dkeyword_name``.
