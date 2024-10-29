@@ -17,3 +17,5 @@ If the operand goes out of scope, the state of the expression is undefined.
    expressions/span
    expressions/subspan
    expressions/diag
+   expressions/column
+   expressions/is_expression

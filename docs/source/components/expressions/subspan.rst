@@ -24,10 +24,10 @@ Description
 
 * Takes in an ``operand``, as well as the ``rowsRange`` and ``colsRange`` intervals that will be used in each dimension
 
-    * ``operand`` is either:
+  * ``operand`` is either:
 
-        * an Eigen dense matrix, ``pressio::is_dense_matrix_eigen<T>::value == true``
+    * an Eigen dense matrix, ``pressio::is_dense_matrix_eigen<T>::value == true``
 
-        * a Kokkos rank-2 view, i.e. ``pressio::is_dense_matrix_kokkos<T>::value == true``
+    * a Kokkos rank-2 view, i.e. ``pressio::is_dense_matrix_kokkos<T>::value == true``
 
 * Returns an expression object that represents a subspan of the ``operand``.
