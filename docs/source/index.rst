@@ -119,7 +119,6 @@ open an issue on `github <https://github.com/Pressio/pressio>`_.
    :maxdepth: 1
    :hidden:
 
-   Tutorials <https://pressio.github.io/pressio-tutorials>
-   GitHub Repo <https://github.com/Pressio/pressio>
-   Open an issue/feature req. <https://github.com/Pressio/pressio/issues>
+   GitHub Repo <https://github.com/Pressio/pressio-ops>
+   Open an issue/feature req. <https://github.com/Pressio/pressio-ops/issues>
    license
