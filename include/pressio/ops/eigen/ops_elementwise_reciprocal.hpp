@@ -2,7 +2,7 @@
 //@HEADER
 // ************************************************************************
 //
-// ops_elementwise_inverse.hpp
+// ops_elementwise_reciprocal.hpp
 //                     		  Pressio
 //                             Copyright 2019
 //    National Technology & Engineering Solutions of Sandia, LLC (NTESS)
@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef PRESSIOOPS_OPS_EIGEN_OPS_ELEMENTWISE_INVERSE_HPP_
-#define PRESSIOOPS_OPS_EIGEN_OPS_ELEMENTWISE_INVERSE_HPP_
+#ifndef PRESSIOOPS_OPS_EIGEN_OPS_elementwise_reciprocal_HPP_
+#define PRESSIOOPS_OPS_EIGEN_OPS_elementwise_reciprocal_HPP_
 
 namespace pressio{ namespace ops{
 
@@ -57,7 +57,7 @@ namespace pressio{ namespace ops{
 
 template <class T1, class T2>
 std::enable_if_t<
-  // common elementwise_inverse constraints
+  // common elementwise_reciprocal constraints
      ::pressio::Traits<T1>::rank == 1
   && ::pressio::Traits<T2>::rank == 1
   // TPL/container specific
@@ -73,7 +73,7 @@ std::enable_if_t<
    && (std::is_floating_point<typename ::pressio::Traits<T1>::scalar_type>::value
    || std::is_integral<typename ::pressio::Traits<T1>::scalar_type>::value)
   >
-elementwise_inverse(const T1 & z, T2 & y)
+elementwise_reciprocal(const T1 & z, T2 & y)
 {
   assert(::pressio::ops::extent(z, 0)==::pressio::ops::extent(y, 0));
 
@@ -84,4 +84,4 @@ elementwise_inverse(const T1 & z, T2 & y)
 }
 
 }}//end namespace pressio::ops
-#endif  // PRESSIOOPS_OPS_EIGEN_OPS_ELEMENTWISE_INVERSE_HPP_
+#endif  // PRESSIOOPS_OPS_EIGEN_OPS_elementwise_reciprocal_HPP_

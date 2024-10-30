@@ -415,12 +415,12 @@ TEST(ops_eigen_vector, elementwiseMultiply)
   EXPECT_DOUBLE_EQ( y(2), 20.0);
 }
 
-TEST(ops_eigen_vector, elementwiseInverse)
+TEST(ops_eigen_vector, elementwiseReciprocal)
 {
   V_t y; y << 0.,0.,0.;
   V_t z; z << 3.,4.,5.;
 
-  pressio::ops::elementwise_inverse(z, y);
+  pressio::ops::elementwise_reciprocal(z, y);
   EXPECT_DOUBLE_EQ( y(0), 1./3.);
   EXPECT_DOUBLE_EQ( y(1), 1./4.);
   EXPECT_DOUBLE_EQ( y(2), 1./5.);

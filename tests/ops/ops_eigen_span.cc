@@ -267,7 +267,7 @@ TEST(ops_eigen_span, elementwiseMultiply)
   EXPECT_DOUBLE_EQ( y(2), 23.0);
 }
 
-TEST(ops_eigen_span, elementwiseInverse)
+TEST(ops_eigen_span, elementwiseReciprocal)
 {
   Eigen::VectorXd M1(6);
   auto y = pressio::span(M1,2,3);
@@ -284,7 +284,7 @@ TEST(ops_eigen_span, elementwiseInverse)
   auto y1 = 1. / z1;
   auto y2 = 1. / z2;
 
-  pressio::ops::elementwise_inverse(z, y);
+  pressio::ops::elementwise_reciprocal(z, y);
   EXPECT_DOUBLE_EQ( y(0), y0);
   EXPECT_DOUBLE_EQ( y(1), y1);
   EXPECT_DOUBLE_EQ( y(2), y2);

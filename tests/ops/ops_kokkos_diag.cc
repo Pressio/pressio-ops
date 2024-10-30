@@ -380,3 +380,30 @@ TEST(ops_kokkos_diag, elementwiseMultiply)
   EXPECT_DOUBLE_EQ( M1_h(1,1), 14.0);
   EXPECT_DOUBLE_EQ( M1_h(2,2), 23.0);
 }
+
+
+TEST(ops_kokkos_diag, elementwiseReciprocal)
+{
+  mat_t M1("M1",3,3);
+  mat_t M3("M3",3,3);
+
+  const auto z0 = 3.;
+  const auto z1 = 4.;
+  const auto z2 = 5.;
+
+  auto M1_h = Kokkos::create_mirror_view_and_copy(Kokkos::HostSpace(), M1);
+  auto M3_h = Kokkos::create_mirror_view_and_copy(Kokkos::HostSpace(), M3);
+  M3_h(0,0)=z0; M3_h(1,1)=z1; M3_h(2,2)=z2;
+
+  Kokkos::deep_copy(M1, M1_h);
+  Kokkos::deep_copy(M3, M3_h);
+
+  auto y = pressio::diagonal(M1);
+  const auto z = pressio::diagonal(M3);
+
+  pressio::ops::elementwise_reciprocal(z, y);
+  Kokkos::deep_copy(M1_h, M1);
+  EXPECT_DOUBLE_EQ( M1_h(0,0), 1 / z0);
+  EXPECT_DOUBLE_EQ( M1_h(1,1), 1 / z1);
+  EXPECT_DOUBLE_EQ( M1_h(2,2), 1 / z2);
+}
