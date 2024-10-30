@@ -88,6 +88,7 @@ template<class ...> struct matching_extents;
 #include "ops/eigen/ops_rank1_update.hpp"
 #include "ops/eigen/ops_rank2_update.hpp"
 #include "ops/eigen/ops_elementwise_multiply.hpp"
+#include "ops/eigen/ops_elementwise_inverse.hpp"
 #include "ops/eigen/ops_level2.hpp"
 #include "ops/eigen/ops_level3.hpp"
 #endif
