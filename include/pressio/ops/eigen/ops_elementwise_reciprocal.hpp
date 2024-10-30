@@ -46,8 +46,8 @@
 //@HEADER
 */
 
-#ifndef PRESSIOOPS_OPS_EIGEN_OPS_elementwise_reciprocal_HPP_
-#define PRESSIOOPS_OPS_EIGEN_OPS_elementwise_reciprocal_HPP_
+#ifndef PRESSIOOPS_OPS_EIGEN_OPS_ELEMENTWISE_RECIPROCAL_HPP_
+#define PRESSIOOPS_OPS_EIGEN_OPS_ELEMENTWISE_RECIPROCAL_HPP_
 
 namespace pressio{ namespace ops{
 
@@ -84,4 +84,4 @@ elementwise_reciprocal(const T1 & z, T2 & y)
 }
 
 }}//end namespace pressio::ops
-#endif  // PRESSIOOPS_OPS_EIGEN_OPS_elementwise_reciprocal_HPP_
+#endif  // PRESSIOOPS_OPS_EIGEN_OPS_ELEMENTWISE_RECIPROCAL_HPP_

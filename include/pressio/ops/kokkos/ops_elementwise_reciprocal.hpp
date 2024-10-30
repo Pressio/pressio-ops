@@ -2,7 +2,7 @@
 //@HEADER
 // ************************************************************************
 //
-// ops_elementwise_multiply.hpp
+// ops_elementwise_reciprocal.hpp
 //                     		  Pressio
 //                             Copyright 2019
 //    National Technology & Engineering Solutions of Sandia, LLC (NTESS)
