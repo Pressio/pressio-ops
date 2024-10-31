@@ -473,3 +473,26 @@ TEST_F(ops_tpetra, vector_elementwiseMultiply)
     EXPECT_DOUBLE_EQ(ch(i,0), gold + offset);
   }
 }
+
+TEST_F(ops_tpetra, vector_elementwiseReciprocal)
+{
+  // 1. Create and fill vector z with test data
+  vec_t z(contigMap_);
+  auto zh = z.getLocalViewHost(Tpetra::Access::ReadWriteStruct());
+  for (int i = 0; i < numGlobalEntries_; ++i) {
+    zh(i, 0) = static_cast<ST>(i + 1);
+  }
+
+  // 2. Create vector y, which will store the elementwise reciprocal of z
+  vec_t y(contigMap_);
+
+  // 3. Compute elementwise reciprocal: y = 1 / z
+  pressio::ops::elementwise_reciprocal(z, y);
+
+  // 4. Check correctness of the reciprocal
+  auto yh = y.getLocalViewHost(Tpetra::Access::ReadOnlyStruct());
+  for (int i = 0; i < localSize_; ++i) {
+    const auto expected_value = 1.0 / zh(i, 0);
+    EXPECT_DOUBLE_EQ(yh(i, 0), expected_value);
+  }
+}

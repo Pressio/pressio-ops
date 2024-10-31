@@ -504,3 +504,32 @@ TEST_F(ops_tpetra, column_expr_elementwiseMultiply)
     EXPECT_DOUBLE_EQ(ch(i,0), gold + offset);
   }
 }
+
+TEST_F(ops_tpetra, column_expr_elementwiseReciprocal)
+{
+
+  // 1. create z and fill with data
+  mvec_t z(contigMap_, 3);
+  auto zh = z.getLocalViewHost(Tpetra::Access::ReadWriteStruct());
+  std::vector<ST> z0(numGlobalEntries_);
+  for (int i=0; i<localSize_; ++i) {
+    for (int j=0; j<3; ++j){
+      zh(i,j) = static_cast<ST>(i + j + 1);
+    }
+  }
+
+  // 2. create y (will store reciprocal of z)
+  mvec_t y(contigMap_, 3);
+
+  // 3. compute ewise reciprocal
+  auto z_expr = pressio::column(z, 0);
+  auto y_expr = pressio::column(y, 0);
+  pressio::ops::elementwise_reciprocal(z_expr, y_expr);
+
+  // 4. check correctness
+  auto yh = y.getLocalViewHost(Tpetra::Access::ReadOnlyStruct());
+  for (int i=0; i<localSize_; ++i){
+    const auto gold = 1 / zh(i, 0);
+    EXPECT_DOUBLE_EQ(yh(i,0), gold);
+  }
+}

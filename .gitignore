@@ -1,2 +1,5 @@
 .vscode
 generated_docs
+build
+install
+
