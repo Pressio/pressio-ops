@@ -66,10 +66,6 @@
 #define PRESSIO_CXX_STD_20 202002L
 static_assert(_PRESSIO_CPLUSPLUS >= PRESSIO_CXX_STD_17, "PRESSIO requires C++17 or greater.");
 
-#if defined PRESSIO_ENABLE_CXX20
-#define PRESSIO_ENABLE_CXX17
-#endif
-
 // ----------------------------------------
 // TPL macros
 // ----------------------------------------

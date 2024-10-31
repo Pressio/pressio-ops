@@ -54,18 +54,11 @@
 namespace pressio{ namespace ops{
 
 template <typename T, typename ScalarType>
-#ifdef PRESSIO_ENABLE_CXX20
-requires (::pressio::is_native_container_kokkos<T>::value
-       or ::pressio::is_expression_acting_on_kokkos<T>::value)
-       and std::convertible_to<ScalarType, typename ::pressio::Traits<T>::scalar_type>
-void
-#else
 std::enable_if_t<
     (::pressio::is_native_container_kokkos<T>::value
   or ::pressio::is_expression_acting_on_kokkos<T>::value)
   and std::is_convertible<ScalarType, typename ::pressio::Traits<T>::scalar_type>::value
   >
-#endif
 fill(const T & o, const ScalarType & value)
 {
   const typename ::pressio::Traits<T>::scalar_type v(value);
