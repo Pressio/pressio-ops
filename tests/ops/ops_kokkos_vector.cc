@@ -479,3 +479,26 @@ TEST(ops_kokkos_vector, vector_elementwiseMultiply)
   EXPECT_DOUBLE_EQ( y_h(1), 12.0);
   EXPECT_DOUBLE_EQ( y_h(2), 20.0);
 }
+
+TEST(ops_kokkos_vector, vector_elementwiseReciprocal)
+{
+  Kokkos::View<double*> y("y", 3);
+  Kokkos::View<double*> z("z", 3);
+
+  const auto z0 = 3.;
+  const auto z1 = 4.;
+  const auto z2 = 5.;
+
+  auto y_h = Kokkos::create_mirror_view_and_copy(Kokkos::HostSpace(), y);
+  auto z_h = Kokkos::create_mirror_view_and_copy(Kokkos::HostSpace(), z);
+  z_h(0) = z0; z_h(1) = z1; z_h(2) = z2;
+
+  Kokkos::deep_copy(y, y_h);
+  Kokkos::deep_copy(z, z_h);
+
+  pressio::ops::elementwise_reciprocal(z, y);
+  Kokkos::deep_copy(y_h, y);
+  EXPECT_DOUBLE_EQ( y_h(0), 1 / z0);
+  EXPECT_DOUBLE_EQ( y_h(1), 1 / z1);
+  EXPECT_DOUBLE_EQ( y_h(2), 1 / z2);
+}

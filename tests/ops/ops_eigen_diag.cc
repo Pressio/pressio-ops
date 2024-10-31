@@ -389,3 +389,26 @@ TEST(ops_eigen_diag, elementwiseMultiply)
   EXPECT_DOUBLE_EQ( y(1), 14.0);
   EXPECT_DOUBLE_EQ( y(2), 23.0);
 }
+
+TEST(ops_eigen_diag, elementwiseReciprocal)
+{
+  Eigen::MatrixXd M1(3,3);
+  auto y = pressio::diagonal(M1);
+
+  auto z0 = 3.;
+  auto z1 = 4.;
+  auto z2 = 5.;
+
+  Eigen::MatrixXd M2(3,3);
+  M2(0,0)=z0; M2(1,1)=z1; M2(2,2)=z2;
+  const auto z = pressio::diagonal(M2);
+
+  auto y0 = 1. / z0;
+  auto y1 = 1. / z1;
+  auto y2 = 1. / z2;
+
+  pressio::ops::elementwise_reciprocal(z, y);
+  EXPECT_DOUBLE_EQ( y(0), y0);
+  EXPECT_DOUBLE_EQ( y(1), y1);
+  EXPECT_DOUBLE_EQ( y(2), y2);
+}
