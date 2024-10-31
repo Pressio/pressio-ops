@@ -507,11 +507,9 @@ TEST_F(ops_tpetra, column_expr_elementwiseMultiply)
 
 TEST_F(ops_tpetra, column_expr_elementwiseReciprocal)
 {
-
   // 1. create z and fill with data
   mvec_t z(contigMap_, 3);
   auto zh = z.getLocalViewHost(Tpetra::Access::ReadWriteStruct());
-  std::vector<ST> z0(numGlobalEntries_);
   for (int i=0; i<localSize_; ++i) {
     for (int j=0; j<3; ++j){
       zh(i,j) = static_cast<ST>(i + j + 1);

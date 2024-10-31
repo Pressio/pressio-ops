@@ -479,7 +479,7 @@ TEST_F(ops_tpetra, vector_elementwiseReciprocal)
   // 1. Create and fill vector z with test data
   vec_t z(contigMap_);
   auto zh = z.getLocalViewHost(Tpetra::Access::ReadWriteStruct());
-  for (int i = 0; i < numGlobalEntries_; ++i) {
+  for (int i = 0; i < localSize_; ++i) {
     zh(i, 0) = static_cast<ST>(i + 1);
   }
 
