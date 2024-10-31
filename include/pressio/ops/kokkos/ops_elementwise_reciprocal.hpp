@@ -58,7 +58,6 @@ namespace pressio{ namespace ops{
 //----------------------------------------------------------------------
 template <typename T1, typename T2>
 std::enable_if_t<
-  // common elementwise_multiply constraints
      ::pressio::Traits<T1>::rank == 1
   && ::pressio::Traits<T2>::rank == 1
   // TPL/container specific
