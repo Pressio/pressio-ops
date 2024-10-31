@@ -351,3 +351,21 @@ TEST_F(ops_tpetra_block, column_expr_elementwiseMultiply)
     EXPECT_DOUBLE_EQ(y_h(i,0), 12);
   }
 }
+
+TEST_F(ops_tpetra_block, column_expr_elementwiseReciprocal)
+{
+  // computing elementwise:  y = 1/z
+
+  auto z = pressio::column(*myMv_, 1);
+  pressio::ops::fill(z, 2.);
+  auto z_h = z.native().getLocalViewHost(Tpetra::Access::ReadOnlyStruct());
+
+  auto y = pressio::column(*myMv_, 2);
+
+  pressio::ops::elementwise_reciprocal(z, y);
+
+  auto y_h = y.native().getLocalViewHost(Tpetra::Access::ReadOnlyStruct());
+  for (int i=0; i<localSize_*blockSize_; ++i){
+    EXPECT_DOUBLE_EQ(y_h(i,0), 1 / z_h(i,0));
+  }
+}

@@ -158,6 +158,7 @@ template<class ...> struct matching_extents;
 #include "ops/tpetra_block/ops_pow.hpp"
 #include "ops/tpetra_block/ops_rank1_update.hpp"
 #include "ops/tpetra_block/ops_elementwise_multiply.hpp"
+#include "ops/tpetra_block/ops_elementwise_reciprocal.hpp"
 #include "ops/tpetra_block/ops_multi_vector_update.hpp"
 #include "ops/tpetra_block/ops_level2.hpp"
 #include "ops/tpetra_block/ops_level3.hpp"

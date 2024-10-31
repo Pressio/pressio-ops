@@ -412,3 +412,20 @@ TEST_F(ops_tpetra_block, vector_elementwiseMultiply)
   }
 
 }
+
+TEST_F(ops_tpetra_block, vector_elementwiseReciprocal)
+{
+  // computing elementwise:  y = 1/z
+
+  auto z = pressio::ops::clone(*myVector_);
+  pressio::ops::fill(z, 2.);
+  auto z_h = z.getVectorView().getLocalViewHost(Tpetra::Access::ReadOnlyStruct());
+
+  auto y = pressio::ops::clone(*myVector_);
+
+  pressio::ops::elementwise_reciprocal(z, y);
+  auto y_h = y.getVectorView().getLocalViewHost(Tpetra::Access::ReadWriteStruct());
+  for (int i=0; i<localSize_*blockSize_; ++i){
+    EXPECT_DOUBLE_EQ(y_h(i,0), 1 / z_h(i,0));
+  }
+}
