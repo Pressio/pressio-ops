@@ -1,11 +1,7 @@
-option(PRESSIO_ENABLE_CXX17 "Enable C++17" OFF)
-option(PRESSIO_ENABLE_CXX20 "Enable C++20" OFF)
 
-if(CMAKE_CXX_STANDARD EQUAL 17)
-  add_definitions(-DPRESSIO_ENABLE_CXX17)
-elseif(CMAKE_CXX_STANDARD EQUAL 20)
-  add_definitions(-DPRESSIO_ENABLE_CXX20)
-endif()
+option(PRESSIO_ENABLE_CXX17 "Enable C++17" OFF)
+# minimum required is 17
+add_definitions(-DPRESSIO_ENABLE_CXX17)
 
 option(PRESSIO_ENABLE_TPL_EIGEN		  "Enable Eigen TPL"	  OFF)
 option(PRESSIO_ENABLE_TPL_TRILINOS	"Enable Trilinos TPL"	OFF)
