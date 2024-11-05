@@ -82,8 +82,4 @@ static_assert(_PRESSIO_CPLUSPLUS >= PRESSIO_CXX_STD_17, "PRESSIO requires C++17 
 #endif
 #endif
 
-#ifndef PRESSIO_ENABLE_TPL_EIGEN
-static_assert(false, "Eigen is not enabled.");
-#endif
-
 #endif
