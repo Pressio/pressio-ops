@@ -57,8 +57,8 @@ jobs:
             -D PRESSIO_OPS_ENABLE_TESTS:BOOL=ON \
             -D PRESSIO_ENABLE_TPL_EIGEN:BOOL=OFF \
             -D PRESSIO_ENABLE_TPL_KOKKOS:BOOL=ON \
-            -D Kokkos_ROOT=/kokkos/install \
-            -D KokkosKernels_ROOT=/kokkos-kernels/install
+            -D KOKKOS_ROOT=/kokkos/install \
+            -D KOKKOS_KERNELS_ROOT=/kokkos-kernels/install
 
       - name: Build
         run: |
