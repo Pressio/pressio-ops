@@ -23,19 +23,13 @@ jobs:
       fail-fast: false
       matrix:
         image:
-          - fedora-clang-17
-          - fedora-gnu-13
-          - ubuntu-clang-14
-          - ubuntu-gnu-11
+          - ubuntu-gnu-kokkos-cpu-serial-11
+          - ubuntu-gnu-kokkos-cpu-openmp-11
         build_type:
           - Release
           - Debug
         cmake_extra_args:
           - ''
-        include:
-          - image: ubuntu-clang-14
-            build_type: Release
-            cmake_extra_args: '-D CMAKE_CXX_STANDARD=20 -D PRESSIO_ENABLE_CXX20=ON'
 
     runs-on: ubuntu-latest
     container:
@@ -63,6 +57,8 @@ jobs:
             -D PRESSIO_OPS_ENABLE_TESTS:BOOL=ON \
             -D PRESSIO_ENABLE_TPL_EIGEN:BOOL=OFF \
             -D PRESSIO_ENABLE_TPL_KOKKOS:BOOL=ON \
+            -D Kokkos_ROOT=/kokkos/install \
+            -D KokkosKernels_ROOT=/kokkos-kernels/install
 
       - name: Build
         run: |
