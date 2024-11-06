@@ -58,12 +58,15 @@ if(PRESSIO_ENABLE_TPL_KOKKOS)
         ")
     endif()
 
-    set(KOKKOS_LIB_NAMES kokkoscontainers kokkoscore kokkoskernels)
-    include_directories(SYSTEM ${KOKKOS_ROOT}/include ${KOKKOS_KERNELS_ROOT}/include)
-    link_directories(${KOKKOS_ROOT}/lib ${KOKKOS_ROOT}/lib64
-${KOKKOS_KERNELS_ROOT}/lib ${KOKKOS_KERNELS_ROOT}/lib64)
+#     set(KOKKOS_LIB_NAMES kokkoscontainers kokkoscore kokkoskernels)
+#     include_directories(SYSTEM ${KOKKOS_ROOT}/include ${KOKKOS_KERNELS_ROOT}/include)
+#     link_directories(${KOKKOS_ROOT}/lib ${KOKKOS_ROOT}/lib64
+# ${KOKKOS_KERNELS_ROOT}/lib ${KOKKOS_KERNELS_ROOT}/lib64)
 
-    link_libraries(${KOKKOS_LIB_NAMES})
+    find_package(Kokkos REQUIRED)
+    find_package(KokkosKernels REQUIRED)
+
+    link_libraries(Kokkos::kokkos Kokkos::kokkoskernels)
   endif()
 endif()
 
