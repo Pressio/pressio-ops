@@ -1,7 +1,7 @@
 .. include:: ../../mydefs.rst
 
 ``elementwise_reciprocal``
-========================
+==========================
 
 Header: ``<pressio/ops.hpp>``
 
