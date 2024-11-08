@@ -49,13 +49,16 @@
 #ifndef PRESSIOOPS_TYPE_TRAITS_NATIVE_EIGEN_DENSE_MATRIX_HPP_
 #define PRESSIOOPS_TYPE_TRAITS_NATIVE_EIGEN_DENSE_MATRIX_HPP_
 
+#ifdef PRESSIO_ENABLE_TPL_EIGEN
 #include "Eigen/Dense"
+#endif
 
 namespace pressio{
 
 template <typename T, typename enable = void>
 struct is_static_dense_matrix_eigen : std::false_type {};
 
+#ifdef PRESSIO_ENABLE_TPL_EIGEN
 /* T is a dense STATIC eigen matrix if
  * T is not an eigen vector
  * rows and cols are not = Eigen:Dynamic
@@ -73,11 +76,13 @@ struct is_static_dense_matrix_eigen<
     T::ColsAtCompileTime != Eigen::Dynamic
     >
   > : std::true_type{};
+#endif
 //----------------------------------------------------------------------
 
 template <typename T, typename enable = void>
 struct is_dynamic_dense_matrix_eigen : std::false_type {};
 
+#ifdef PRESSIO_ENABLE_TPL_EIGEN
 /* T is a dense DYNAMIC eigen matrix if
  * is not an eigen vector
  * is not a static dense matrix
@@ -148,11 +153,13 @@ struct is_dynamic_dense_matrix_eigen<
     T::ColsAtCompileTime != Eigen::Dynamic
     >
   > : std::true_type{};
+#endif
 //----------------------------------------------------------------------
 
 template <typename T, typename enable = void>
 struct is_dense_row_major_matrix_eigen : std::false_type {};
 
+#ifdef PRESSIO_ENABLE_TPL_EIGEN
 template<typename T>
 struct is_dense_row_major_matrix_eigen<
   T,
@@ -162,11 +169,13 @@ struct is_dense_row_major_matrix_eigen<
     int(T::IsRowMajor)==1
     >
   > : std::true_type{};
+#endif
 //----------------------------------------------------------------------
 
 template <typename T, typename enable = void>
 struct is_dense_col_major_matrix_eigen : std::false_type {};
 
+#ifdef PRESSIO_ENABLE_TPL_EIGEN
 template<typename T>
 struct is_dense_col_major_matrix_eigen<
   T,
@@ -176,11 +185,13 @@ struct is_dense_col_major_matrix_eigen<
     int(T::IsRowMajor)==0
     >
   > : std::true_type{};
+#endif
 //----------------------------------------------------------------------
 
 template <typename T, typename enable = void>
 struct is_dense_matrix_eigen : std::false_type {};
 
+#ifdef PRESSIO_ENABLE_TPL_EIGEN
 template<typename T>
 struct is_dense_matrix_eigen<
   T,
@@ -189,6 +200,7 @@ struct is_dense_matrix_eigen<
     is_dynamic_dense_matrix_eigen<T>::value
     >
   > : std::true_type{};
+#endif
 
 }//end namespace
 #endif  // PRESSIOOPS_TYPE_TRAITS_NATIVE_EIGEN_DENSE_MATRIX_HPP_

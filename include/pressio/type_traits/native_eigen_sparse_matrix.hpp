@@ -49,13 +49,16 @@
 #ifndef PRESSIOOPS_TYPE_TRAITS_NATIVE_EIGEN_SPARSE_MATRIX_HPP_
 #define PRESSIOOPS_TYPE_TRAITS_NATIVE_EIGEN_SPARSE_MATRIX_HPP_
 
+#ifdef PRESSIO_ENABLE_TPL_EIGEN
 #include "Eigen/Sparse"
+#endif
 
 namespace pressio{
 
 template <typename T, typename enable = void>
 struct is_sparse_matrix_eigen : std::false_type {};
 
+#ifdef PRESSIO_ENABLE_TPL_EIGEN
 /*
  * T is an eigen sparse matrix if is
  * not an eigen vector
@@ -72,7 +75,7 @@ struct is_sparse_matrix_eigen<
       >::value
     >
   > : std::true_type{};
-
+#endif
 
 //----------------------------------------------------------------------
 
