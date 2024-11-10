@@ -60,16 +60,11 @@ auto span(T & operand, IndexType startIndex, IndexType extent)
   // note that this works also when T is const-qualified
   // because that qualification carries over to the impl
 
-  constexpr bool constraint = false
-#ifdef PRESSIO_ENABLE_TPL_KOKKOS
-    || is_vector_kokkos<T>::value
-#endif
-#ifdef PRESSIO_ENABLE_TPL_EIGEN
-    || is_dynamic_vector_eigen<T>::value
-#endif
-    ;
-  static_assert(constraint, "pressio::span() currently supported only for an Eigen dynamic vector"
-		" or a Kokkos View.");
+  constexpr bool constraint = is_vector_kokkos<T>::value
+    || is_dynamic_vector_eigen<T>::value;
+  static_assert(constraint,
+       "pressio::span() currently supported only for an Eigen dynamic vector"
+       " or a Kokkos View.");
 
   static_assert(Traits< std::remove_const_t<T> >::rank==1,
 		"span can only be applied to a rank-1 object.");

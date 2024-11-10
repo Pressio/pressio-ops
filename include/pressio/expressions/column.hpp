@@ -60,17 +60,13 @@ auto column(T & operand, IndexType colIndex)
   // note that this works also when T is const-qualified
   // because that qualification carries over to the impl
 
-  constexpr bool constraint = false
-#ifdef PRESSIO_ENABLE_TPL_EIGEN
-    || is_dense_matrix_eigen<T>::value
-#endif
-#ifdef PRESSIO_ENABLE_TPL_TRILINOS
+  constexpr bool constraint =
+    is_dense_matrix_eigen<T>::value
     || is_multi_vector_tpetra<T>::value
-    || is_multi_vector_tpetra_block<T>::value
-#endif
-    ;
-  static_assert(constraint, "pressio::column() currently supported only for "
-		"an Eigen dynamic matrix, a tpetra or tpetra-block multivector");
+    || is_multi_vector_tpetra_block<T>::value;
+  static_assert(constraint,
+      "pressio::column() currently supported only for "
+      "an Eigen dynamic matrix, a tpetra or tpetra-block multivector");
 
   static_assert(Traits< std::remove_const_t<T> >::rank==2,
 		"column can only be applied to a rank-2 object.");
