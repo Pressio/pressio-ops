@@ -49,7 +49,9 @@
 #ifndef PRESSIOOPS_TYPE_TRAITS_NATIVE_KOKKOS_VECTOR_HPP_
 #define PRESSIOOPS_TYPE_TRAITS_NATIVE_KOKKOS_VECTOR_HPP_
 
+#ifdef PRESSIO_ENABLE_TPL_KOKKOS
 #include "Kokkos_Core.hpp"
+#endif
 
 namespace pressio{
 
@@ -64,6 +66,7 @@ struct is_static_vector_kokkos{
   static constexpr bool value = false;
 };
 
+#ifdef PRESSIO_ENABLE_TPL_KOKKOS
 template <class DataType, class ...Properties>
 struct is_static_vector_kokkos< Kokkos::View<DataType, Properties...> >
 {
@@ -71,6 +74,7 @@ struct is_static_vector_kokkos< Kokkos::View<DataType, Properties...> >
   static constexpr bool value = view_type::traits::rank==1 &&
     view_type::traits::rank_dynamic==0;
 };
+#endif
 
 template <class T>
 struct is_static_vector_kokkos<const T>: public is_static_vector_kokkos<T> {};
@@ -85,6 +89,7 @@ struct is_dynamic_vector_kokkos{
   static constexpr bool value = false;
 };
 
+#ifdef PRESSIO_ENABLE_TPL_KOKKOS
 template <class DataType, class ...Properties>
 struct is_dynamic_vector_kokkos< Kokkos::View<DataType, Properties...> >
 {
@@ -92,6 +97,7 @@ struct is_dynamic_vector_kokkos< Kokkos::View<DataType, Properties...> >
   static constexpr bool value = view_type::traits::rank==1 &&
     view_type::traits::rank_dynamic!=0;
 };
+#endif
 
 template <class T>
 struct is_dynamic_vector_kokkos<const T>: public is_dynamic_vector_kokkos<T> {};

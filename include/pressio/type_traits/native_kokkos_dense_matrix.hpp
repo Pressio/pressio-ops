@@ -49,7 +49,9 @@
 #ifndef PRESSIOOPS_TYPE_TRAITS_NATIVE_KOKKOS_DENSE_MATRIX_HPP_
 #define PRESSIOOPS_TYPE_TRAITS_NATIVE_KOKKOS_DENSE_MATRIX_HPP_
 
+#ifdef PRESSIO_ENABLE_TPL_KOKKOS
 #include <KokkosSparse_CrsMatrix.hpp>
+#endif
 
 namespace pressio{
 
@@ -61,6 +63,7 @@ struct is_static_dense_matrix_kokkos{
   static constexpr bool value = false;
 };
 
+#ifdef PRESSIO_ENABLE_TPL_KOKKOS
 template <class DataType, class ...Properties>
 struct is_static_dense_matrix_kokkos< Kokkos::View<DataType, Properties...> >
 {
@@ -68,6 +71,7 @@ struct is_static_dense_matrix_kokkos< Kokkos::View<DataType, Properties...> >
   static constexpr bool value = view_type::traits::rank==2 &&
     view_type::traits::rank_dynamic==0;
 };
+#endif
 
 // -------------------------------------------------
 template <typename T>
@@ -75,6 +79,7 @@ struct is_dynamic_dense_matrix_kokkos{
   static constexpr bool value = false;
 };
 
+#ifdef PRESSIO_ENABLE_TPL_KOKKOS
 template <class DataType, class ...Properties>
 struct is_dynamic_dense_matrix_kokkos< Kokkos::View<DataType, Properties...> >
 {
@@ -82,6 +87,7 @@ struct is_dynamic_dense_matrix_kokkos< Kokkos::View<DataType, Properties...> >
   static constexpr bool value = view_type::traits::rank==2 &&
     view_type::traits::rank_dynamic!=0;
 };
+#endif
 
 // -------------------------------------------------
 template <typename T, typename enable = void>
