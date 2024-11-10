@@ -88,6 +88,7 @@ Use the links below to view details about each operation.
     ops/deep_copy
     ops/dot
     ops/elementwise_multiply
+    ops/elementwise_reciprocal
     ops/extent
     ops/fill
     ops/min_max
