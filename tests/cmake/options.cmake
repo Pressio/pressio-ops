@@ -47,25 +47,20 @@ if(PRESSIO_ENABLE_TPL_KOKKOS)
   message(">> Enabling Kokkos since PRESSIO_ENABLE_TPL_KOKKOS=ON")
   add_definitions(-DPRESSIO_ENABLE_TPL_KOKKOS)
 
-  # when trilinos is enabled it links kokkos too
+  # if kokkos is used as standalone lib, then user
+  # needs to define: Kokkos_ROOT and KokkosKernels_ROOT
   if(NOT PRESSIO_ENABLE_TPL_TRILINOS)
-    # if kokkos is used as standalone lib, then we are more specific
-    # user needs to define: Kokkos_ROOT and KokkosKernels_ROOT
     if (NOT Kokkos_ROOT OR NOT KokkosKernels_ROOT)
-      message(FATAL_ERROR "Missing Kokkos installation directories. KOKKOS needs:
+      message(
+	FATAL_ERROR
+	"Missing Kokkos installation directories. KOKKOS needs:
         -D Kokkos_ROOT=<full-path-to-kokkos-installation>
-        -D KokkosKernels_ROOT=<full-path-to-kokkos-kernels-installation>
-        ")
+        -D KokkosKernels_ROOT=<full-path-to-kokkos-kernels-installation>"
+      )
     endif()
-
-#     set(KOKKOS_LIB_NAMES kokkoscontainers kokkoscore kokkoskernels)
-#     include_directories(SYSTEM ${KOKKOS_ROOT}/include ${KOKKOS_KERNELS_ROOT}/include)
-#     link_directories(${KOKKOS_ROOT}/lib ${KOKKOS_ROOT}/lib64
-# ${KOKKOS_KERNELS_ROOT}/lib ${KOKKOS_KERNELS_ROOT}/lib64)
 
     find_package(Kokkos REQUIRED)
     find_package(KokkosKernels REQUIRED)
-
     link_libraries(Kokkos::kokkos Kokkos::kokkoskernels)
   endif()
 endif()
