@@ -61,31 +61,21 @@ template<class T, class Enable = void> struct Traits;
 //*** vector ****
 #include "type_traits/native_eigen_vector.hpp"
 #include "type_traits/native_kokkos_vector.hpp"
-#ifdef PRESSIO_ENABLE_TPL_TRILINOS
 #include "type_traits/native_teuchos_vector.hpp"
 #include "type_traits/native_tpetra_block_vector.hpp"
 #include "type_traits/native_tpetra_vector.hpp"
-#ifdef PRESSIO_ENABLE_EPETRA
 #include "type_traits/native_epetra_vector.hpp"
-#endif // PRESSIO_ENABLE_EPETRA
-#endif // PRSSIO_ENABLE_TPL_TRILINOS
 
 //*** matrix ****
 #include "type_traits/native_kokkos_dense_matrix.hpp"
-#ifdef PRESSIO_ENABLE_TPL_TRILINOS
 #include "type_traits/native_teuchos_dense_matrix.hpp"
-#endif
 #include "type_traits/native_eigen_dense_matrix.hpp"
 #include "type_traits/native_eigen_sparse_matrix.hpp"
 
 //*** multi vector ****
-#ifdef PRESSIO_ENABLE_TPL_TRILINOS
 #include "type_traits/native_tpetra_block_multi_vector.hpp"
 #include "type_traits/native_tpetra_multi_vector.hpp"
-#ifdef PRESSIO_ENABLE_EPETRA
 #include "type_traits/native_epetra_multi_vector.hpp"
-#endif // PRESSIO_ENABLE_EPETRA
-#endif // PRSSIO_ENABLE_TPL_TRILINOS
 
 #include "type_traits/traits_tpl.hpp"
 

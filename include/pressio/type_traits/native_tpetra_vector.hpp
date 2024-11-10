@@ -49,13 +49,16 @@
 #ifndef PRESSIOOPS_TYPE_TRAITS_NATIVE_TPETRA_VECTOR_HPP_
 #define PRESSIOOPS_TYPE_TRAITS_NATIVE_TPETRA_VECTOR_HPP_
 
+#ifdef PRESSIO_ENABLE_TPL_TRILINOS
 #include "Tpetra_Vector.hpp"
+#endif
 
 namespace pressio{
 
 template <typename T, typename enable = void>
 struct is_vector_tpetra : std::false_type {};
 
+#ifdef PRESSIO_ENABLE_TPL_TRILINOS
 template <typename T>
 struct is_vector_tpetra<
   T,
@@ -72,6 +75,7 @@ struct is_vector_tpetra<
       >::value
     >::type
   > : std::true_type{};
+#endif
 
 }
 #endif  // PRESSIOOPS_TYPE_TRAITS_NATIVE_TPETRA_VECTOR_HPP_
