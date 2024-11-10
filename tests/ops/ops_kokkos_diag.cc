@@ -173,12 +173,18 @@ TEST(ops_kokkos_diag, norms)
   }
   Kokkos::deep_copy(a, a_h);
 
-  Eigen::VectorXd gold(5);
-  gold << 0.,6.,12.,18.,24.;
+  std::vector<double> gold = {0.,6.,12.,18.,24.};
+  double l1norm = 0;
+  double l2norm = 0;
+  std::for_each(gold.begin(), gold.end(), [&](double v){
+    l1norm += std::abs(v);
+    l2norm += v*v;
+  });
+  l2norm = std::sqrt(l2norm);
 
   auto e = pressio::diagonal(a);
-  ASSERT_DOUBLE_EQ(pressio::ops::norm1(e), gold.lpNorm<1>());
-  ASSERT_DOUBLE_EQ(pressio::ops::norm2(e), gold.lpNorm<2>());
+  ASSERT_DOUBLE_EQ(pressio::ops::norm1(e), l1norm);
+  ASSERT_DOUBLE_EQ(pressio::ops::norm2(e), l2norm);
 }
 
 TEST(ops_kokkos_diag, dot_vector)
@@ -235,9 +241,6 @@ TEST(ops_kokkos_diag, pow)
    }
   }
   Kokkos::deep_copy(a, a_h);
-
-  Eigen::VectorXd gold(5);
-  gold << 0.,6.,12.,18.,24.;
 
   auto exp = pressio::diagonal(a);
   pressio::ops::pow(exp, 2.);
