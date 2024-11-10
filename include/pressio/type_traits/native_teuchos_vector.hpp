@@ -49,13 +49,16 @@
 #ifndef PRESSIOOPS_TYPE_TRAITS_NATIVE_TEUCHOS_VECTOR_HPP_
 #define PRESSIOOPS_TYPE_TRAITS_NATIVE_TEUCHOS_VECTOR_HPP_
 
+#ifdef PRESSIO_ENABLE_TPL_TRILINOS
 #include "Teuchos_SerialDenseVector.hpp"
+#endif
 
 namespace pressio{
 
 template <typename T, typename enable = void>
 struct is_dense_vector_teuchos : std::false_type {};
 
+#ifdef PRESSIO_ENABLE_TPL_TRILINOS
 template <typename T>
 struct is_dense_vector_teuchos<
   T,
@@ -66,6 +69,7 @@ struct is_dense_vector_teuchos<
       >::value
     >
   > : std::true_type{};
+#endif
 
 }//end namespace
 #endif  // PRESSIOOPS_TYPE_TRAITS_NATIVE_TEUCHOS_VECTOR_HPP_

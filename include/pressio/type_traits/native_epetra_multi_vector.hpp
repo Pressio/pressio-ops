@@ -49,13 +49,16 @@
 #ifndef PRESSIOOPS_TYPE_TRAITS_NATIVE_EPETRA_MULTI_VECTOR_HPP_
 #define PRESSIOOPS_TYPE_TRAITS_NATIVE_EPETRA_MULTI_VECTOR_HPP_
 
+#ifdef PRESSIO_ENABLE_EPETRA
 #include "Epetra_MultiVector.h"
+#endif
 
 namespace pressio{
 
 template <typename T, typename enable = void>
 struct is_multi_vector_epetra : std::false_type {};
 
+#ifdef PRESSIO_ENABLE_EPETRA
 template <typename T>
 struct is_multi_vector_epetra<T,
   typename
@@ -63,6 +66,7 @@ struct is_multi_vector_epetra<T,
     std::is_same<T,Epetra_MultiVector>::value
    >::type
   > : std::true_type{};
+#endif
 
 }//end namespace
 #endif  // PRESSIOOPS_TYPE_TRAITS_NATIVE_EPETRA_MULTI_VECTOR_HPP_

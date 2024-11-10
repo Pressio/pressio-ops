@@ -49,13 +49,16 @@
 #ifndef PRESSIOOPS_TYPE_TRAITS_NATIVE_TEUCHOS_DENSE_MATRIX_HPP_
 #define PRESSIOOPS_TYPE_TRAITS_NATIVE_TEUCHOS_DENSE_MATRIX_HPP_
 
+#ifdef PRESSIO_ENABLE_TPL_TRILINOS
 #include <Teuchos_SerialDenseMatrix.hpp>
+#endif
 
 namespace pressio{
 
 template <typename T, typename enable = void>
 struct is_dense_matrix_teuchos : std::false_type {};
 
+#ifdef PRESSIO_ENABLE_TPL_TRILINOS
 template <typename T>
 struct is_dense_matrix_teuchos<
   T,
@@ -66,11 +69,12 @@ struct is_dense_matrix_teuchos<
       >::value
     >::type
   > : std::true_type{};
-//-------------------------------------------------
+#endif
 
 template <typename T, typename enable = void>
 struct is_dense_matrix_teuchos_rcp : std::false_type {};
 
+#ifdef PRESSIO_ENABLE_TPL_TRILINOS
 template <typename T>
 struct is_dense_matrix_teuchos_rcp<
   T,
@@ -79,7 +83,7 @@ struct is_dense_matrix_teuchos_rcp<
     is_dense_matrix_teuchos<typename T::element_type>::value
     >::type
   > : std::true_type{};
-
+#endif
 
 }//end namespace
 #endif  // PRESSIOOPS_TYPE_TRAITS_NATIVE_TEUCHOS_DENSE_MATRIX_HPP_
