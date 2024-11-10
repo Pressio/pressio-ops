@@ -3,6 +3,8 @@
 #include "pressio/ops.hpp"
 #include "ops_shared_level2.hpp"
 
+#include <Kokkos_DualView.hpp>
+
 //-------------------------------------------
 // Test implementation and utilities
 //-------------------------------------------
