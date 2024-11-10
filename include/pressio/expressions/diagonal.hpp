@@ -60,16 +60,12 @@ auto diagonal(T & operand)
   // note that this works also when T is const-qualified
   // because that qualification carries over to the impl
 
-  constexpr bool constraint = false
-#ifdef PRESSIO_ENABLE_TPL_KOKKOS
-    || is_dense_matrix_kokkos<T>::value
-#endif
-#ifdef PRESSIO_ENABLE_TPL_EIGEN
-    || is_dense_matrix_eigen<T>::value
-#endif
-    ;
-  static_assert(constraint, "pressio::diagonal() currently supported only for an Eigen dynamic matrix"
-		" or a Kokkos rank-2 View.");
+  constexpr bool constraint =
+    is_dense_matrix_kokkos<T>::value
+    || is_dense_matrix_eigen<T>::value;
+  static_assert(constraint,
+       "pressio::diagonal() currently supported only for an Eigen dynamic matrix"
+       " or a Kokkos rank-2 View.");
   static_assert(Traits<T>::rank==2,
 		"diagonal can only be applied to a rank-2 object.");
 
