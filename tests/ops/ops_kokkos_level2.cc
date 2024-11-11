@@ -73,21 +73,18 @@ private:
   template <typename ...ViewProps>
   static void set_input(Kokkos::View<ViewProps...> x, const std::vector<double> &values) {
     assert(x.extent(0) == values.size());
-    auto x_h = Kokkos::create_mirror_view_and_copy(Kokkos::HostSpace(), x);
     for (size_t i = 0; i < x.extent(0); ++i) {
-      x_h(i) = values[i];
+      x(i) = values[i];
     }
-    Kokkos::deep_copy(x, x_h);
   }
 
   // populates input matrix with unique integer values
   template <typename ...ViewProps>
   static void set_matrix(Kokkos::View<ViewProps...> mtx) {
-    auto mtx_h = mtx;
     size_t ex0 = mtx.extent(0), ex1 = mtx.extent(1);
     for (size_t i = 0; i < ex0; ++i) {
       for (size_t j = 0; j < ex1; ++j) {
-        mtx_h(i, j) = (double)(i * ex1 + j + 1.0);
+        mtx(i, j) = (double)(i * ex1 + j + 1.0);
       }
     }
   }
