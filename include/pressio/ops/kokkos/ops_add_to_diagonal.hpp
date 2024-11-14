@@ -62,7 +62,20 @@ std::enable_if_t<
   >
 add_to_diagonal(T & o, const ScalarType & value)
 {
-  // Temporary placeholder so that code will compile
+  // Prior to the definition of this function,
+  // add_to_diagonal was only enabled for Eigen containers
+  // (see ops/eigen/add_to_diagonal.hpp).
+  //
+  // In Pressio PR 708 (https://github.com/Pressio/pressio/pull/708),
+  // we added a Kokkos-only CI pipeline. However, disabling Eigen
+  // caused a build error because add_to_diagonal was still called
+  // by Pressio's discrete_jacobian function.
+  //
+  // This function therefore serves as a placeholder so that when Eigen
+  // is disabled, the function still exists and the code can compile.
+  //
+  // Note: This change is temporary, and this function
+  // should be implemented properly in the future.
   throw std::runtime_error("missing implementation");
 }
 
