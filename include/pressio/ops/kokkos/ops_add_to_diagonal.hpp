@@ -62,6 +62,7 @@ std::enable_if_t<
   >
 add_to_diagonal(T & o, const ScalarType & value)
 {
+  // Temporary placeholder so that code will compile
   throw std::runtime_error("missing implementation");
 }
 
