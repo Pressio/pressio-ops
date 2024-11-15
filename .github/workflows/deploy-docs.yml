@@ -2,7 +2,7 @@ name: Deploy docs
 
 on:
   push:
-    branches: [ main ]
+    branches: [ develop, 29-deploy-docs-on-pushes-to-develop ]
 
 jobs:
   build-and-deploy-docs:
