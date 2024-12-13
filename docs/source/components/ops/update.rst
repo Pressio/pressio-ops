@@ -67,8 +67,6 @@ Description
 
   * Rank-1 or Rank-2 (see specific overload) Eigen containers or Pressio expressions of Eigen containers
 
-  * Rank-1 Epetra containers
-
   * Rank-1 or Rank-2 (see specific overload) Kokkos containers or Pressio expressions of Kokkos containers
 
   * Rank-1 Tpetra containers or Pressio column expressions acting on Tpetra

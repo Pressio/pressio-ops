@@ -64,7 +64,6 @@ template<class T, class Enable = void> struct Traits;
 #include "type_traits/native_teuchos_vector.hpp"
 #include "type_traits/native_tpetra_block_vector.hpp"
 #include "type_traits/native_tpetra_vector.hpp"
-#include "type_traits/native_epetra_vector.hpp"
 
 //*** matrix ****
 #include "type_traits/native_kokkos_dense_matrix.hpp"
@@ -75,7 +74,6 @@ template<class T, class Enable = void> struct Traits;
 //*** multi vector ****
 #include "type_traits/native_tpetra_block_multi_vector.hpp"
 #include "type_traits/native_tpetra_multi_vector.hpp"
-#include "type_traits/native_epetra_multi_vector.hpp"
 
 #include "type_traits/traits_tpl.hpp"
 

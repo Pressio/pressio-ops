@@ -71,11 +71,6 @@ Description
 
     * All container types are either Eigen containers or Pressio expressions of Eigen containers,
 
-  * Epetra
-
-    * ``A_type`` is an Epetra rank-2 container
-    * Either ``x_type`` or ``y_type`` is a rank-1 Epetra container
-    * The other non-Epetra container is a rank-1 Teuchos or Eigen container
 
   * Kokkos
 

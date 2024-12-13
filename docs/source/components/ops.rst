@@ -35,10 +35,6 @@ All expressions are within the ``pressio`` namespace.
      - ``is_vector_kokkos<T>::value``
      - ``is_dense_matrix_kokkos<T>::value``,   ``is_sparse_matrix_kokkos<T>::value``
 
-   * - Epetra
-     - ``is_vector_epetra<T>::value``
-     - ``is_multi_vector_epetra<T>::value``
-
    * - Tpetra
      - ``is_vector_tpetra<T>::value``
      - ``is_multi_vector_tpetra<T>::value``

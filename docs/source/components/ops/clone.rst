@@ -36,8 +36,6 @@ Description
 
   * a Teuchos vector
 
-  * or an Epetra vector or multi-vector
-
   * or a Tpetra vector or multi-vector
 
   * or a Tpetra block vector or multi-vector
@@ -56,7 +54,7 @@ Notes
   And any operation applied to ``result`` will not have any impact on ``operand``.
 
 * For types that have value semantics, for example ``Eigen::Matrix<...>``,
-  Epetra vector or MV, this kernel can be implemented by calling the copy constructor
+  this kernel can be implemented by calling the copy constructor
   and returning the copy
 
 * For Kokkos, Tpetra, or TpetraBlock data types, which by default have view semantics
