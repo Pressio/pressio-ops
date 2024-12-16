@@ -267,7 +267,6 @@ and <em>copying</em> all values from <code class="code highlight cpp docutils li
 <li><p>an Eigen vector or matrix object</p></li>
 <li><p>a Kokkos view</p></li>
 <li><p>a Teuchos vector</p></li>
-<li><p>or an Epetra vector or multi-vector</p></li>
 <li><p>or a Tpetra vector or multi-vector</p></li>
 <li><p>or a Tpetra block vector or multi-vector</p></li>
 </ul>
@@ -286,7 +285,7 @@ to <code class="code highlight cpp docutils literal highlight-cpp"><span class="
 have any impact on <code class="docutils literal notranslate"><span class="pre">result</span></code>.
 And any operation applied to <code class="docutils literal notranslate"><span class="pre">result</span></code> will not have any impact on <code class="docutils literal notranslate"><span class="pre">operand</span></code>.</p></li>
 <li><p>For types that have value semantics, for example <code class="docutils literal notranslate"><span class="pre">Eigen::Matrix&lt;...&gt;</span></code>,
-Epetra vector or MV, this kernel can be implemented by calling the copy constructor
+this kernel can be implemented by calling the copy constructor
 and returning the copy</p></li>
 <li><p>For Kokkos, Tpetra, or TpetraBlock data types, which by default have view semantics
 (i.e. a copy is a shallow copy), the operation can be implemented by first making a new
@@ -331,7 +330,7 @@ object with extents identical to <code class="docutils literal notranslate"><spa
             
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on Dec 13, 2024</div>
+              Last updated on Dec 16, 2024</div>
           </div>
           <div class="right-details">
             <div class="icons">

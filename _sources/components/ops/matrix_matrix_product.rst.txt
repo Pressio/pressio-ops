@@ -74,8 +74,6 @@ The matrix-matrix product works for the following matrix types:
 
 * Eigen (all containers are rank-2 Eigen matrices)
 
-* Epetra (``A`` and ``B`` are Epetra multi-vectors; ``C`` is a rank-2 Eigen matrix)
-
 * Kokkos (all containers are rank-2 Kokkos views)
 
 * Tpetra (``A`` and ``B`` are Tpetra multi-vectors; ``C`` is either a rank-2 Eigen matrix or a rank-2 Kokkos view)

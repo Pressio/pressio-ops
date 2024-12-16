@@ -104,10 +104,6 @@ The following list is partial, and more will be added as we continue the develop
      - Provides static member constant ``value`` equal to ``true`` if ``T`` is a dense Teuchos vector. :raw-html-m2r:`<br/>` Requires: ``PRESSIO_ENABLE_TPL_TRILINOS==On``
    * - ``template<class T>`` :raw-html-m2r:`<br/>` ``struct is_dense_matrix_teuchos;``
      - Provides static member constant ``value`` equal to ``true`` if ``T`` is a dense Teuchos matrix. :raw-html-m2r:`<br/>` Requires: ``PRESSIO_ENABLE_TPL_TRILINOS==On``
-   * - ``template<class T>`` :raw-html-m2r:`<br/>` ``struct is_vector_epetra;``
-     - Provides static member constant ``value`` equal to ``true`` if ``T`` is Epetra vector. :raw-html-m2r:`<br/>` Requires: ``PRESSIO_ENABLE_TPL_TRILINOS==On``
-   * - ``template<class T>`` :raw-html-m2r:`<br/>` ``struct is_multi_vector_epetra;``
-     - Provides static member constant ``value`` equal to ``true`` if ``T`` is an Epetra multi vector. :raw-html-m2r:`<br/>` Requires: ``PRESSIO_ENABLE_TPL_TRILINOS==On``
    * - ``template<class T>`` :raw-html-m2r:`<br/>` ``struct is_vector_tpetra;``
      - Provides static member constant ``value`` equal to ``true`` if ``T`` is a Tpetra vector. :raw-html-m2r:`<br/>` Requires: ``PRESSIO_ENABLE_TPL_TRILINOS==On``
    * - ``template<class T>`` :raw-html-m2r:`<br/>` ``struct is_multi_vector_tpetra;``

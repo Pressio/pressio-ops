@@ -26,8 +26,6 @@ Description
 
   * Eigen (or a Pressio expression acting on an Eigen container)
 
-  * Epetra
-
   * Kokkos (or a Pressio expression acting on a Kokkos container)
 
   * Teuchos

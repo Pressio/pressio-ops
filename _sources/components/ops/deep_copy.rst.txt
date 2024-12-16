@@ -37,8 +37,6 @@ Description
 
   * a Tpetra block vector or multi-vector
 
-  * a Epetra vector or multi-vector
-
 Notes
 -----
 
