@@ -27,9 +27,6 @@ jobs:
         build_type:
           - Release
           - Debug
-        epetra_toggle:
-          - ON
-          - OFF
 
     runs-on: ubuntu-latest
     container: ghcr.io/pressio/${{ matrix.image }}:${{ matrix.tag }}
@@ -61,7 +58,6 @@ jobs:
           -D PRESSIO_ENABLE_TPL_EIGEN:BOOL=ON \
           -D PRESSIO_ENABLE_TPL_MPI:BOOL=ON \
           -D PRESSIO_ENABLE_TPL_TRILINOS:BOOL=ON \
-          -D PRESSIO_ENABLE_EPETRA:BOOL=${{ matrix.epetra_toggle }} \
           -D PRESSIO_ENABLE_TPL_KOKKOS:BOOL=ON \
           -D EIGEN_INCLUDE_DIR=/eigen/eigen-${{ env.eigen_version }} \
           -D Trilinos_DIR=${{ env.trilinos_dir }}/lib/cmake/Trilinos \

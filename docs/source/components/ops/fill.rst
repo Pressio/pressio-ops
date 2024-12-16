@@ -34,8 +34,6 @@ Description
 
   * a Tpetra block vector or multi-vector
 
-  * a Epetra vector or multi-vector
-
   * a pressio expression, i.e. ``pressio::diag``, ``pressio::span``, ``pressio::subspan``, based on an Eigen or Kokkos container
 
 * ``ScalarType`` must be convertible to ``pressio::Traits<T>::scalar_type``

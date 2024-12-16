@@ -33,8 +33,6 @@ Description
 
   * a Tpetra block vector
 
-  * a Epetra vector
-
   * a Pressio expression, i.e. ``pressio::diag``, ``pressio::span``, ``pressio::subspan``, based on Eigen or Kokkos container
 
 Notes

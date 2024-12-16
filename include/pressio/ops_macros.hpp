@@ -69,12 +69,6 @@ static_assert(_PRESSIO_CPLUSPLUS >= PRESSIO_CXX_STD_17, "PRESSIO requires C++17 
 // ----------------------------------------
 // TPL macros
 // ----------------------------------------
-#if defined PRESSIO_ENABLE_EPETRA
-#if !defined PRESSIO_ENABLE_TPL_TRILINOS
-#define PRESSIO_ENABLE_TPL_TRILINOS
-#endif
-#endif
-
 #if defined PRESSIO_ENABLE_TPL_TRILINOS
 // if trilinos enabled, kokkos and MPI should be too
 #if !defined PRESSIO_ENABLE_TPL_KOKKOS
