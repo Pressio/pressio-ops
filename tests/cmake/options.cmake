@@ -18,7 +18,6 @@ endif()
 
 # tpls
 #=====================================================================
-
 option(PRESSIO_ENABLE_TPL_EIGEN		  "Enable Eigen TPL"	  OFF)
 option(PRESSIO_ENABLE_TPL_TRILINOS	"Enable Trilinos TPL"	OFF)
 option(PRESSIO_ENABLE_TPL_KOKKOS		"Enable Kokkos TPL"	  OFF)
