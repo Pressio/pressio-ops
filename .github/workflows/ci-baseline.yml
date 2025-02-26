@@ -72,7 +72,7 @@ jobs:
 
       - name: Build
         run: |
-          cmake --build builddir --target install
+          cmake --build builddir
 
       - name: Run tests
         working-directory: builddir/tests
