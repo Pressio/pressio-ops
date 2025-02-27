@@ -1,10 +1,10 @@
 .. role:: raw-html-m2r(raw)
    :format: html
 
-Installation and Dependencies
+Configuration and Dependencies
 =============================
 
-Installation
+Configuration
 ------------
 
 .. tip::

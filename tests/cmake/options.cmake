@@ -1,8 +1,23 @@
 
-option(PRESSIO_ENABLE_CXX17 "Enable C++17" OFF)
-# minimum required is 17
-add_definitions(-DPRESSIO_ENABLE_CXX17)
+# c++ standard
+#=====================================================================
+if (NOT CMAKE_CXX_STANDARD)
+  set(CMAKE_CXX_STANDARD 17)
+  set(CMAKE_CXX_STANDARD_REQUIRED ON)
+  set(CMAKE_CXX_EXTENSIONS OFF)
+endif()
 
+message("${Magenta}>> CMAKE_CXX_STANDARD is set to ${CMAKE_CXX_STANDARD} ${ColourReset}")
+
+if(CMAKE_CXX_STANDARD STREQUAL "17"
+    OR CMAKE_CXX_STANDARD STREQUAL "20")
+  if(NOT "cxx_std_${CMAKE_CXX_STANDARD}" IN_LIST CMAKE_CXX_COMPILE_FEATURES)
+    message(FATAL_ERROR "Compiler does not support C++${CMAKE_CXX_STANDARD}. This is required.")
+  endif()
+endif()
+
+# tpls
+#=====================================================================
 option(PRESSIO_ENABLE_TPL_EIGEN		  "Enable Eigen TPL"	  OFF)
 option(PRESSIO_ENABLE_TPL_TRILINOS	"Enable Trilinos TPL"	OFF)
 option(PRESSIO_ENABLE_TPL_KOKKOS		"Enable Kokkos TPL"	  OFF)

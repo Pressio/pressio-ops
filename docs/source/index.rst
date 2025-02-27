@@ -80,7 +80,7 @@ Each component (level) of the stack depends on the ones below it.
 Get Started
 -----------
 
-* `Install <installation.html>`_: (currently) header-only, should be trivial
+* `Configuration <configuration.html>`_: (currently) header-only, should be trivial
 
 
 License and Citation
@@ -102,7 +102,7 @@ open an issue on `github <https://github.com/Pressio/pressio>`_.
    :maxdepth: 1
    :hidden:
 
-   installation
+   configuration
 
 .. toctree::
    :caption: API
