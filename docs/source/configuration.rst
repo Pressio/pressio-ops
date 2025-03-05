@@ -2,10 +2,10 @@
    :format: html
 
 Configuration and Dependencies
-=============================
+==============================
 
 Configuration
-------------
+-------------
 
 .. tip::
 
@@ -34,16 +34,16 @@ Currently, the list of TPLs supported is shown below:
      - Version Known to Work/run in CI
    * - Eigen
      - Required
-     - 3.3.7
+     - 3.4.0
    * - Trilinos
      - Optional
-     - commit: ef73d14babf6e7556b0420add98cce257ccaa56b
+     - commits: 0dc4553, 5bbda25
    * - MPI
      - Optional
      - --
    * - Kokkos
      - Optional
-     - 3.1.0
+     - 4.4.01
    * - BLAS
      - Optional
      - --
@@ -52,7 +52,7 @@ Currently, the list of TPLs supported is shown below:
      - --
    * - GoogleTest
      - Optional
-     - 1.10.0
+     - 1.14.0
 
 Eigen is the only required dependency because it is the
 default choice for instantiating the ROM data structures
