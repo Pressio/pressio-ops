@@ -42,7 +42,6 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.github_token }}
     env:
-      eigen_version: 3.4.0
       num_cpus: 2 # $(cat /proc/cpuinfo | grep processor -c)
 
     steps:
@@ -59,7 +58,6 @@ jobs:
             ${{ matrix.cmake_extra_args }} \
             -D PRESSIO_OPS_ENABLE_TESTS:BOOL=ON \
             -D PRESSIO_ENABLE_TPL_EIGEN:BOOL=ON \
-            -D EIGEN_INCLUDE_DIR=/eigen/eigen-${{ env.eigen_version }}
 
       - name: Build
         run: |

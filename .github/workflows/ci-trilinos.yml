@@ -30,9 +30,8 @@ jobs:
     container: ghcr.io/pressio/${{ matrix.image }}:${{ matrix.tag }}
 
     env:
-      eigen_version: 3.4.0
       num_cpus: 4
-      trilinos_dir: /home/pressio_builds/trilinos/install
+      trilinos_dir: /trilinos/install
 
     steps:
     - uses: actions/checkout@v4
@@ -50,7 +49,6 @@ jobs:
           -D PRESSIO_ENABLE_TPL_MPI:BOOL=ON \
           -D PRESSIO_ENABLE_TPL_TRILINOS:BOOL=ON \
           -D PRESSIO_ENABLE_TPL_KOKKOS:BOOL=ON \
-          -D EIGEN_INCLUDE_DIR=/eigen/eigen-${{ env.eigen_version }} \
           -D Trilinos_DIR=${{ env.trilinos_dir }}/lib/cmake/Trilinos \
           -D CMAKE_CXX_FLAGS='-Wall'
 
