@@ -27,7 +27,7 @@ jobs:
           - Debug
 
     runs-on: ubuntu-latest
-    container: ghcr.io/pressio/${{ matrix.image }}:${{ matrix.tag }}
+    container: ghcr.io/pressio/${{ matrix.image }}
 
     env:
       num_cpus: 4
