@@ -23,8 +23,8 @@ jobs:
       fail-fast: false
       matrix:
         image:
-          - ubuntu-gnu11-kokkos-cpu-serial
-          - ubuntu-gnu11-kokkos-cpu-openmp
+          - ubuntu-05
+          - ubuntu-06
         build_type:
           - Debug
 

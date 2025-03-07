@@ -23,17 +23,15 @@ jobs:
       fail-fast: false
       matrix:
         image:
-          - fedora-clang17
-          - fedora-gnu13
-          - ubuntu-clang14
-          - ubuntu-gnu11
+          - ubuntu-01
+          - ubuntu-03
         build_type:
           - Release
           - Debug
         cmake_extra_args:
           - ''
         include:
-          - image: ubuntu-clang14
+          - image: ubuntu-01
             build_type: Release
             cmake_extra_args: '-D CMAKE_CXX_STANDARD=20 -D PRESSIO_ENABLE_CXX20=ON'
 
@@ -49,12 +47,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
-      - name: Preparing environment
-        run: |
-          wget https://gitlab.com/libeigen/eigen/-/archive/${{ env.eigen_version }}/eigen-${{ env.eigen_version }}.tar.gz \
-          && mkdir -p /eigen \
-          && tar -xf eigen-${{ env.eigen_version }}.tar.gz -C /eigen
 
       - name: Configure
         run: |

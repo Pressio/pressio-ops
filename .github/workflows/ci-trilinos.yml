@@ -11,7 +11,7 @@ on:
     - '**/*.md'
 
 concurrency:
-  group: ${ {github.event_name }}-${{ github.workflow }}-${{ github.ref }}
+  group: ${{ github.event_name }}-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: ${{github.event_name == 'pull_request'}}
 
 jobs:
@@ -20,10 +20,8 @@ jobs:
     strategy:
       matrix:
         image:
-          - ubuntu-gnu11-trilinos
-        tag:
-          - 0dc4553
-          - 5bbda25
+          - ubuntu-07
+          - ubuntu-08
         build_type:
           - Release
           - Debug
@@ -38,13 +36,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-
-    - name: Preparing environment
-      run: |
-        sed -i -e '$alocalhost slots=4' /etc/openmpi/openmpi-default-hostfile \
-        && wget https://gitlab.com/libeigen/eigen/-/archive/${{ env.eigen_version }}/eigen-${{ env.eigen_version }}.tar.gz \
-        && mkdir -p /eigen \
-        && tar -xf eigen-${{ env.eigen_version }}.tar.gz -C /eigen
 
     - name: Configure
       run: |
