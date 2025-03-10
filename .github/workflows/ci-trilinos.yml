@@ -11,7 +11,7 @@ on:
     - '**/*.md'
 
 concurrency:
-  group: ${ {github.event_name }}-${{ github.workflow }}-${{ github.ref }}
+  group: ${{ github.event_name }}-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: ${{github.event_name == 'pull_request'}}
 
 jobs:
@@ -20,31 +20,21 @@ jobs:
     strategy:
       matrix:
         image:
-          - ubuntu-gnu11-trilinos
-        tag:
-          - 0dc4553
-          - 5bbda25
+          - ubuntu-07
+          - ubuntu-08
         build_type:
           - Release
           - Debug
 
     runs-on: ubuntu-latest
-    container: ghcr.io/pressio/${{ matrix.image }}:${{ matrix.tag }}
+    container: ghcr.io/pressio/${{ matrix.image }}
 
     env:
-      eigen_version: 3.4.0
       num_cpus: 4
-      trilinos_dir: /home/pressio_builds/trilinos/install
+      trilinos_dir: /trilinos/install
 
     steps:
     - uses: actions/checkout@v4
-
-    - name: Preparing environment
-      run: |
-        sed -i -e '$alocalhost slots=4' /etc/openmpi/openmpi-default-hostfile \
-        && wget https://gitlab.com/libeigen/eigen/-/archive/${{ env.eigen_version }}/eigen-${{ env.eigen_version }}.tar.gz \
-        && mkdir -p /eigen \
-        && tar -xf eigen-${{ env.eigen_version }}.tar.gz -C /eigen
 
     - name: Configure
       run: |
@@ -59,7 +49,6 @@ jobs:
           -D PRESSIO_ENABLE_TPL_MPI:BOOL=ON \
           -D PRESSIO_ENABLE_TPL_TRILINOS:BOOL=ON \
           -D PRESSIO_ENABLE_TPL_KOKKOS:BOOL=ON \
-          -D EIGEN_INCLUDE_DIR=/eigen/eigen-${{ env.eigen_version }} \
           -D Trilinos_DIR=${{ env.trilinos_dir }}/lib/cmake/Trilinos \
           -D CMAKE_CXX_FLAGS='-Wall'
 
