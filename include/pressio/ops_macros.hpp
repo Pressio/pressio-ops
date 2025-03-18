@@ -77,9 +77,6 @@ static_assert(_PRESSIO_CPLUSPLUS >= PRESSIO_CXX_STD_17, "PRESSIO requires C++17 
 #if !defined PRESSIO_ENABLE_TPL_MPI
 #define PRESSIO_ENABLE_TPL_MPI
 #endif
-#if !defined PRESSIO_ENABLE_TEUCHOS_TIMERS
-#define PRESSIO_ENABLE_TEUCHOS_TIMERS
-#endif
 #endif
 
 #endif
