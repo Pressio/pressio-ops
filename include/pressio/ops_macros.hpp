@@ -50,7 +50,7 @@
 #define PRESSIOOPS_OPS_MACROS_HPP
 
 #define PRESSIO_OPS_MAJOR_VERSION 0
-#define PRESSIO_OPS_MINOR_VERSION 14
+#define PRESSIO_OPS_MINOR_VERSION 15
 #define PRESSIO_OPS_PATCH_VERSION 0
 
 // ----------------------------------------
