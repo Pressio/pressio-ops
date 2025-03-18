@@ -50,7 +50,7 @@
 #define PRESSIOOPS_OPS_MACROS_HPP
 
 #define PRESSIO_OPS_MAJOR_VERSION 0
-#define PRESSIO_OPS_MINOR_VERSION 14
+#define PRESSIO_OPS_MINOR_VERSION 15
 #define PRESSIO_OPS_PATCH_VERSION 0
 
 // ----------------------------------------
@@ -76,9 +76,6 @@ static_assert(_PRESSIO_CPLUSPLUS >= PRESSIO_CXX_STD_17, "PRESSIO requires C++17 
 #endif
 #if !defined PRESSIO_ENABLE_TPL_MPI
 #define PRESSIO_ENABLE_TPL_MPI
-#endif
-#if !defined PRESSIO_ENABLE_TEUCHOS_TIMERS
-#define PRESSIO_ENABLE_TEUCHOS_TIMERS
 #endif
 #endif
 
