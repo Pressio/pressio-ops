@@ -10,9 +10,6 @@ Configuration
 .. tip::
 
     pressio-ops is header-only, so it does not need to be precompiled and linked to.
-    However, since we use preprocessor directives to conditionally
-    enable/disable code based on target third-party libraries,
-    one needs to account for this. See below for the details.
 
 .. warning::
 
@@ -58,10 +55,10 @@ Eigen is the only required dependency because it is the
 default choice for instantiating the ROM data structures
 and solving the (dense) ROM problem used in `pressio <https://github.com/Pressio/pressio>`_.
 
-CMake Keywords
-~~~~~~~~~~~~~~
+Macros
+~~~~~~
 
-Enabling/disabling specific dependencies can be done via the following cmake variables:
+Enabling/disabling specific dependencies can be done via the following macros:
 
 .. list-table::
    :widths: 30 60 10
@@ -88,10 +85,6 @@ Enabling/disabling specific dependencies can be done via the following cmake var
      - self-explanatory
      - ``OFF`` but automatically ``ON`` if ``PRESSIO_ENABLE_TPL_TRILINOS=ON``
 
-   * - ``PRESSIO_ENABLE_TEUCHOS_TIMERS``
-     - self-explanatory
-     - ``OFF`` but automatically ``ON`` if ``PRESSIO_ENABLE_TPL_TRILINOS=ON``
-
 
 Obviously, the choice of which TPLs to enable is related to
 your application's dependency requirements.
@@ -102,14 +95,19 @@ On the contrary, if you have an application that relies only on
 Eigen data structures, then it makes sense to only leave only Eigen on
 and disable the rest.
 
-Also, we note that some of the cmake variables listed above are connected
-and cannot be turned on individualy.
+Also, we note that some of the macros listed above are connected.
 For example, if we enable Trilinos then ``pressio`` automatically
 enables also Kokkos, BLAS, LAPACK and MPI.
 
+Building
+~~~~~~~~
+
+``pressio-ops`` is a header-only library, and does not need to be built or installed.
+However, one may use CMake to configure and build the tests by setting the ``-DPRESSIO_OPS_ENABLE_TESTS=ON`` CMake variable.
+
+When configuring with CMake, all of the above macros may be passed as CMake variables.
 
 .. important::
 
-   All CMake keywords are prefixed with ``PRESSIO_`` which is case-sensitive.
-
    Recall that to set a keyword in CMake you used the syntax ``-Dkeyword_name``.
+   For example: ``-DPRESSIO_ENABLE_TPL_MPI=ON``
