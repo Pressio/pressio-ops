@@ -31,8 +31,3 @@ Description
   * Tpetra vectors or column expressions
 
   * Tpetra block vectors or column expressions
-
-Notes
------
-
-* See the :doc:`ops homepage <../ops>` for a table of booleans to use when checking that ``T1`` and ``T2`` have the correct types.

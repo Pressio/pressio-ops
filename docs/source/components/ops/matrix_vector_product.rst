@@ -100,8 +100,3 @@ Description
     * ``y_type`` is a rank-1 container.
       If ``x_type`` is a Tpetra Block vector, ``y_type`` may be either an Eigen vector or a rank-1 Kokkos view
       Otherwise, ``y_type`` is a Tpetra Block vector or column expression
-
-Notes
------
-
-* See the :doc:`ops homepage <../ops>` for a table of booleans to use when checking that ``A_type``, ``x_type``, and ``y_type``` have the correct types.

@@ -35,8 +35,3 @@ Description
   * a Tpetra block vector or multi-vector
 
   * a pressio expression, i.e. ``pressio::diag``, ``pressio::span``, ``pressio::subspan``, based on an Eigen, Tpetra Block, or Kokkos container
-
-Notes
------
-
-* See the :doc:`ops homepage <../ops>` for a table of booleans to use when checking that ``T`` has the correct type.
