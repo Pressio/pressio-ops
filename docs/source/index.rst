@@ -154,6 +154,15 @@ open an issue on `github <https://github.com/Pressio/pressio>`_.
 
    ./components/type_traits
 
+
+.. toctree::
+   :caption: mpl
+   :maxdepth: 1
+   :hidden:
+
+   ./components/mpl
+
+
 .. toctree::
    :caption: Miscellanea
    :maxdepth: 1
