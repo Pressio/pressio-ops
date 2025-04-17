@@ -89,21 +89,21 @@ Enabling/disabling specific dependencies can be done via the following macros:
 Obviously, the choice of which TPLs to enable is related to
 your application's dependency requirements.
 For example, if you have an application that relies on
-Trilinos data structures and want to use ``pressio``\ ,
+Trilinos data structures and want to use ``pressio-ops``\ ,
 then it makes sense to enable the Trilinos dependency.
 On the contrary, if you have an application that relies only on
 Eigen data structures, then it makes sense to only leave only Eigen on
 and disable the rest.
 
 Also, we note that some of the macros listed above are connected.
-For example, if we enable Trilinos then ``pressio`` automatically
+For example, if we enable Trilinos then ``pressio-ops`` automatically
 enables also Kokkos, BLAS, LAPACK and MPI.
 
 Building
 ~~~~~~~~
 
 ``pressio-ops`` is a header-only library, and does not need to be built or installed.
-However, one may use CMake to configure and build the tests by setting the ``-DPRESSIO_OPS_ENABLE_TESTS=ON`` CMake variable.
+However, one may use CMake to configure and build the tests by setting the ``-D PRESSIO_OPS_ENABLE_TESTS=ON`` CMake variable.
 
 When configuring with CMake, all of the above macros may be passed as CMake variables.
 
