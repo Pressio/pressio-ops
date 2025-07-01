@@ -37,8 +37,3 @@ Description
   * a pressio expression, i.e. ``pressio::diag``, ``pressio::span``, ``pressio::subspan``, based on an Eigen or Kokkos container
 
 * ``ScalarType`` must be convertible to ``pressio::Traits<T>::scalar_type``
-
-Notes
------
-
-* See the :doc:`ops homepage <../ops>` for a table of booleans to use when checking that ``T1`` and ``T2`` have the correct types.

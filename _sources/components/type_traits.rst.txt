@@ -124,3 +124,28 @@ The following list is partial, and more will be added as we continue the develop
      - Provides static member constant ``value`` equal to ``true`` if ``T`` is a dynamic dense Kokkos matrix (rank-2 View). :raw-html-m2r:`<br/>` Requires: ``PRESSIO_ENABLE_TPL_KOKKOS==On``
    * - ``template<class T>`` :raw-html-m2r:`<br/>` ``struct is_dense_matrix_kokkos;``
      - Provides static member constant ``value`` equal to ``true`` if ``T`` is a static or dynamic dense Kokkos matrix (rank-2 View).       :raw-html-m2r:`<br/>` Requires: ``PRESSIO_ENABLE_TPL_KOKKOS==On``
+
+
+
+Additionally, because Pressio features expressions for containers built on Eigen, Kokkos, and Tpetra, you can check whether or not a container is native with:
+
+.. list-table::
+   :widths: 10 20 20
+   :header-rows: 1
+   :align: left
+
+   * - Container Type
+     - Native
+     - Pressio Expression
+
+   * - Eigen
+     - ``is_native_container_eigen<T>::value``
+     - ``is_expression_acting_on_eigen<T>::value``
+
+   * - Kokkos
+     - ``is_native_container_kokkos<T>::value``
+     - ``is_expression_acting_on_kokkos<T>::value``
+
+   * - Tpetra
+     -
+     - ``is_expression_column_acting_on_tpetra<T>::value``

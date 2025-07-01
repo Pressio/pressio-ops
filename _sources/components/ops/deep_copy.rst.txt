@@ -36,9 +36,3 @@ Description
   * a Tpetra vector or multi-vector
 
   * a Tpetra block vector or multi-vector
-
-Notes
------
-
-* See the :doc:`ops homepage <../ops>` for a table of booleans to use when checking that ``T``, ``T1``, and ``T2`` have the correct types.
-
