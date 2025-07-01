@@ -99,14 +99,6 @@ public:
   }
 
   auto data() const { return operand_; }
-  // ref_t operator()(size_t i){
-  //   assert(i < (size_t)extent_);
-  //   return nativeExprObj_(i);
-  // }
-  // const_ref_t operator()(size_t i) const {
-  //   assert(i < (size_t)extent_);
-  //   return nativeExprObj_(i);
-  // }
 };
 #endif
 
