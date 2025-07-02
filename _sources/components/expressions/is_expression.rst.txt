@@ -5,27 +5,53 @@
 
 Header: ``<pressio/expressions.hpp>``
 
-API
----
 
-.. code-block:: cpp
+This page summarizes the main type traits for detecting Pressio expressions and how they interact with native containers from supported backends.
 
-  namespace pressio {
+Core Expression Type Traits
+----------------------------
 
-  // For a given type T
-  bool eigen = is_expression_acting_on_eigen<T>::value;
++----------------------------------------------+--------------------------------------------------------------+
+| Trait                                        | Description                                                  |
++==============================================+==============================================================+
+| ``pressio::is_expression<T>``                | Checks if ``T`` is any recognized Pressio expression (span,  |
+|                                              | diagonal, subspan, or column).                               |
++----------------------------------------------+--------------------------------------------------------------+
+| ``pressio::is_expression_span<T>``           | True if ``T`` is a SpanExpr.                                 |
++----------------------------------------------+--------------------------------------------------------------+
+| ``pressio::is_expression_diagonal<T>``       | True if ``T`` is a DiagonalExpr.                             |
++----------------------------------------------+--------------------------------------------------------------+
+| ``pressio::is_expression_subspan<T>``        | True if ``T`` is a SubspanExpr.                              |
++----------------------------------------------+--------------------------------------------------------------+
+| ``pressio::is_expression_column<T>``         | True if ``T`` is a ColumnExpr.                               |
++----------------------------------------------+--------------------------------------------------------------+
 
-  bool kokkos = is_expression_acting_on_kokkos<T>::value;
+Backend-Specific Expression Traits
+-----------------------------------
 
-  bool tpetra = is_expression_acting_on_tpetra<T>::value;
-  bool tpetra = is_expression_column_acting_on_tpetra<T>::value;
+These traits refine the detection to check whether a recognized expression type wraps a native container from a specific backend.
 
-  bool tpetra_block = is_expression_acting_on_tpetra_block<T>::value;
-  bool tpetra_block = is_expression_column_acting_on_tpetra_block<T>::value;
++------------------------------------------------------------+---------------------------------------------------------------------+
+| Trait                                                      | Description                                                         |
++============================================================+=====================================================================+
+| ``pressio::is_expression_acting_on_eigen<T>``              | True if ``T`` is a supported expression whose underlying container  |
+|                                                            | is an Eigen type.                                                   |
++------------------------------------------------------------+---------------------------------------------------------------------+
+| ``pressio::is_expression_acting_on_kokkos<T>``             | True if ``T`` is a supported expression whose underlying container  |
+|                                                            | is a Kokkos type.                                                   |
++------------------------------------------------------------+---------------------------------------------------------------------+
+| ``pressio::is_expression_acting_on_tpetra<T>``             | True if ``T`` is a ColumnExpr that wraps a Tpetra MultiVector.      |
++------------------------------------------------------------+---------------------------------------------------------------------+
+| ``pressio::is_expression_column_acting_on_tpetra<T>``      | True if ``T`` is both a ColumnExpr and acts on a Tpetra MultiVector.|
++------------------------------------------------------------+---------------------------------------------------------------------+
+| ``pressio::is_expression_acting_on_tpetra_block<T>``       | True if ``T`` is a ColumnExpr that wraps a Tpetra Block MultiVector.|
++------------------------------------------------------------+---------------------------------------------------------------------+
+| ``pressio::is_expression_column_acting_on_tpetra_block<T>``| True if ``T`` is both a ColumnExpr and acts on a Tpetra Block       |
+|                                                            | MultiVector.                                                        |
++------------------------------------------------------------+---------------------------------------------------------------------+
 
-  } // end namespace pressio
+Notes
+-----
 
-Description
------------
-
-* Returns a boolean to indicate if the given type ``T`` is the specified expression type
+- Each trait inherits from ``std::true_type`` or ``std::false_type`` and exposes a ``.value`` member for compile-time checks.
+- These traits automatically handle ``const``-qualified types.
