@@ -1,10 +1,9 @@
-/*
 //@HEADER
 // ************************************************************************
 //
-//                     		  Pressio
-//                             Copyright 2019
-//    National Technology & Engineering Solutions of Sandia, LLC (NTESS)
+//                              Pressio
+// Copyright 2019 National Technology & Engineering Solutions of Sandia,LLC
+//                              (NTESS)
 //
 // Under the terms of Contract DE-NA0003525 with NTESS, the
 // U.S. Government retains certain rights in this software.
@@ -43,8 +42,6 @@
 //
 // ************************************************************************
 //@HEADER
-*/
-
 #ifndef PRESSIOOPS_TYPE_TRAITS_MISCELLANEA_HPP_
 #define PRESSIOOPS_TYPE_TRAITS_MISCELLANEA_HPP_
 

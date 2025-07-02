@@ -1,11 +1,9 @@
-/*
 //@HEADER
 // ************************************************************************
 //
-// native_teuchos_vector.hpp
-//                     		  Pressio
-//                             Copyright 2019
-//    National Technology & Engineering Solutions of Sandia, LLC (NTESS)
+//                              Pressio
+// Copyright 2019 National Technology & Engineering Solutions of Sandia,LLC
+//                              (NTESS)
 //
 // Under the terms of Contract DE-NA0003525 with NTESS, the
 // U.S. Government retains certain rights in this software.
@@ -44,7 +42,6 @@
 //
 // ************************************************************************
 //@HEADER
-*/
 
 #ifndef PRESSIOOPS_TYPE_TRAITS_NATIVE_TEUCHOS_VECTOR_HPP_
 #define PRESSIOOPS_TYPE_TRAITS_NATIVE_TEUCHOS_VECTOR_HPP_
