@@ -69,7 +69,7 @@ Each component/level of the stack depends on the ones below it.
      - Header(s)
 
    * - ``ops``
-     - shared-memory/distributed linear algebra kernels specializations
+     - shared-memory/distributed linear algebra kernels wrappers
      - ``<pressio/ops.hpp>``
 
    * - ``expressions``

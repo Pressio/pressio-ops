@@ -76,7 +76,6 @@
 #include "./mpl/is_std_shared_ptr.hpp"
 #include "./mpl/publicly_inherits_from.hpp"
 
-// #include "./mpl/mpl_non_variadic.hpp"
 #include "./mpl/mpl_variadic.hpp"
 
 #endif

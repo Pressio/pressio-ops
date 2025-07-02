@@ -59,23 +59,20 @@ namespace pressio{
   std::enable_if_t< !std::is_void<typename T::NAME##_type>::value > \
   > : std::true_type{};\
 
-PRESSIO_IMPL_HAS_NESTED_TYPEDEF(scalar)            // usage: generic concepts
-PRESSIO_IMPL_HAS_NESTED_TYPEDEF(jacobian)          // usage: ode,      solvers_nonlinear
-PRESSIO_IMPL_HAS_NESTED_TYPEDEF(residual)          // usage: ode, rom, solvers_nonlinear
-PRESSIO_IMPL_HAS_NESTED_TYPEDEF(right_hand_side)   // usage: ode, rom
-PRESSIO_IMPL_HAS_NESTED_TYPEDEF(rhs)		   // usage: ode, rom
-PRESSIO_IMPL_HAS_NESTED_TYPEDEF(discrete_residual) // usage: ode, rom
-PRESSIO_IMPL_HAS_NESTED_TYPEDEF(state)             // usage: ode, rom, solvers_nonlinear
-// usage: ode
+PRESSIO_IMPL_HAS_NESTED_TYPEDEF(scalar)
+PRESSIO_IMPL_HAS_NESTED_TYPEDEF(jacobian)
+PRESSIO_IMPL_HAS_NESTED_TYPEDEF(residual)
+PRESSIO_IMPL_HAS_NESTED_TYPEDEF(right_hand_side)
+PRESSIO_IMPL_HAS_NESTED_TYPEDEF(rhs)
+PRESSIO_IMPL_HAS_NESTED_TYPEDEF(discrete_residual)
+PRESSIO_IMPL_HAS_NESTED_TYPEDEF(state)
 PRESSIO_IMPL_HAS_NESTED_TYPEDEF(mass_matrix)
 PRESSIO_IMPL_HAS_NESTED_TYPEDEF(discrete_jacobian)
 PRESSIO_IMPL_HAS_NESTED_TYPEDEF(independent_variable)
-// usage: solvers_nonlinear
 PRESSIO_IMPL_HAS_NESTED_TYPEDEF(matrix)
 PRESSIO_IMPL_HAS_NESTED_TYPEDEF(hessian)
 PRESSIO_IMPL_HAS_NESTED_TYPEDEF(gradient)
 PRESSIO_IMPL_HAS_NESTED_TYPEDEF(residual_norm)
-// usage: rom
 PRESSIO_IMPL_HAS_NESTED_TYPEDEF(time)
 PRESSIO_IMPL_HAS_NESTED_TYPEDEF(full_state)
 PRESSIO_IMPL_HAS_NESTED_TYPEDEF(reduced_state)
