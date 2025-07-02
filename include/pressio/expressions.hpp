@@ -57,7 +57,6 @@
 #include "./expressions/subspan.hpp"
 #include "./expressions/diagonal.hpp"
 #include "./expressions/column.hpp"
-
 #include "./expressions/is_expression.hpp"
 
 #endif
