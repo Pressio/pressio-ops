@@ -1,9 +1,11 @@
+/*
 //@HEADER
 // ************************************************************************
 //
-//                              Pressio
-// Copyright 2019 National Technology & Engineering Solutions of Sandia,LLC
-//                              (NTESS)
+// find_if_unary_pred.hpp
+//                     	         Pressio
+//                             Copyright 2019
+//    National Technology & Engineering Solutions of Sandia, LLC (NTESS)
 //
 // Under the terms of Contract DE-NA0003525 with NTESS, the
 // U.S. Government retains certain rights in this software.
@@ -42,6 +44,7 @@
 //
 // ************************************************************************
 //@HEADER
+*/
 
 #ifndef PRESSIOOPS_MPL_VARIADIC_FIND_IF_UNARY_PRED_HPP_
 #define PRESSIOOPS_MPL_VARIADIC_FIND_IF_UNARY_PRED_HPP_

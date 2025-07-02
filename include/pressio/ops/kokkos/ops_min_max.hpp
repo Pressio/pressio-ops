@@ -1,9 +1,11 @@
+/*
 //@HEADER
 // ************************************************************************
 //
-//                              Pressio
-// Copyright 2019 National Technology & Engineering Solutions of Sandia,LLC
-//                              (NTESS)
+// ops_min_max.hpp
+//                     	         Pressio
+//                             Copyright 2019
+//    National Technology & Engineering Solutions of Sandia, LLC (NTESS)
 //
 // Under the terms of Contract DE-NA0003525 with NTESS, the
 // U.S. Government retains certain rights in this software.
@@ -42,6 +44,7 @@
 //
 // ************************************************************************
 //@HEADER
+*/
 
 #ifndef PRESSIOOPS_OPS_KOKKOS_OPS_MIN_MAX_HPP_
 #define PRESSIOOPS_OPS_KOKKOS_OPS_MIN_MAX_HPP_
