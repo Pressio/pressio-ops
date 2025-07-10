@@ -30,5 +30,3 @@ Notes
 -----
 
 * If the diagonal entries of ``operand`` are written, then all diagonal entries must already exist.
-
-* See the :doc:`ops homepage <../ops>` for a table of booleans to use when checking that ``T1`` has the correct type.

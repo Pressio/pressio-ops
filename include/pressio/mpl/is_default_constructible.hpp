@@ -3,7 +3,7 @@
 // ************************************************************************
 //
 // is_default_constructible.hpp
-//                     		  Pressio
+//                     	         Pressio
 //                             Copyright 2019
 //    National Technology & Engineering Solutions of Sandia, LLC (NTESS)
 //

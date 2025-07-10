@@ -33,8 +33,3 @@ Description
   * Tpetra (or a Pressio expression acting on a Tpetra container)
 
   * Tpetra Block (or a Pressio expression acting on a Tpetra Block container)
-
-Notes
------
-
-* See the :doc:`ops homepage <../ops>` for a table of booleans to use when checking for the correct types.

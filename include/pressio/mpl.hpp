@@ -3,7 +3,7 @@
 // ************************************************************************
 //
 // mpl.hpp
-//                     		  Pressio
+//                     	         Pressio
 //                             Copyright 2019
 //    National Technology & Engineering Solutions of Sandia, LLC (NTESS)
 //
@@ -76,7 +76,6 @@
 #include "./mpl/is_std_shared_ptr.hpp"
 #include "./mpl/publicly_inherits_from.hpp"
 
-// #include "./mpl/mpl_non_variadic.hpp"
 #include "./mpl/mpl_variadic.hpp"
 
 #endif

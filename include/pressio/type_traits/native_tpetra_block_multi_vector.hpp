@@ -3,7 +3,7 @@
 // ************************************************************************
 //
 // native_tpetra_block_multi_vector.hpp
-//                     		  Pressio
+//                     	         Pressio
 //                             Copyright 2019
 //    National Technology & Engineering Solutions of Sandia, LLC (NTESS)
 //

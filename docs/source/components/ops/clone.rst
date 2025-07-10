@@ -60,5 +60,3 @@ Notes
 * For Kokkos, Tpetra, or TpetraBlock data types, which by default have view semantics
   (i.e. a copy is a shallow copy), the operation can be implemented by first making a new
   object with extents identical to ``operand``, followed by a deep copy, and then return the result.
-
-* See the :doc:`ops homepage <../ops>` for a table of booleans to use when checking that ``T`` has the correct type.

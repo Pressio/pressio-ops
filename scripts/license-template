@@ -2,7 +2,7 @@
 //@HEADER
 // ************************************************************************
 //
-// not_void.hpp
+// <file-name.hpp>
 //                     	         Pressio
 //                             Copyright 2019
 //    National Technology & Engineering Solutions of Sandia, LLC (NTESS)
@@ -45,19 +45,3 @@
 // ************************************************************************
 //@HEADER
 */
-
-#ifndef PRESSIOOPS_MPL_NOT_VOID_HPP_
-#define PRESSIOOPS_MPL_NOT_VOID_HPP_
-
-namespace pressio { namespace mpl {
-
-template<class T>
-struct not_void
-{
-  static constexpr bool value =
-    !std::is_same<void, typename std::remove_cv<T>>::value;
-};
-
-}} // end namespace pressio::mpl
-
-#endif  // PRESSIOOPS_MPL_NOT_VOID_HPP_

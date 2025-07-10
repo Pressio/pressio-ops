@@ -2,8 +2,8 @@
 //@HEADER
 // ************************************************************************
 //
-// ops_vector_reciprocal_kokkos_functors.hpp
-//                     		  Pressio
+// ops_vector_reciprocal_kokkos_functor.hpp
+//                     	         Pressio
 //                             Copyright 2019
 //    National Technology & Engineering Solutions of Sandia, LLC (NTESS)
 //

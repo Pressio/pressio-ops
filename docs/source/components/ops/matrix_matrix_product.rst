@@ -79,8 +79,3 @@ The matrix-matrix product works for the following matrix types:
 * Tpetra (``A`` and ``B`` are Tpetra multi-vectors; ``C`` is either a rank-2 Eigen matrix or a rank-2 Kokkos view)
 
 * Tpetra Block (``A`` and ``B`` are Tpetra Block multi-vectors; ``C`` is either a rank-2 Eigen matrix or a rank-2 Kokkos view)
-
-Notes
------
-
-* See the :doc:`ops homepage <../ops>` for a table of booleans to use when checking that ``A``, ``B``, and ``C``` have the correct types.

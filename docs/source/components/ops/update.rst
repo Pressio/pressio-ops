@@ -72,8 +72,3 @@ Description
   * Rank-1 Tpetra containers or Pressio column expressions acting on Tpetra
 
   * Rank-1 Tpetra Block containers or Pressio column expressions acting on Tpetra Block
-
-Notes
------
-
-* See the :doc:`ops homepage <../ops>` for a table of booleans to use when checking for the correct types.

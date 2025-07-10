@@ -3,7 +3,7 @@
 // ************************************************************************
 //
 // native_eigen_vector.hpp
-//                     		  Pressio
+//                     	         Pressio
 //                             Copyright 2019
 //    National Technology & Engineering Solutions of Sandia, LLC (NTESS)
 //
@@ -53,7 +53,7 @@
 #include <Eigen/Dense>
 #endif
 
-namespace pressio{ 
+namespace pressio{
 
 template <typename T, typename enable = void>
 struct is_dynamic_row_vector_eigen : std::false_type {};
@@ -63,7 +63,7 @@ template <typename T>
 struct is_dynamic_row_vector_eigen<
   T,
   std::enable_if_t<
-    std::is_same< 
+    std::is_same<
       typename std::remove_cv<T>::type,
 		  Eigen::Matrix<typename T::Scalar,1, Eigen::Dynamic>
 		 >::value
@@ -173,5 +173,5 @@ struct is_vector_eigen<
   > : std::true_type{};
 #endif
 
-}//end namespace 
+}//end namespace
 #endif  // PRESSIOOPS_TYPE_TRAITS_NATIVE_EIGEN_VECTOR_HPP_

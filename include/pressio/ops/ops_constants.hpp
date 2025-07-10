@@ -2,8 +2,8 @@
 //@HEADER
 // ************************************************************************
 //
-// utils_static_constants.hpp
-//                     		  Pressio
+// ops_constants.hpp
+//                     	         Pressio
 //                             Copyright 2019
 //    National Technology & Engineering Solutions of Sandia, LLC (NTESS)
 //

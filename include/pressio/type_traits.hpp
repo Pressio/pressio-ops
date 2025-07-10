@@ -3,7 +3,7 @@
 // ************************************************************************
 //
 // type_traits.hpp
-//                     		  Pressio
+//                     	         Pressio
 //                             Copyright 2019
 //    National Technology & Engineering Solutions of Sandia, LLC (NTESS)
 //
@@ -55,26 +55,26 @@ namespace pressio{
 template<class T, class Enable = void> struct Traits;
 }
 
-#include "type_traits/miscellanea.hpp"
-#include "type_traits/nested_typedef_detection.hpp"
+#include "./type_traits/miscellanea.hpp"
+#include "./type_traits/nested_typedef_detection.hpp"
 
 //*** vector ****
-#include "type_traits/native_eigen_vector.hpp"
-#include "type_traits/native_kokkos_vector.hpp"
-#include "type_traits/native_teuchos_vector.hpp"
-#include "type_traits/native_tpetra_block_vector.hpp"
-#include "type_traits/native_tpetra_vector.hpp"
+#include "./type_traits/native_eigen_vector.hpp"
+#include "./type_traits/native_kokkos_vector.hpp"
+#include "./type_traits/native_teuchos_vector.hpp"
+#include "./type_traits/native_tpetra_block_vector.hpp"
+#include "./type_traits/native_tpetra_vector.hpp"
 
 //*** matrix ****
-#include "type_traits/native_kokkos_dense_matrix.hpp"
-#include "type_traits/native_teuchos_dense_matrix.hpp"
-#include "type_traits/native_eigen_dense_matrix.hpp"
-#include "type_traits/native_eigen_sparse_matrix.hpp"
+#include "./type_traits/native_kokkos_dense_matrix.hpp"
+#include "./type_traits/native_teuchos_dense_matrix.hpp"
+#include "./type_traits/native_eigen_dense_matrix.hpp"
+#include "./type_traits/native_eigen_sparse_matrix.hpp"
 
 //*** multi vector ****
-#include "type_traits/native_tpetra_block_multi_vector.hpp"
-#include "type_traits/native_tpetra_multi_vector.hpp"
+#include "./type_traits/native_tpetra_block_multi_vector.hpp"
+#include "./type_traits/native_tpetra_multi_vector.hpp"
 
-#include "type_traits/traits_tpl.hpp"
+#include "./type_traits/traits_tpl.hpp"
 
 #endif
