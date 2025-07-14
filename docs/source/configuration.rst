@@ -1,11 +1,8 @@
 .. role:: raw-html-m2r(raw)
    :format: html
 
-Configuration and Dependencies
-==============================
-
-Configuration
--------------
+Get Started
+===========
 
 .. tip::
 
@@ -111,3 +108,5 @@ When configuring with CMake, all of the above macros may be passed as CMake vari
 
    Recall that to set a keyword in CMake you used the syntax ``-Dkeyword_name``.
    For example: ``-DPRESSIO_ENABLE_TPL_MPI=ON``
+
+

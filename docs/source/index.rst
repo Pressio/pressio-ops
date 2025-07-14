@@ -88,7 +88,9 @@ Each component/level of the stack depends on the ones below it.
 Get Started
 -----------
 
-* `Configuration <configuration.html>`_: (currently) header-only, should be trivial
+* `Read here <configuration.html>`_
+
+* `Hello world <helloworld.html>`_
 
 
 License and Citation
@@ -103,7 +105,7 @@ Questions?
 ----------
 
 Find us on Slack: https://pressioteam.slack.com or
-open an issue on `github <https://github.com/Pressio/pressio>`_.
+open an issue on `github <https://github.com/Pressio/pressio-ops>`_.
 
 
 .. toctree::
@@ -111,6 +113,7 @@ open an issue on `github <https://github.com/Pressio/pressio>`_.
    :hidden:
 
    configuration
+   helloworld
 
 .. toctree::
    :caption: ops
