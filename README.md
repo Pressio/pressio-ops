@@ -8,6 +8,10 @@ The goal is for users to be able to clone and use this repository on its own, wi
 
 https://pressio.github.io/pressio-ops/
 
+# Hello world
+
+[Here](https://github.com/Pressio/pressio-ops/examples/hello_world.cpp).
+
 ## Questions?
 
 Find us on Slack: https://pressioteam.slack.com and/or
