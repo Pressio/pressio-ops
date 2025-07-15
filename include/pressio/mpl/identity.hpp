@@ -2,7 +2,7 @@
 //@HEADER
 // ************************************************************************
 //
-// mpl.hpp
+// identity.hpp
 //                     	         Pressio
 //                             Copyright 2019
 //    National Technology & Engineering Solutions of Sandia, LLC (NTESS)
@@ -46,31 +46,17 @@
 //@HEADER
 */
 
-#ifndef PRESSIOOPS_MPL_HPP
-#define PRESSIOOPS_MPL_HPP
+#ifndef PRESSIOOPS_MPL_IDENTITY_HPP_
+#define PRESSIOOPS_MPL_IDENTITY_HPP_
 
-#include "ops_macros.hpp"
+namespace pressio{ namespace mpl {
 
-#include <type_traits>
-#include <memory>
-#include <complex>
-#include <cstddef>
-#include <tuple>
+/**
+ * \brief Returns the argument passed
+ */
+template<class T> struct identity{
+  using type = T;
+};
 
-// some will change/disappear once we move to C++14
-#include "./mpl/identity.hpp"
-#include "./mpl/void_t.hpp"
-#include "./mpl/remove_cvref.hpp"
-#include "./mpl/remove_reference.hpp"
-#include "./mpl/all_of.hpp"
-#include "./mpl/none_of.hpp"
-#include "./mpl/any_of.hpp"
-#include "./mpl/at.hpp"
-#include "./mpl/size.hpp"
-
-#include "./mpl/detection_idiom.hpp"
-#include "./mpl/is_std_shared_ptr.hpp"
-
-#include "./mpl/mpl_variadic.hpp"
-
-#endif
+}} // namespace pressio::mpl
+#endif  // PRESSIOOPS_MPL_IDENTITY_HPP_
