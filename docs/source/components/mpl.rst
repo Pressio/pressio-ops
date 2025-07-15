@@ -28,28 +28,6 @@ The following is a *partial* list only intended to provide a general idea of the
 To find out all supported cases, browse the `source <https://github.com/Pressio/pressio-ops/tree/main/include/pressio/mpl>`__.
 
 
-..
-   ``pressio::mpl::not_void``
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-   .. code-block:: cpp
-
-      template<class T> struct not_void;
-
-   *
-     Provides the static member constant ``value`` that is equal to true, if ``T`` is NOT of
-     the type ``void``\ , ``const void``\ , ``volatile void``\ , or ``const volatile void``.
-     Otherwise, value is true.
-
-   *
-     Example:\ :raw-html-m2r:`<br/>`
-
-     .. code-block:: cpp
-
-	namespace pmpl = pressio::mpl;
-	static_assert(pmpl::not_void<double>::value, "" );
-
-
 ``pressio::mpl::all_of``
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -100,15 +78,3 @@ To find out all supported cases, browse the `source <https://github.com/Pressio/
   none of the elements in the sequence satisfy the predicate ``F``.
   Otherwise, value is equal to false.
 
-
-``pressio::mpl::is_subscriptable_as``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: cpp
-
-   template<class T, class IndexType> struct is_subscriptable_as;
-
-* Provides the static member constant ``value`` that is equal to true if
-  ``T`` has subscript operator ``[]``\ , it can be indexed by an instance of ``IndexType``\ ,
-  and the return type is not void.
-  Otherwise, value is equal to false.

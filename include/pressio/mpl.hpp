@@ -51,16 +51,16 @@
 
 #include "ops_macros.hpp"
 
-#include "./mpl/mpl_ConfigDefs.hpp"
+#include <type_traits>
+#include <memory>
+#include <complex>
+#include <cstddef>
+#include <tuple>
 
 // some will change/disappear once we move to C++14
-#include "./mpl/identity.hpp"
-#include "./mpl/conditional_t.hpp"
 #include "./mpl/void_t.hpp"
-#include "./mpl/not_same.hpp"
 #include "./mpl/remove_cvref.hpp"
 #include "./mpl/remove_reference.hpp"
-#include "./mpl/not_void.hpp"
 #include "./mpl/all_of.hpp"
 #include "./mpl/none_of.hpp"
 #include "./mpl/any_of.hpp"
@@ -68,13 +68,7 @@
 #include "./mpl/size.hpp"
 
 #include "./mpl/detection_idiom.hpp"
-#include "./mpl/is_subscriptable_as.hpp"
-#include "./mpl/is_default_constructible.hpp"
-#include "./mpl/is_std_complex.hpp"
 #include "./mpl/is_std_shared_ptr.hpp"
-#include "./mpl/is_std_unique_ptr.hpp"
-#include "./mpl/is_std_shared_ptr.hpp"
-#include "./mpl/publicly_inherits_from.hpp"
 
 #include "./mpl/mpl_variadic.hpp"
 
