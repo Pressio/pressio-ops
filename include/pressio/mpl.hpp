@@ -53,24 +53,22 @@
 
 #include <type_traits>
 #include <memory>
-#include <complex>
 #include <cstddef>
 #include <tuple>
 
-// some will change/disappear once we move to C++14
 #include "./mpl/identity.hpp"
 #include "./mpl/void_t.hpp"
 #include "./mpl/remove_cvref.hpp"
-#include "./mpl/remove_reference.hpp"
 #include "./mpl/all_of.hpp"
 #include "./mpl/none_of.hpp"
 #include "./mpl/any_of.hpp"
 #include "./mpl/at.hpp"
 #include "./mpl/size.hpp"
-
 #include "./mpl/detection_idiom.hpp"
 #include "./mpl/is_std_shared_ptr.hpp"
 
+// this variadic include must be here because
+// it depends on the above
 #include "./mpl/mpl_variadic.hpp"
 
 #endif
