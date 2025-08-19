@@ -66,6 +66,7 @@
 #include "./mpl/size.hpp"
 #include "./mpl/detection_idiom.hpp"
 #include "./mpl/is_std_shared_ptr.hpp"
+#include "./mpl/is_unique_ptr.hpp"
 
 // this variadic include must be here because
 // it depends on the above
