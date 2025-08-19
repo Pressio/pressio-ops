@@ -2,6 +2,8 @@
 #include <gtest/gtest.h>
 #include "pressio/mpl.hpp"
 
+using namespace pressio::mpl;
+
 // Compile-time consistency: value vs _v
 template <typename T>
 constexpr bool value_equals_v = (is_unique_ptr<T>::value == is_unique_ptr_v<T>);
