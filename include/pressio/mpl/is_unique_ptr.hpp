@@ -2,7 +2,7 @@
 //@HEADER
 // ************************************************************************
 //
-// mpl.hpp
+// is_unique_ptr.hpp
 //                     	         Pressio
 //                             Copyright 2019
 //    National Technology & Engineering Solutions of Sandia, LLC (NTESS)
@@ -46,30 +46,23 @@
 //@HEADER
 */
 
-#ifndef PRESSIOOPS_MPL_HPP
-#define PRESSIOOPS_MPL_HPP
+#ifndef PRESSIOOPS_MPL_IS_UNIQUE_PTR_HPP_
+#define PRESSIOOPS_MPL_IS_UNIQUE_PTR_HPP_
 
-#include "ops_macros.hpp"
+namespace pressio{ namespace mpl{
 
-#include <type_traits>
-#include <memory>
-#include <cstddef>
-#include <tuple>
+template<class T> struct is_unique_ptr : std::false_type {};
 
-#include "./mpl/identity.hpp"
-#include "./mpl/void_t.hpp"
-#include "./mpl/remove_cvref.hpp"
-#include "./mpl/all_of.hpp"
-#include "./mpl/none_of.hpp"
-#include "./mpl/any_of.hpp"
-#include "./mpl/at.hpp"
-#include "./mpl/size.hpp"
-#include "./mpl/detection_idiom.hpp"
-#include "./mpl/is_std_shared_ptr.hpp"
-#include "./mpl/is_unique_ptr.hpp"
+template<class U, class D>
+struct is_unique_ptr<std::unique_ptr<U,D>> : std::true_type {};
 
-// this variadic include must be here because
-// it depends on the above
-#include "./mpl/mpl_variadic.hpp"
+template<class T> struct is_unique_ptr<const T> : is_unique_ptr<T> {};
+template<class T> struct is_unique_ptr<volatile T> : is_unique_ptr<T> {};
+template<class T> struct is_unique_ptr<const volatile T> : is_unique_ptr<T> {};
 
-#endif
+template<class T>
+constexpr bool is_unique_ptr_v = is_unique_ptr<T>::value;
+
+
+}} // namespace pressio::mpl
+#endif  // PRESSIOOPS_MPL_IS_STD_SHARED_PTR_HPP_
