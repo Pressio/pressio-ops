@@ -6,7 +6,7 @@
 pressio-ops
 ===========
 
-This C++ library aims to provide a unified free-function-based interface
+This header-only C++ library aims to provide a unified free-function-based interface
 to facilitate usability and interoperability of widely-used linear
 algebra software libraries.
 
@@ -16,7 +16,7 @@ Motivation
 Linear algebra underpins many applications fundamental to science and industry.
 Currently, there are multiple open-source libraries offering shared- and distributed-memory
 linear algebra data structures (vectors, matrices, etc.) and/or kernel operations to manipulate them.
-For example, Trilinos, PETSc, Kokkos/Kokkos-kernels, Eigen, Blitz++, Armadillo, mlpack, BLAS/LAPACK.
+For example, Trilinos, PETSc, Kokkos/Kokkos-kernels, Eigen, Blitz++, Armadillo, mlpack, BLAS/LAPACK, Magma, Slate.
 These libraries serve as foundations to many applications.
 Compound this mutiplicity of efforts by the lack of interest and/or resources
 to improve their usability and inteoperabability, and the result is a plethora
@@ -33,7 +33,7 @@ of linear algebra libraries that shared some key aspects:
   and stick to it, or reimplemnet support for multiple backends from scratch every time.
 
 - **Hard-to-use API**: some of these libraries adopt an API that closely adheres to the BLAS standard,
-  thus making them harder to use for a generic user. It is well-known and accepted that the BLAS standard defines
+  thus making them a bit harder to use for a generic user. It is well-known and accepted that the BLAS standard defines
   an API is hard to read and use: one reason is that its API defines functions accepting several arguments,
   with adjacent parameters that can be invoked by the same arguments in either order with different meaning.
   This makes them hard to be used correctly---this was also a key motivation of
@@ -56,7 +56,6 @@ What does pressio-ops offer?
 A unified free-function-based interface to facilitate
 usability and interoperability of widely-used linear algebra software libraries.
 The supported capabilities are shown in the table below and in the expanded sidebar.
-
 Each component/level of the stack depends on the ones below it.
 
 .. list-table::
@@ -85,8 +84,8 @@ Each component/level of the stack depends on the ones below it.
      - ``<pressio/mpl.hpp>``
 
 
-Get Started
------------
+Get Started & Hello World
+-------------------------
 
 * `Read here <configuration.html>`_
 

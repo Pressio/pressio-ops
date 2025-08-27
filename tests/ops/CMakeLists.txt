@@ -13,6 +13,11 @@ if(PRESSIO_ENABLE_TPL_EIGEN)
     ops_eigen_subspan.cc
     ops_eigen_level2.cc
     ops_eigen_level3.cc
+    ops_hello_world_1.cc
+  )
+
+  add_serial_exe_and_fake_test_just_for_running(
+    hello_world_1 ${CMAKE_CURRENT_SOURCE_DIR}/hello_world_1.cc
   )
 endif()
 
@@ -29,6 +34,10 @@ if(PRESSIO_ENABLE_TPL_KOKKOS)
 endif()
 
 if(PRESSIO_ENABLE_TPL_TRILINOS)
+  add_mpi_exe_and_fake_test_just_for_running(
+    hello_world_2 ${CMAKE_CURRENT_SOURCE_DIR}/hello_world_2.cc 3
+  )
+
   # TPETRA
   set(SRC1 ${CMAKE_CURRENT_SOURCE_DIR}/ops_tpetra_vector.cc)
   add_utest_mpi(ops_vector_tpetra gTestMain_tpetra 3 "${SRC1}")
@@ -44,6 +53,9 @@ if(PRESSIO_ENABLE_TPL_TRILINOS)
 
   set(SRC1 ${CMAKE_CURRENT_SOURCE_DIR}/ops_tpetra_column_expr.cc)
   add_utest_mpi(ops_column_expr_tpetra gTestMain_tpetra 3 "${SRC1}")
+
+  set(SRC1 ${CMAKE_CURRENT_SOURCE_DIR}/ops_hello_world_2.cc)
+  add_utest_mpi(ops_hello_world_2 gTestMain_tpetra 3 "${SRC1}")
 
 
   # TPETRA BLOCK

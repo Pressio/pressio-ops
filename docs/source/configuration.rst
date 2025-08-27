@@ -48,9 +48,7 @@ Currently, the list of TPLs supported is shown below:
      - Optional
      - 1.14.0
 
-Eigen is the only required dependency because it is the
-default choice for instantiating the ROM data structures
-and solving the (dense) ROM problem used in `pressio <https://github.com/Pressio/pressio>`_.
+Eigen is the only required dependency because it is needed by `pressio-rom <https://github.com/Pressio/pressio-rom>`_.
 
 Macros
 ~~~~~~
@@ -92,21 +90,17 @@ On the contrary, if you have an application that relies only on
 Eigen data structures, then it makes sense to only leave only Eigen on
 and disable the rest.
 
-Also, we note that some of the macros listed above are connected.
+Note that some of the macros listed above are related.
 For example, if we enable Trilinos then ``pressio-ops`` automatically
 enables also Kokkos, BLAS, LAPACK and MPI.
 
-Building
-~~~~~~~~
+Building tests
+~~~~~~~~~~~~~~
 
-``pressio-ops`` is a header-only library, and does not need to be built or installed.
-However, one may use CMake to configure and build the tests by setting the ``-D PRESSIO_OPS_ENABLE_TESTS=ON`` CMake variable.
+If you are interested in building the tests, look for example at: 
 
-When configuring with CMake, all of the above macros may be passed as CMake variables.
+- `baseline CI <https://github.com/Pressio/pressio-ops/blob/de244f235fd1f0d28dca79b255473260347f13d2/.github/workflows/ci-baseline.yml#L52-L60>`_
 
-.. important::
-
-   Recall that to set a keyword in CMake you used the syntax ``-Dkeyword_name``.
-   For example: ``-DPRESSIO_ENABLE_TPL_MPI=ON``
+- `trilinos CI <https://github.com/Pressio/pressio-ops/blob/de244f235fd1f0d28dca79b255473260347f13d2/.github/workflows/ci-trilinos.yml#L41-L53>`_
 
 
