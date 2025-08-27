@@ -24,7 +24,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Configuration and Dependencies" href="configuration.html" /> 
+    <link rel="next" title="Get Started" href="configuration.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -48,7 +48,8 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration and Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Get Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helloworld.html">Hello world</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">ops</span></p>
 <ul>
@@ -120,7 +121,7 @@
              
   <section id="pressio-ops">
 <h1>pressio-ops<a class="headerlink" href="#pressio-ops" title="Link to this heading"></a></h1>
-<p>This C++ library aims to provide a unified free-function-based interface
+<p>This header-only C++ library aims to provide a unified free-function-based interface
 to facilitate usability and interoperability of widely-used linear
 algebra software libraries.</p>
 <section id="motivation">
@@ -128,7 +129,7 @@ algebra software libraries.</p>
 <p>Linear algebra underpins many applications fundamental to science and industry.
 Currently, there are multiple open-source libraries offering shared- and distributed-memory
 linear algebra data structures (vectors, matrices, etc.) and/or kernel operations to manipulate them.
-For example, Trilinos, PETSc, Kokkos/Kokkos-kernels, Eigen, Blitz++, Armadillo, mlpack, BLAS/LAPACK.
+For example, Trilinos, PETSc, Kokkos/Kokkos-kernels, Eigen, Blitz++, Armadillo, mlpack, BLAS/LAPACK, Magma, Slate.
 These libraries serve as foundations to many applications.
 Compound this mutiplicity of efforts by the lack of interest and/or resources
 to improve their usability and inteoperabability, and the result is a plethora
@@ -144,7 +145,7 @@ Also, this constitutes a problem for any new application that will being
 developed, since one would need to choose one library from the start
 and stick to it, or reimplemnet support for multiple backends from scratch every time.</p></li>
 <li><p><strong>Hard-to-use API</strong>: some of these libraries adopt an API that closely adheres to the BLAS standard,
-thus making them harder to use for a generic user. It is well-known and accepted that the BLAS standard defines
+thus making them a bit harder to use for a generic user. It is well-known and accepted that the BLAS standard defines
 an API is hard to read and use: one reason is that its API defines functions accepting several arguments,
 with adjacent parameters that can be invoked by the same arguments in either order with different meaning.
 This makes them hard to be used correctly—this was also a key motivation of
@@ -164,8 +165,8 @@ and operated on-line on different data structures.</p></li>
 <h2>What does pressio-ops offer?<a class="headerlink" href="#what-does-pressio-ops-offer" title="Link to this heading"></a></h2>
 <p>A unified free-function-based interface to facilitate
 usability and interoperability of widely-used linear algebra software libraries.
-The supported capabilities are shown in the table below and in the expanded sidebar.</p>
-<p>Each component/level of the stack depends on the ones below it.</p>
+The supported capabilities are shown in the table below and in the expanded sidebar.
+Each component/level of the stack depends on the ones below it.</p>
 <table class="docutils align-left">
 <colgroup>
 <col style="width: 10.0%" />
@@ -198,10 +199,11 @@ The supported capabilities are shown in the table below and in the expanded side
 </tbody>
 </table>
 </section>
-<section id="get-started">
-<h2>Get Started<a class="headerlink" href="#get-started" title="Link to this heading"></a></h2>
+<section id="get-started-hello-world">
+<h2>Get Started &amp; Hello World<a class="headerlink" href="#get-started-hello-world" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="configuration.html">Configuration</a>: (currently) header-only, should be trivial</p></li>
+<li><p><a class="reference external" href="configuration.html">Read here</a></p></li>
+<li><p><a class="reference external" href="helloworld.html">Hello world</a></p></li>
 </ul>
 </section>
 <section id="license-and-citation">
@@ -213,7 +215,7 @@ an (outdated) preprint at: <a class="reference external" href="https://arxiv.org
 <section id="questions">
 <h2>Questions?<a class="headerlink" href="#questions" title="Link to this heading"></a></h2>
 <p>Find us on Slack: <a class="reference external" href="https://pressioteam.slack.com">https://pressioteam.slack.com</a> or
-open an issue on <a class="reference external" href="https://github.com/Pressio/pressio">github</a>.</p>
+open an issue on <a class="reference external" href="https://github.com/Pressio/pressio-ops">github</a>.</p>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
@@ -233,14 +235,14 @@ open an issue on <a class="reference external" href="https://github.com/Pressio/
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="configuration.html" class="btn btn-neutral float-right" title="Configuration and Dependencies" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="configuration.html" class="btn btn-neutral float-right" title="Get Started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2021, National Technology &amp; Engineering Solutions of Sandia, LLC (NTESS).
-      <span class="lastupdated">Last updated on Aug 19, 2025.
+      <span class="lastupdated">Last updated on Aug 27, 2025.
       </span></p>
   </div>
 

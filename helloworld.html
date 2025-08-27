@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello world &mdash; pressio-ops-0.16.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/hacks.css?v=cc68cc33" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=7de89ed4"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="abs" href="components/ops/abs.html" />
+    <link rel="prev" title="Get Started" href="configuration.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            pressio-ops
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Get Started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Hello world</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#basic-example-using-eigen-only">Basic example using Eigen only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basic-example-using-trilinos">Basic example using Trilinos</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ops</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="components/ops/abs.html"><code class="docutils literal notranslate"><span class="pre">abs</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="components/ops/add_to_diagonal.html"><code class="docutils literal notranslate"><span class="pre">add_to_diagonal</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="components/ops/clone.html"><code class="docutils literal notranslate"><span class="pre">clone</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="components/ops/deep_copy.html"><code class="docutils literal notranslate"><span class="pre">deep_copy</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="components/ops/dot.html"><code class="docutils literal notranslate"><span class="pre">dot</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="components/ops/elementwise_multiply.html"><code class="docutils literal notranslate"><span class="pre">elementwise_multiply</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="components/ops/elementwise_reciprocal.html"><code class="docutils literal notranslate"><span class="pre">elementwise_reciprocal</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="components/ops/extent.html"><code class="docutils literal notranslate"><span class="pre">extent</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="components/ops/fill.html"><code class="docutils literal notranslate"><span class="pre">fill</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="components/ops/min_max.html"><code class="docutils literal notranslate"><span class="pre">min</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">max</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="components/ops/norms.html"><code class="docutils literal notranslate"><span class="pre">norms</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="components/ops/pow.html"><code class="docutils literal notranslate"><span class="pre">pow</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="components/ops/matrix_matrix_product.html"><code class="docutils literal notranslate"><span class="pre">product</span></code> (matrix-matrix)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="components/ops/matrix_vector_product.html"><code class="docutils literal notranslate"><span class="pre">product</span></code> (matrix-vector)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="components/ops/resize.html"><code class="docutils literal notranslate"><span class="pre">resize</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="components/ops/scale.html"><code class="docutils literal notranslate"><span class="pre">scale</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="components/ops/set_zero.html"><code class="docutils literal notranslate"><span class="pre">set_zero</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="components/ops/update.html"><code class="docutils literal notranslate"><span class="pre">update</span></code></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">expressions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="components/expressions/span.html"><code class="docutils literal notranslate"><span class="pre">span</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="components/expressions/subspan.html"><code class="docutils literal notranslate"><span class="pre">subspan</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="components/expressions/diag.html"><code class="docutils literal notranslate"><span class="pre">diagonal</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="components/expressions/column.html"><code class="docutils literal notranslate"><span class="pre">column</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="components/expressions/is_expression.html"><code class="docutils literal notranslate"><span class="pre">is_expression</span></code></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">type_traits</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="components/type_traits.html"><code class="docutils literal notranslate"><span class="pre">type_traits</span></code></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">mpl</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="components/mpl.html"><code class="docutils literal notranslate"><span class="pre">mpl</span></code></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellanea</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Pressio/pressio-ops">GitHub Repo</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/Pressio/pressio-ops/issues">Open an issue/feature req.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pressio-ops</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Hello world</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/helloworld.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="hello-world">
+<h1>Hello world<a class="headerlink" href="#hello-world" title="Link to this heading"></a></h1>
+<section id="basic-example-using-eigen-only">
+<h2>Basic example using Eigen only<a class="headerlink" href="#basic-example-using-eigen-only" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Clone pressio-ops and download <a class="reference external" href="https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.tar.gz">Eigen-3.4</a></p></li>
+<li><p>Copy the snippet below into a <cite>main.cpp</cite> somewhere:</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;pressio/ops.hpp&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Eigen/Dense&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+<span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">pressio</span><span class="p">;</span>
+
+<span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">VectorXd</span><span class="w"> </span><span class="nf">x</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="w"> </span><span class="n">y</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p">;</span>
+<span class="w"> </span><span class="n">y</span><span class="p">.</span><span class="n">setConstant</span><span class="p">(</span><span class="mf">2.0</span><span class="p">);</span>
+
+<span class="w"> </span><span class="c1">// BLAS-like dot</span>
+<span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ops</span><span class="o">::</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span><span class="w"> </span><span class="c1">// 1*2 + 2*2 + 3*2 = 12</span>
+
+<span class="w"> </span><span class="c1">// y = 1.5*x - y, so y becomes [-0.5, 1.0, 2.5]</span>
+<span class="w"> </span><span class="n">ops</span><span class="o">::</span><span class="n">update</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="mf">-1.</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="mf">1.5</span><span class="p">);</span>
+
+<span class="w"> </span><span class="c1">// z = A * x  (matrix–vector product)</span>
+<span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">MatrixXd</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">MatrixXd</span><span class="o">::</span><span class="n">Identity</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+<span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">VectorXd</span><span class="w"> </span><span class="nf">z</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="w"> </span><span class="n">ops</span><span class="o">::</span><span class="n">product</span><span class="p">(</span><span class="n">pressio</span><span class="o">::</span><span class="n">nontranspose</span><span class="p">{},</span><span class="w"> </span><span class="mf">1.</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="mf">0.</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">);</span>
+
+<span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;dot(x,y) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+<span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;y after axpby = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">y</span><span class="p">.</span><span class="n">transpose</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+<span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;z = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">z</span><span class="p">.</span><span class="n">transpose</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+
+<span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>Build/run (requires C++17):</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>g++<span class="w"> </span>-D<span class="w"> </span>PRESSIO_ENABLE_TPL_EIGEN<span class="w"> </span>-I<span class="w"> </span>&lt;path-to-pressio-ops&gt;/include/<span class="w"> </span>-I<span class="w"> </span>&lt;path-to-eigen&gt;/eigen-3.4.0<span class="w"> </span>main.cpp
+./a.out
+</pre></div>
+</div>
+</div></blockquote>
+<p>For more details about configuring and option, see <a class="reference external" href="configuration.html">here</a>.</p>
+</section>
+<section id="basic-example-using-trilinos">
+<h2>Basic example using Trilinos<a class="headerlink" href="#basic-example-using-trilinos" title="Link to this heading"></a></h2>
+<p>This assumes you have trilinos installed somewhere.</p>
+<blockquote>
+<div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;pressio/ops.hpp&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Eigen/Dense&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Tpetra_Core.hpp&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Tpetra_Map.hpp&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Tpetra_Vector.hpp&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Tpetra_MultiVector.hpp&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;Teuchos_RCP.hpp&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">**</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w"> </span><span class="n">Tpetra</span><span class="o">::</span><span class="n">ScopeGuard</span><span class="w"> </span><span class="n">scope</span><span class="p">(</span><span class="o">&amp;</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">argv</span><span class="p">);</span>
+<span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="k">using</span><span class="w"> </span><span class="n">map_t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Tpetra</span><span class="o">::</span><span class="n">Map</span><span class="o">&lt;&gt;</span><span class="p">;</span>
+<span class="w">   </span><span class="k">using</span><span class="w"> </span><span class="n">vec_t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Tpetra</span><span class="o">::</span><span class="n">Vector</span><span class="o">&lt;&gt;</span><span class="p">;</span>
+<span class="w">   </span><span class="k">using</span><span class="w"> </span><span class="n">mv_t</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">Tpetra</span><span class="o">::</span><span class="n">MultiVector</span><span class="o">&lt;&gt;</span><span class="p">;</span>
+
+<span class="w">   </span><span class="k">auto</span><span class="w"> </span><span class="n">comm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Tpetra</span><span class="o">::</span><span class="n">getDefaultComm</span><span class="p">();</span>
+<span class="w">   </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">rank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">comm</span><span class="o">-&gt;</span><span class="n">getRank</span><span class="p">();</span>
+
+<span class="w">   </span><span class="c1">// Global problem size N (distributed across ranks)</span>
+<span class="w">   </span><span class="k">const</span><span class="w"> </span><span class="n">Tpetra</span><span class="o">::</span><span class="n">global_size_t</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span>
+
+<span class="w">   </span><span class="c1">// Create a contiguous, uniformly distributed map</span>
+<span class="w">   </span><span class="k">using</span><span class="w"> </span><span class="n">LO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">map_t</span><span class="o">::</span><span class="n">local_ordinal_type</span><span class="p">;</span>
+<span class="w">   </span><span class="k">using</span><span class="w"> </span><span class="n">GO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">map_t</span><span class="o">::</span><span class="n">global_ordinal_type</span><span class="p">;</span>
+<span class="w">   </span><span class="k">auto</span><span class="w"> </span><span class="n">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Tpetra</span><span class="o">::</span><span class="n">createUniformContigMap</span><span class="o">&lt;</span><span class="n">LO</span><span class="p">,</span><span class="n">GO</span><span class="o">&gt;</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="n">comm</span><span class="p">);</span>
+
+<span class="w">   </span><span class="c1">// vectors</span>
+<span class="w">   </span><span class="n">vec_t</span><span class="w"> </span><span class="n">x</span><span class="p">(</span><span class="n">map</span><span class="p">),</span><span class="w"> </span><span class="n">y</span><span class="p">(</span><span class="n">map</span><span class="p">),</span><span class="w"> </span><span class="n">z</span><span class="p">(</span><span class="n">map</span><span class="p">);</span>
+<span class="w">   </span><span class="n">pressio</span><span class="o">::</span><span class="n">ops</span><span class="o">::</span><span class="n">fill</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span>
+<span class="w">   </span><span class="n">pressio</span><span class="o">::</span><span class="n">ops</span><span class="o">::</span><span class="n">fill</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">);</span>
+<span class="w">   </span><span class="n">pressio</span><span class="o">::</span><span class="n">ops</span><span class="o">::</span><span class="n">fill</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span>
+
+<span class="w">   </span><span class="c1">// Global dot product via pressio-ops</span>
+<span class="w">   </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pressio</span><span class="o">::</span><span class="n">ops</span><span class="o">::</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+
+<span class="w">   </span><span class="c1">// MultiVector with 2 columns (row map as x,y,z)</span>
+<span class="w">   </span><span class="n">mv_t</span><span class="w"> </span><span class="n">MV</span><span class="p">(</span><span class="n">map</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+
+<span class="w">   </span><span class="c1">// Obtain column views (each behaves like a Vector in ops)</span>
+<span class="w">   </span><span class="k">auto</span><span class="w"> </span><span class="n">col0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pressio</span><span class="o">::</span><span class="n">column</span><span class="p">(</span><span class="n">MV</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">   </span><span class="k">auto</span><span class="w"> </span><span class="n">col1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pressio</span><span class="o">::</span><span class="n">column</span><span class="p">(</span><span class="n">MV</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">   </span><span class="c1">// these modify the underlying MV because are mutable views</span>
+<span class="w">   </span><span class="n">pressio</span><span class="o">::</span><span class="n">ops</span><span class="o">::</span><span class="n">fill</span><span class="p">(</span><span class="n">col0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.</span><span class="p">);</span>
+<span class="w">   </span><span class="n">pressio</span><span class="o">::</span><span class="n">ops</span><span class="o">::</span><span class="n">fill</span><span class="p">(</span><span class="n">col1</span><span class="p">,</span><span class="w"> </span><span class="mf">4.</span><span class="p">);</span>
+
+<span class="w">   </span><span class="c1">// dot between cols</span>
+<span class="w">   </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">dcols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pressio</span><span class="o">::</span><span class="n">ops</span><span class="o">::</span><span class="n">dot</span><span class="p">(</span><span class="n">col0</span><span class="p">,</span><span class="w"> </span><span class="n">col1</span><span class="p">);</span>
+
+<span class="w">   </span><span class="c1">// z = z + 0.5 * col1</span>
+<span class="w">   </span><span class="n">pressio</span><span class="o">::</span><span class="n">ops</span><span class="o">::</span><span class="n">update</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="w"> </span><span class="mf">1.</span><span class="p">,</span><span class="w"> </span><span class="n">col1</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">);</span>
+<span class="w">   </span><span class="k">auto</span><span class="w"> </span><span class="n">dotz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pressio</span><span class="o">::</span><span class="n">ops</span><span class="o">::</span><span class="n">dot</span><span class="p">(</span><span class="n">col0</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">);</span>
+
+<span class="w">   </span><span class="c1">// perform mat-vec, storing result into Eigen vector</span>
+<span class="w">   </span><span class="c1">// v0 = MV^T * z</span>
+<span class="w">   </span><span class="n">Eigen</span><span class="o">::</span><span class="n">VectorXd</span><span class="w"> </span><span class="n">v0</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="w">   </span><span class="n">pressio</span><span class="o">::</span><span class="n">ops</span><span class="o">::</span><span class="n">fill</span><span class="p">(</span><span class="n">v0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.</span><span class="p">);</span>
+<span class="w">   </span><span class="n">pressio</span><span class="o">::</span><span class="n">ops</span><span class="o">::</span><span class="n">product</span><span class="p">(</span><span class="n">pressio</span><span class="o">::</span><span class="n">transpose</span><span class="p">{},</span><span class="w"> </span><span class="mf">1.</span><span class="p">,</span><span class="w"> </span><span class="n">MV</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">,</span><span class="w"> </span><span class="mf">0.</span><span class="p">,</span><span class="w"> </span><span class="n">v0</span><span class="p">);</span>
+
+<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rank</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">){</span>
+<span class="w">     </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;dot(x,y) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">     </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;dot(col0, col1) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">dcols</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">     </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;dotz = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">dotz</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">     </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;v0 = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">v0</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w"> </span><span class="p">}</span>
+<span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="configuration.html" class="btn btn-neutral float-left" title="Get Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="components/ops/abs.html" class="btn btn-neutral float-right" title="abs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, National Technology &amp; Engineering Solutions of Sandia, LLC (NTESS).
+      <span class="lastupdated">Last updated on Aug 27, 2025.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

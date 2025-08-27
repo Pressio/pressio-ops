@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Configuration and Dependencies &mdash; pressio-ops-0.16.0</title>
+  <title>Get Started &mdash; pressio-ops-0.16.0</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -23,7 +23,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="abs" href="components/ops/abs.html" />
+    <link rel="next" title="Hello world" href="helloworld.html" />
     <link rel="prev" title="pressio-ops" href="index.html" /> 
 </head>
 
@@ -48,11 +48,11 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Configuration and Dependencies</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Get Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#dependencies">Dependencies</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="helloworld.html">Hello world</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">ops</span></p>
 <ul>
@@ -112,7 +112,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Configuration and Dependencies</li>
+      <li class="breadcrumb-item active">Get Started</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/configuration.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -122,10 +122,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="configuration-and-dependencies">
-<h1>Configuration and Dependencies<a class="headerlink" href="#configuration-and-dependencies" title="Link to this heading"></a></h1>
-<section id="configuration">
-<h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
+  <section id="get-started">
+<h1>Get Started<a class="headerlink" href="#get-started" title="Link to this heading"></a></h1>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>pressio-ops is header-only, so it does not need to be precompiled and linked to.</p>
@@ -134,7 +132,6 @@
 <p class="admonition-title">Warning</p>
 <p>To use pressio-ops, you need at least a C++17 compiler.</p>
 </div>
-</section>
 <section id="dependencies">
 <h2>Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading"></a></h2>
 <p>Some parts contain code that are specific to third-party libraries (TPLs).
@@ -182,9 +179,7 @@ Currently, the list of TPLs supported is shown below:</p>
 </tr>
 </tbody>
 </table>
-<p>Eigen is the only required dependency because it is the
-default choice for instantiating the ROM data structures
-and solving the (dense) ROM problem used in <a class="reference external" href="https://github.com/Pressio/pressio">pressio</a>.</p>
+<p>Eigen is the only required dependency because it is needed by <a class="reference external" href="https://github.com/Pressio/pressio-rom">pressio-rom</a>.</p>
 <section id="macros">
 <h3>Macros<a class="headerlink" href="#macros" title="Link to this heading"></a></h3>
 <p>Enabling/disabling specific dependencies can be done via the following macros:</p>
@@ -227,20 +222,17 @@ then it makes sense to enable the Trilinos dependency.
 On the contrary, if you have an application that relies only on
 Eigen data structures, then it makes sense to only leave only Eigen on
 and disable the rest.</p>
-<p>Also, we note that some of the macros listed above are connected.
+<p>Note that some of the macros listed above are related.
 For example, if we enable Trilinos then <code class="docutils literal notranslate"><span class="pre">pressio-ops</span></code> automatically
 enables also Kokkos, BLAS, LAPACK and MPI.</p>
 </section>
-<section id="building">
-<h3>Building<a class="headerlink" href="#building" title="Link to this heading"></a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">pressio-ops</span></code> is a header-only library, and does not need to be built or installed.
-However, one may use CMake to configure and build the tests by setting the <code class="docutils literal notranslate"><span class="pre">-D</span> <span class="pre">PRESSIO_OPS_ENABLE_TESTS=ON</span></code> CMake variable.</p>
-<p>When configuring with CMake, all of the above macros may be passed as CMake variables.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Recall that to set a keyword in CMake you used the syntax <code class="docutils literal notranslate"><span class="pre">-Dkeyword_name</span></code>.
-For example: <code class="docutils literal notranslate"><span class="pre">-DPRESSIO_ENABLE_TPL_MPI=ON</span></code></p>
-</div>
+<section id="building-tests">
+<h3>Building tests<a class="headerlink" href="#building-tests" title="Link to this heading"></a></h3>
+<p>If you are interested in building the tests, look for example at:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/Pressio/pressio-ops/blob/de244f235fd1f0d28dca79b255473260347f13d2/.github/workflows/ci-baseline.yml#L52-L60">baseline CI</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Pressio/pressio-ops/blob/de244f235fd1f0d28dca79b255473260347f13d2/.github/workflows/ci-trilinos.yml#L41-L53">trilinos CI</a></p></li>
+</ul>
 </section>
 </section>
 </section>
@@ -250,14 +242,14 @@ For example: <code class="docutils literal notranslate"><span class="pre">-DPRES
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="pressio-ops" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="components/ops/abs.html" class="btn btn-neutral float-right" title="abs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="helloworld.html" class="btn btn-neutral float-right" title="Hello world" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2021, National Technology &amp; Engineering Solutions of Sandia, LLC (NTESS).
-      <span class="lastupdated">Last updated on Aug 19, 2025.
+      <span class="lastupdated">Last updated on Aug 27, 2025.
       </span></p>
   </div>
 
