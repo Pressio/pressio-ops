@@ -1,12 +1,26 @@
 
 # Scope
 
-This repo contains the `mpl`, `type_traits`, `expressions`, and `ops` components, moved from the [`pressio-rom`](https://github.com/Pressio/pressio-rom) repository.
-The goal is for users to be able to clone and use this repository on its own, without requiring the rest of `pressio-rom`.
+**pressio-ops** is a **header-only C++** library providing a **unified, free-function interface** for common linear-algebra operations across multiple backends. 
+
+## What it offers
+- **Type traits & MPL:** Utilities for detection and metaprogramming that help adapt to different data structures.
+- **Expressions:** Lightweight expression helpers like `span`, `subspan`, `diagonal`, and `column` for slicing and views.
+- **Ops (kernels):** BLAS-like building blocks—`dot`, norms, elementwise ops, `product` (matrix–vector/matrix–matrix), `scale`, `update`, `fill`, `set_zero`, `clone`, `deep_copy`, `resize`, and more—exposed as free functions (e.g., `pressio::ops::product(...)`).
+
+## Why use it
+- **One API, many backends:** Write operations once and use them with different linear-algebra libraries without refactoring your code.
+- **Interoperability:** Designed to make coupling components less painful.
+- **Lightweight:** Header-only.
 
 # Website
 
 https://pressio.github.io/pressio-ops/
+
+# Hello World 
+
+https://pressio.github.io/pressio-ops/helloworld.html
+
 
 ## Questions?
 
