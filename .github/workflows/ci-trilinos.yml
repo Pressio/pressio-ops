@@ -22,6 +22,7 @@ jobs:
         image:
           - ubuntu-07
           - ubuntu-08
+          - ubuntu-09
         build_type:
           - Release
           - Debug
