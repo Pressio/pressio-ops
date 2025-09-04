@@ -2,7 +2,7 @@
 //@HEADER
 // ************************************************************************
 //
-// not_void.hpp
+// is_unique_ptr.hpp
 //                     	         Pressio
 //                             Copyright 2019
 //    National Technology & Engineering Solutions of Sandia, LLC (NTESS)
@@ -46,18 +46,23 @@
 //@HEADER
 */
 
-#ifndef PRESSIOOPS_MPL_NOT_VOID_HPP_
-#define PRESSIOOPS_MPL_NOT_VOID_HPP_
+#ifndef PRESSIOOPS_MPL_IS_UNIQUE_PTR_HPP_
+#define PRESSIOOPS_MPL_IS_UNIQUE_PTR_HPP_
 
-namespace pressio { namespace mpl {
+namespace pressio{ namespace mpl{
+
+template<class T> struct is_unique_ptr : std::false_type {};
+
+template<class U, class D>
+struct is_unique_ptr<std::unique_ptr<U,D>> : std::true_type {};
+
+template<class T> struct is_unique_ptr<const T> : is_unique_ptr<T> {};
+template<class T> struct is_unique_ptr<volatile T> : is_unique_ptr<T> {};
+template<class T> struct is_unique_ptr<const volatile T> : is_unique_ptr<T> {};
 
 template<class T>
-struct not_void
-{
-  static constexpr bool value =
-    !std::is_same<void, typename std::remove_cv<T>>::value;
-};
+constexpr bool is_unique_ptr_v = is_unique_ptr<T>::value;
 
-}} // end namespace pressio::mpl
 
-#endif  // PRESSIOOPS_MPL_NOT_VOID_HPP_
+}} // namespace pressio::mpl
+#endif  // PRESSIOOPS_MPL_IS_STD_SHARED_PTR_HPP_

@@ -67,9 +67,10 @@ struct has_traits<
        // because if I only check for ::pressio::Traits<T>
        // any type would yield true since ::pressio::Traits<T>
        // is always the default case
-       mpl::not_void<
-   typename ::pressio::Traits<T>::scalar_type
-   >::value
+       !std::is_same<
+          void, 
+          typename ::pressio::Traits<T>::scalar_type
+        >::value
        &&
        ::pressio::Traits<T>::rank != 0
        >
