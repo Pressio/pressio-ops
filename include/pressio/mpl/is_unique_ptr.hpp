@@ -65,4 +65,4 @@ constexpr bool is_unique_ptr_v = is_unique_ptr<T>::value;
 
 
 }} // namespace pressio::mpl
-#endif  // PRESSIOOPS_MPL_IS_STD_SHARED_PTR_HPP_
+#endif  // PRESSIOOPS_MPL_IS_UNIQUE_PTR_HPP_
