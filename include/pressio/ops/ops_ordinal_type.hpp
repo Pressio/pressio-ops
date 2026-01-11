@@ -105,6 +105,17 @@ struct OrdinalType<
 };
 #endif
 
+template <class T>
+struct OrdinalType<
+  T,
+  std::enable_if_t<
+    ::pressio::is_vector_std<T>::value
+    >
+  >
+{
+  using type = std::size_t;
+};
+
 #ifdef PRESSIO_ENABLE_TPL_TRILINOS
 template <class T>
 struct LocalOrdinalType<

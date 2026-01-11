@@ -55,6 +55,8 @@ namespace pressio{ namespace ops{
 template<class T>
 struct is_known_data_type
 {
+  static constexpr bool v0 = is_vector_std<T>::value;
+
   static constexpr bool v1 =
 #ifdef PRESSIO_ENABLE_TPL_EIGEN
     is_vector_eigen<T>::value
@@ -82,7 +84,7 @@ struct is_known_data_type
     false;
 #endif
 
-  static constexpr bool value = v1 || v2 || v3;
+  static constexpr bool value = v0 || v1 || v2 || v3;
 };
 
 template<class ... Args>

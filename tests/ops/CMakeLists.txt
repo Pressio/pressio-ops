@@ -2,6 +2,8 @@
 # to include google test fixtures
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/fixtures)
 
+add_serial_utest(ops_std_vector ops_std_vector.cc)
+
 if(PRESSIO_ENABLE_TPL_EIGEN)
   add_serial_utest(
     ops_eigen

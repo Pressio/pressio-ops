@@ -88,6 +88,14 @@ struct Traits< T,
 };
 #endif
 
+template <typename T>
+struct Traits< T,
+  std::enable_if_t< is_vector_std<T>::value > >
+{
+  static constexpr int rank = 1;
+  using scalar_type = typename T::value_type;
+};
+
 #ifdef PRESSIO_ENABLE_TPL_TRILINOS
 template<typename T>
 struct Traits< T,

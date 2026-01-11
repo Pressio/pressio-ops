@@ -59,6 +59,7 @@ template<class T, class Enable = void> struct Traits;
 #include "./type_traits/nested_typedef_detection.hpp"
 
 //*** vector ****
+#include "./type_traits/native_std_vector.hpp"
 #include "./type_traits/native_eigen_vector.hpp"
 #include "./type_traits/native_kokkos_vector.hpp"
 #include "./type_traits/native_teuchos_vector.hpp"

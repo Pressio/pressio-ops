@@ -70,6 +70,21 @@ template<class ...> struct matching_extents;
 #include "./ops/ops_known_data_type.hpp"
 #include "./ops/ops_ordinal_type.hpp"
 
+// std
+#include "./ops/std/ops_extent.hpp"
+#include "./ops/std/ops_clone.hpp"
+#include "./ops/std/ops_deep_copy.hpp"
+#include "./ops/std/ops_set_zero.hpp"
+#include "./ops/std/ops_scale.hpp"
+#include "./ops/std/ops_fill.hpp"
+#include "./ops/std/ops_abs.hpp"
+#include "./ops/std/ops_min_max.hpp"
+#include "./ops/std/ops_norms.hpp"
+#include "./ops/std/ops_dot.hpp"
+#include "./ops/std/ops_pow.hpp"
+#include "./ops/std/ops_elementwise_multiply.hpp"
+#include "./ops/std/ops_elementwise_reciprocal.hpp"
+
 // Eigen
 #ifdef PRESSIO_ENABLE_TPL_EIGEN
 #include "./ops/eigen/ops_extent.hpp"
